@@ -144,12 +144,18 @@ gulp.task('webpack', function(callback) {
   });
 });
 
-gulp.task('scripts', ['webpack']);
+gulp.task('nhscripts', function() {
+    gulp.src('scriptsnh/**/*')
+    .pipe(gulp.dest(path.join(__dirname, site.metalsmith.config.assetRoot, 'assets')));
+});
+
+gulp.task('scripts', ['webpack', 'nhscripts']);
 
 gulp.task('watch', ['default'], function() {
   gulp.watch(['gulpfile.js', 'site.js'], ['default']);
   gulp.watch([site.metalsmith.config.styleRoot+'/**/*'], ['styles']);
   gulp.watch([site.metalsmith.config.scriptRoot+'/**/*'], ['scripts']);
+  gulp.watch('scriptsnh/**/*', ['scripts']);
   gulp.watch([
     site.metalsmith.config.contentRoot+'/**/*',
     site.metalsmith.config.layoutRoot+'/**/*',
@@ -171,7 +177,7 @@ gulp.task('server', ['default', 'watch'], function(callback) {
     serve(req, res, done);
   })
 
-  var serverPort = 8080;//Math.floor((Math.random() * 1000) + 3000);
+  var serverPort = 8080;
   if (argv.port) {
     serverPort = parseInt(argv.port);
   }

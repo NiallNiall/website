@@ -1,3 +1,7 @@
 <header class="canvasheader">
 	<h2>{{title}}</h2>
+
+	{{#each experiments}}
+		<a href="/{{{ this.path }}}/">{{this.title}}</a>
+	{{/each}}
 </header>

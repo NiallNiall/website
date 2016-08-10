@@ -35,6 +35,10 @@ module.exports = {
         "blog": {
           "sortBy": "date",
           "reverse": true
+        },
+        "experiments": {
+          "sortBy": "date",
+          "reverse": false
         }
       },
       "metalsmith-pagination": {

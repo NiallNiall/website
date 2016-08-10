@@ -7,12 +7,15 @@
     
     {{> header-folio}}
 
-    <canvas id="mycanvas" class="bgcanvas drkcanvas"></canvas>
+    <canvas id="papercanvas" class="bgcanvas drkcanvas"></canvas>
 
     {{> footer}}
 
     <script src="/assets/vendor.js" async></script>
     <script src="/assets/app.js" async></script>
-    {{#block "scripts"}}{{/block}}
+    <script src="/assets/vendor/paper-full.js" async></script>
+    {{#each paperscripts}}
+      <script type="text/paperscript" canvas="papercanvas" src="/assets/{{this}}.js"></script>
+    {{/each}}
   </body>
 </html>
