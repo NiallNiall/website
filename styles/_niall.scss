@@ -1,0 +1,102 @@
+
+//===============================================================================
+// VARIABLES
+//===============================================================================
+// $paper:  #FEE9D6;
+// $ink:    black;
+
+$bgColour: #FCF7E9;
+
+//===============================================================================
+// BASCIS
+//===============================================================================
+
+
+html,
+body {
+  background-color: $paper;
+  color: $ink;
+  font-family: sans-serif;
+  line-height: 1.4;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.mainwrap {
+  // background: $bgColour;
+}
+
+.home-header {
+  // border-bottom: 4px solid $clr1;
+  padding-top: 48px;
+}
+
+.home-logo {
+  color: $clr3;
+  font-weight: lighter;
+  margin-bottom: 0px;
+  margin-top: 24px;
+  font-size: 64px;
+  line-height: 0.8;
+
+  font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
+    -moz-font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
+    -webkit-font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
+    -ms-font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
+    -o-font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
+}
+
+.home-header-hidden {
+  .home-header-hide {
+    display: none;
+  }
+}
+
+.home-sub {
+  color: $clr2;
+  font-family: $serif;
+  font-weight: light;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1.0;
+}
+
+.bborder {
+  border-bottom: 3px solid $clr1;
+}
+
+.rborder {
+  border-bottom: 6px solid $clr2;
+}
+
+.center-block {
+  text-align: center;
+  font-weight: bolder;
+  color: $clr3;
+  h2 {
+    font-size: 48px;
+  }
+}
+
+ul.port-list {
+  li {
+    font-family: $serif;
+    color: $clr3;
+    font-weight: bold;
+    line-height: 1.2;
+    
+    &:first-child {
+      font-family: $sans-serif;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+.port-title {
+  color: $clr3;
+  font-weight: bolder;
+  letter-spacing: 0.02em;
+}

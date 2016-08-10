@@ -1,0 +1,28 @@
+//===============================================================================
+// Z-indices
+//===============================================================================
+
+
+
+.intro-container {
+  z-index: 1;
+}
+
+
+  .gbl-head {
+  z-index:999;
+}
+
+.gbl-head-bg {
+  z-index: 0;
+}
+
+.agile-home-container{
+  position: relative;
+  z-index:5;
+}
+
+.whatis-nav{
+  position: relative;
+  z-index: 4;
+}

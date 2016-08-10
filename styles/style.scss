@@ -1,0 +1,43 @@
+//===============================================================================
+// IMPORTS
+//===============================================================================
+// normalize.css v3.0.0 | MIT License | git.io/normalize
+@import "_normalize.scss";
+
+// define mixins & functions
+@import "_mixins.scss";
+
+
+// Grid: Global grid styles and variables
+@import "shared/_fonts.scss";
+@import "shared/_global-variables.scss";
+
+// Shared components and styles
+//===============================================================================
+// Grid: Global grid styles and variables
+@import "shared/_global-grid.scss";
+
+// Layout: Global base layout
+@import "shared/_layout.scss";
+
+// Typography: Headings, hierachy etc.
+@import "shared/_typography.scss";
+
+// Elements: Forms, buttons, lists etc.
+@import "shared/_elements.scss";
+
+// Global Header: Header visible globally
+@import "shared/_global-header.scss";
+
+// Global Footer: Footer visible globally
+@import "shared/_global-footer.scss";
+
+// Z-indices: keep track of the layer heirachy
+@import "shared/_z-indices.scss";
+
+
+// niall
+@import "_niall.scss";
+
+// niall
+@import "_canvasexp.scss";
