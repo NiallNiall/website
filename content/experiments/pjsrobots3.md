@@ -1,5 +1,5 @@
 ---
-title: paper robots straight
+title: paper robots erratic
 url: experiments
 description: Test Post
 collection: experiments
@@ -8,5 +8,5 @@ layout: experiment.html
 date: 2015-11-01
 draft: false
 paperscripts:
-- experiments/probo-straight
+- experiments/probo-erratic
 ---
