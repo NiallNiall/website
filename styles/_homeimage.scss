@@ -1,0 +1,40 @@
+//===============================================================================
+// Full Width home Image
+//===============================================================================
+
+.header-image {
+  background: $clr2; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($clr2, $clr3); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($clr2, $clr3); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($clr2, $clr3); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($clr2, $clr3); /* Standard syntax */
+  padding: 24px;
+}
+.header-inner {
+  width:100%;
+  height: 100%;
+  background: $paper;
+}
+
+.header-text-outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.header-text-inner {
+  display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    h1{
+      color: $clr2;
+      font-size: 126px;
+  }
+}
+
+.full-width-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
