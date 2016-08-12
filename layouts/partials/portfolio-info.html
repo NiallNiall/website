@@ -1,0 +1,17 @@
+<div class="portfolio-info shadow-box">
+      <div class="portfolio-inner">
+        <p>
+          <h3 class="port-title rborder">{{title}}</h3>
+          {{{contents}}}
+        </p>
+
+        {{#if this.previous}}
+        <a class="button-previous" href="/{{this.previous.path}}">Previous Project</a>
+        {{/if}}
+
+        {{#if this.next}}
+        <a class="button-next" href="/{{this.next.path}}">Next Project</a>
+        {{/if}}
+
+      </div>
+    </div>

@@ -51,3 +51,9 @@ input, textarea {
     }
   }
 }
+
+.shadow-box {
+  -webkit-box-shadow: 2px 2px 39px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 39px -4px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 39px -4px rgba(0,0,0,0.75);
+}

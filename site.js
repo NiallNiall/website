@@ -39,6 +39,11 @@ module.exports = {
         "experiments": {
           "sortBy": "date",
           "reverse": false
+        },
+        "commercial-print": {
+          "sortBy": "date",
+          "reverse": false,
+          "refer": true
         }
       },
       "metalsmith-pagination": {

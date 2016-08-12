@@ -8,3 +8,4 @@ layout: video.html
 date: 2015-11-01
 draft: false
 ---
+Working at Pebble, I produced a series of videos outlining various processes and methods within AstraZeneca's working practice.

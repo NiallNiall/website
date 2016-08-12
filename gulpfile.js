@@ -153,7 +153,7 @@ gulp.task('scripts', ['webpack', 'nhscripts']);
 
 gulp.task('watch', ['default'], function() {
   gulp.watch(['gulpfile.js', 'site.js'], ['default']);
-  gulp.watch([site.metalsmith.config.styleRoot+'/**/*'], ['styles']);
+  gulp.watch([site.metalsmith.config.styleRoot+'/**/*.scss'], ['styles']);
   gulp.watch([site.metalsmith.config.scriptRoot+'/**/*'], ['scripts']);
   gulp.watch('scriptsnh/**/*', ['scripts']);
   gulp.watch([

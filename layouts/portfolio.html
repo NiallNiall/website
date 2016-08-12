@@ -5,8 +5,15 @@
 
   <body data-function="{{function}}">
     
-    {{> header-folio}}
+    {{> header-portfolio}}
 
+    {{> portfolio-info}}
+
+    <div class="portfolio-images full-width-block">
+      {{#each imgs}}
+      <img src="/img/portfolio/{{this}}">
+      {{/each}}
+    </div>
     
 
     <script src="/assets/vendor.js" async></script>
