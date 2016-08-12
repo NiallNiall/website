@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-    {{> head-paper}}
+  {{> head-paper}}
 
   <body data-function="{{function}}">
     
@@ -9,15 +9,19 @@
 
     {{> portfolio-info}}
 
-    <button id="fs-video" class="" style="margin-top:200px;">play play play</button>
-
-
-
+    <div id="fs-video" class="video-play-outer" class="">
+        <button class="video-btn video-btn-txt shadow-box">play</button>
+    </div>
     
+    <div id="fs-video-container" class="video-fullscreen">
+      <button class="btn-close video-btn video-btn-txt video-close shadow-box">close</button>
+      <video id="fs-video" controls>
+        <source type="video/webm" src="https://s3-eu-west-1.amazonaws.com/pebblecodecom/549361110.webm" />
+        <source type="video/mp4" src="https://s3-eu-west-1.amazonaws.com/pebblecodecom/549361110.mp4" />
+      </video>
+    </div>
 
-    <script src="/assets/vendor.js" async></script>
-    <script src="/assets/app.js" async></script>
-
-
+    <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/video.js"></script>
   </body>
 </html>

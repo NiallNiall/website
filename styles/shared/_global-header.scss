@@ -413,3 +413,23 @@ $gbl-nav-item-padding: 6px;
 
 }
 
+
+
+
+.dropdown {
+  margin: 0;
+  ul {
+  display: none;
+  position: absolute; 
+  /* the height of the main nav */
+  }
+}
+
+/* Display Dropdowns on Hover */
+.dropdown li:hover > ul {
+  display:inherit;
+}
+
+.dropdown-item {
+  background: $clr2;
+}
