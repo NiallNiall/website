@@ -7,7 +7,6 @@
 // define mixins & functions
 @import "_mixins.scss";
 
-
 // Grid: Global grid styles and variables
 @import "shared/_fonts.scss";
 @import "shared/_global-variables.scss";
@@ -35,18 +34,20 @@
 // Z-indices: keep track of the layer heirachy
 @import "shared/_z-indices.scss";
 
+// Animations
+@import "shared/_animations.scss";
+
 // niall
 @import "_niall.scss";
 
-// niall
-@import "_canvasexp.scss";
-
-// niall
+// Video Related
 @import "_video.scss";
 
-// niall
+// Pages Home
 @import "_homeimage.scss";
 
-
-// niall
+// Pages Portfolio
 @import "_portfolio.scss";
+
+// Pages Canvas
+@import "_canvasexp.scss";

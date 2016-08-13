@@ -1,8 +1,34 @@
 <footer class="gbl-foot">
 	<div class="grid">
 		<div class="col-1-1">
-			© 2015 Niall Henn<br />
-			This website is built with Metalsmith, Gulp, and Sass from <a href="https://github.com/patrickheeney">Patrick Heeney's</a> base.
+			<p class="left">
+			© 2015 Niall Henn
+			This website is built with Metalsmith, Gulp, and Sass from <a href="https://github.com/patrickheeney">Patrick Heeney's</a> base.</p>
+
+			
+
+			<ul class="right">
+				{{#each sociallinks}}
+					<li class="social-icon right">
+						<a href="{{this.link}}">
+						<img src="/img/social/{{this.img}}"/></a>
+					</li>
+<!-- 					{{this.name}} -->
+	 			{{/each}}
+				<!-- <li class="social-icon right">
+					<img src="/img/social/LinkedIn-black.svg"/>
+				</li>
+				<li class="social-icon right">
+					<img src="/img/social/Twitter-black.svg"/>
+				</li>
+				<li class="social-icon right">
+					<img src="/img/social/Soundcloud-black.svg"/>
+				</li>
+				<li class="social-icon right">
+					<img src="/img/social/Vimeo-black.svg"/>
+				</li> -->
+			</ul>
+
 		</div>
 	</div>
 </footer>

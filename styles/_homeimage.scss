@@ -47,6 +47,8 @@
   transform: translate(-50%,0)
 }
 
+
+
 .home-logo {
   color: $clr3;
   font-weight: lighter;
@@ -97,21 +99,19 @@
 
 .home-info {
   margin-top: 100px;
-  font-size: 20px;
-  color: $clr3;
-  font-style: italic;
+  padding-bottom: px;
   p{
+    font-size: 20px;
+    color: $clr3;
+    font-style: italic;
     max-width: 550px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-.showreel-btn-outer {
-  background: $clr2; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient($clr2, $clr3); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient($clr2, $clr3); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient($clr2, $clr3); /* For Firefox 3.6 to 15 */
-  background: linear-gradient($clr2, $clr3); /* Standard syntax */
-  padding: $epsilon;
+.showreel-btn {
+  margin: 50px 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }

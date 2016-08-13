@@ -9,7 +9,25 @@ module.exports = {
     "metadata": {
       "site": {
         "url": "https://github.com/evocode/metalsmith-base"
-      }
+      },
+      "sociallinks": [
+            {
+              "img": "LinkedIn-black.svg",
+              "link": "http://www.linkedin.com",
+            },
+            {
+              "img": "Twitter-black.svg",
+              "link": "http://www.twitter.com",
+            },
+            {
+              "img": "Soundcloud-black.svg",
+              "link": "http://www.soundcloud.com",
+            },
+            {
+              "img": "Vimeo-black.svg",
+              "link": "http://www.vimeo.com",
+            }
+      ]
     },
     "config": {
       "contentRoot": "./content",
