@@ -1,5 +1,5 @@
 ---
-title: paper robots tight
+title: Paper Robots Tight
 url: experiments
 description: Test Post
 collection: experiments

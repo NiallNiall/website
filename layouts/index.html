@@ -7,26 +7,27 @@
 			<div class="header-text-outer">
 				<div class="header-text-inner">
 					<h1 class="home-logo">Niall Henn</h1>
+          <h3 class="home-sub">Design Generalist and an Artist of sorts</h3>
 				</div>				
 			</div>
+
+      <a id="home-button" class="home-button">Check me Out</a>
 		</div>
 	</div>
 
-	<div class="grid full-width-box">
+  <div class="home-info col-1-1">
+    <p>Hi there, my name is Niall.</p>
 
-<!--   <div class="col-1-1 home-header">
-    <h1 class="home-logo">N<span class="home-header-hide">iall </span>H<span class="home-header-hide">enn</span></h1>
-    <p class="home-sub bborder">A motion designer but also an artist of sorts</p>
-  </div> -->
+    <p>I'm a multidisciplinary designer working professionally since 2009, in that time shifting from print to digital to motion. Currently the Lead Motion Designer at pebble code.
+    </p>
 
-  <div class="col-1-1 center-block">
-    <p>My name is Niall. I'm a designer with a variety of hats and a few years underneath them. Here's a selection of work from my portfolio.</p>
-        
-    <p>Take a look round.</p>
+    <p>I live and work in London.</p>
   </div>
 
+	<div id="lower-content" class="grid home-lower">
+
   <div class="col-1-1 center-block">
-    <h2 class="bborder">Showreel</h2>
+    <h2 class="">Showreel</h2>
   </div>
 
   <div class="port-section col-1-1">
@@ -84,6 +85,11 @@
 		{{/each}}
     </ul>
     </div>
-</div>
+  </div>
+  {{/content}}
+
+  {{#content "scripts"}}
+    <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/home.js"></script>
   {{/content}}
 {{/extend}}

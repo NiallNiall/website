@@ -56,10 +56,10 @@ body {
 }
 
 .home-sub {
-  color: $clr2;
+  color: lighten($clr2, 10%);
   font-family: $serif;
   font-weight: light;
-  font-style: italic;
+  // font-style: italic;
   font-size: 24px;
   line-height: 1.0;
 }

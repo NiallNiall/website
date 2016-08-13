@@ -2,31 +2,15 @@
 // FOOTER
 //===============================================================================
 .gbl-foot {
+    @include clearfix;
 	background: $clr3;
 	width: 100%;
     height: $alpha;
     // position: absolute;
-    bottom: 0;
-    left: 0;
+    // bottom: 0;
+    // left: 0;
 }
 
 .gbl-foot-legal {
   margin-bottom: 20px;
-}
-
-.header-text-outer {
-    display: table;
-    width: 100%;
-    height: 100%;
-}
-
-.header-text-inner {
-	display: table-cell;
-    position: relative;
-    vertical-align: middle;
-    text-align: center;
-    h1{
-    	color: white;
-	    font-size: 126px;
-	}
 }

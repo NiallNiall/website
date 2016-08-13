@@ -58,6 +58,9 @@ strong {
   font-weight: 700;
 }
 
+p {
+  font-weight: normal;
+}
 
 // Lists
 ol {
@@ -93,22 +96,22 @@ img {
 
 // Links
 a {
-  font-family: $sans-serif;
-  color: $ink;
+  // font-family: $sans-serif;
+  color: $clr3;
   text-decoration: none;
 
   &:hover, &.hover {
     cursor: pointer;
-    color: $primary;
+    // color: $primary;
   }
 
   &:active, &.active {
-    color: darken($primary, 10);
+    // color: darken($primary, 10);
   }
 
   &:visited,
   &.visited {
-    color: darken($ink, 15);
+    // color: darken($ink, 15);
   }
 }
 

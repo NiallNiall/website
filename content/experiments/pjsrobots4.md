@@ -1,5 +1,5 @@
 ---
-title: paper robots wobbly
+title: Paper Robots Wobbly
 url: experiments
 description: Test Post
 collection: experiments

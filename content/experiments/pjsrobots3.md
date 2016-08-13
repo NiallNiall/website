@@ -1,5 +1,5 @@
 ---
-title: paper robots erratic
+title: Paper Robots Erratic
 url: experiments
 description: Test Post
 collection: experiments

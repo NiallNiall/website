@@ -1,5 +1,5 @@
 ---
-title: paper robots straight
+title: Paper Robots Straight
 url: experiments
 description: Test Post
 collection: experiments
