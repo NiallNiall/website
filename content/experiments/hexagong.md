@@ -1,5 +1,5 @@
 ---
-title: video hexagong
+title: Video Hexagong
 url: experiments
 description: Test Post
 collection: videos
