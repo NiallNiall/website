@@ -1,11 +1,5 @@
-// // $(document).ready(function () {
-//   //your code here
-//   if (window.jQuery) {  
-//     alert('it has loaded!!');   // jQuery is loaded  
-//   } else {
-//       alert('it has not loaded!!');    // jQuery is not loaded
-//   }
-// // });
+var iframe = document.querySelector('iframe');
+var player = new Vimeo.Player(iframe);
 
 var videoPlay = document.getElementById('fs-video');
 if (videoPlay) {
@@ -22,15 +16,16 @@ if (videoPlay) {
 
   var videoStop = function() {
     $videoContainer.fadeOut(350, function() {
-      $videoContainer.find('#fs-video')[0].pause();
+      player.pause();
     });
   }
 
   videoPlay.addEventListener('click', function(e) {
-    $videoContainer.find('#fs-video')[0].play();
+    
+    player.play();
+
     $('#fs-video-container').fadeIn(350, function() {
       $(this).css('display', 'flex');
     });
   });
 }
-

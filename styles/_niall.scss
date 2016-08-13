@@ -34,36 +34,6 @@ body {
   padding-top: 48px;
 }
 
-.home-logo {
-  color: $clr3;
-  font-weight: lighter;
-  margin-bottom: 0px;
-  margin-top: 24px;
-  font-size: 64px;
-  line-height: 0.8;
-
-  font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
-    -moz-font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
-    -webkit-font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
-    -ms-font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
-    -o-font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
-}
-
-.home-header-hidden {
-  .home-header-hide {
-    display: none;
-  }
-}
-
-.home-sub {
-  color: lighten($clr2, 10%);
-  font-family: $serif;
-  font-weight: light;
-  // font-style: italic;
-  font-size: 24px;
-  line-height: 1.0;
-}
-
 .bborder {
   border-bottom: 3px solid $clr1;
 }
