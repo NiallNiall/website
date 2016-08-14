@@ -1,5 +1,5 @@
 ---
-title: AZ Video Work
+title: Votes for Schools video
 url: commercial
 description: Test Post
 collection: commercial-video

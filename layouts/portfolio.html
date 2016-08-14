@@ -9,11 +9,13 @@
 
     {{> portfolio-info}}
 
-    <div class="portfolio-images full-width-block">
+    <!-- <div class="portfolio-images full-width-block"> -->
       {{#each imgs}}
-      <img src="/img/portfolio/{{this}}">
+      <div class="{{this.class}} portfolio-images">
+        <img src="/img/portfolio/{{this.img}}"></div>
+      </div>
       {{/each}}
-    </div>
+    <!-- </div> -->
     
 
     <script src="/assets/vendor.js" async></script>

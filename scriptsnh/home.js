@@ -7,6 +7,6 @@ $.easing.custom = function (x, t, b, c, d) {
     event.preventDefault();
     // alert('hai hai');
     $('html, body').animate({
-        scrollTop: $("#lower-content").offset().top
+        scrollTop: $("#home-info").offset().top
     }, 700, "custom");
   });

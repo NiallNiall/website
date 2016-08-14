@@ -8,9 +8,12 @@ layout: portfolio.html
 date: 2015-11-01
 draft: false
 imgs:
-- sebago_logo_1.jpg
-- sebago_logo_2.jpg
-- sebago_logo_3b.jpg
+- class:
+  img: sebago_logo_1.jpg
+- class: 
+  img: sebago_logo_2.jpg
+- class: white-image
+  img: sebago_logo_3b.jpg
 ---
 Alongside the creative director at Elements, I designed an emblem to represent the whole Sebago brand, incorporating their values of Americana, handsewn craftsmanship, and marine lifestyle. Brought together with the image of the 6 states of New England, their home on the east coast of America.
 

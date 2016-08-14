@@ -2,15 +2,24 @@
 // Portfolio
 //===============================================================================
 .portfolio-images {
+	float: left;
+	width: 100%;
+	background: white;
 
 	img{
 		width: 100%;
 		height: 100%;
-		margin:0px;
-		padding:0px;
 		float: left;
 	}
+
+	&.white-image {
+		padding-left: 250px;
+	}
 }
+
+// .white-image {
+// 	padding-left: 400px;
+// }
 
 
 .portfolio-header {
@@ -49,3 +58,4 @@
 .button-next {
 	float:right;
 }
+
