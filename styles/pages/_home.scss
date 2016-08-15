@@ -194,11 +194,12 @@ ul.port-list {
   width: 80%;
   height: 80%;
   &:before {
-    transform: rotate(30deg);
+    transform: translateY(0%) rotate(30deg);
     transform-origin: 140% 0;
+    animation: arrow-squidgeL 2s linear 2s infinite;
 
     .home-button:hover & {
-      transform: rotate(40deg);
+      transform: translateY(100%) rotate(40deg);
       background: white;
     }
 
@@ -206,13 +207,26 @@ ul.port-list {
   &:after {
     // top: 50%;
     left: 50%;
-    transform: rotate(-30deg);
+    transform: translateY(0%) rotate(-30deg);
     transform-origin: -40% 0;
+    animation: arrow-squidgeR 2s linear 2s infinite;
 
     .home-button:hover & {
-      transform: rotate(-40deg);
+      transform: translateY(100%) rotate(-40deg);
       background: white;
     }
   }
 }
 
+
+@keyframes arrow-squidgeL {
+    0%   {transform: translateY(0%) rotate(30deg);}
+    50%  {transform: translateY(100%) rotate(40deg);}
+    100%  {transform: translateY(0%) rotate(30deg);}
+}
+
+@keyframes arrow-squidgeR {
+    0%   {transform: translateY(0%) rotate(-30deg);}
+    50%  {transform: translateY(100%) rotate(-40deg);}
+    100%  {transform: translateY(0%) rotate(-30deg);}
+}
