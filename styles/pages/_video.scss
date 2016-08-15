@@ -141,3 +141,9 @@
     width: 100%;
     height: 100%;
 }
+
+  .touch-device .bgvideo {
+    background: url(../img/features/video-fallback.jpg);
+    background-position: center;
+    background-size: cover;
+  }

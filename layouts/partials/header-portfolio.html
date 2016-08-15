@@ -2,10 +2,17 @@
 	<div class="grid">
 		<div class="col-1-1">
 			<a class="header-logo" href="/">Niall Henn</a>
+
 			<ul class="dropdown right">
 				<li><a class="">Commercial</a>
+	
 					<ul>
 						{{#each commercial-print}}
+							<li class="dropdown-item">
+								<a href="/{{{ this.path }}}/">{{this.title}}</a>
+							</li>
+						{{/each}}
+						{{#each commercial-video}}
 							<li class="dropdown-item">
 								<a href="/{{{ this.path }}}/">{{this.title}}</a>
 							</li>
@@ -17,7 +24,17 @@
 			<ul class="dropdown right">
 				<li><a class="">Experiments</a>
 					<ul>
-						{{#each commercial-print}}
+						{{#each experiments}}
+							<li class="dropdown-item">
+								<a href="/{{{ this.path }}}/">{{this.title}}</a>
+							</li>
+						{{/each}}
+						{{#each videos}}
+							<li class="dropdown-item">
+								<a href="/{{{ this.path }}}/">{{this.title}}</a>
+							</li>
+						{{/each}}
+						{{#each artwork}}
 							<li class="dropdown-item">
 								<a href="/{{{ this.path }}}/">{{this.title}}</a>
 							</li>
