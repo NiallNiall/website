@@ -17,20 +17,6 @@
 	}
 }
 
-// .white-image {
-// 	padding-left: 400px;
-// }
-
-
-.portfolio-header {
-  position: absolute;
-  top:0;
-  left:0;
-  z-index: 999;
-  background: $clr3;
-  width: 100%;
-}
-
 .portfolio-info {
 	background: $paper;
 	background: -webkit-linear-gradient($clr2, $clr3); /* For Safari 5.1 to 6.0 */
@@ -38,8 +24,8 @@
 	background: -moz-linear-gradient($clr2, $clr3); /* For Firefox 3.6 to 15 */
 	background: linear-gradient($clr2, $clr3); /* Standard syntax */
 	position: fixed;
-	left: $alpha;
-	top: $alpha;
+	left: 20px;
+	top: 40px;
 	width: 300px;
 	padding: $zeta;
 }

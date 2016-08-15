@@ -433,3 +433,33 @@ $gbl-nav-item-padding: 6px;
 .dropdown-item {
   background: $clr2;
 }
+
+
+
+
+
+
+
+.portfolio-header {
+  height: $beta;
+  padding-top: 5px;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 999;
+  width: 100%;
+  line-height: 1.0;
+}
+
+.bluebg {
+  color: lighten($clr3,20%);
+  background: $clr3;
+  a {
+    color: #fff;
+  }
+}
+
+.header-logo {
+  font-family: $sans-serif;
+  letter-spacing: 0.05em;
+}

@@ -8,7 +8,7 @@
   background: -o-linear-gradient($clr2, $clr3); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient($clr2, $clr3); /* For Firefox 3.6 to 15 */
   background: linear-gradient($clr2, $clr3); /* Standard syntax */
-  padding: 24px;
+  padding: $beta;
 }
 .header-inner {
   width:100%;
@@ -34,18 +34,7 @@
   }
 }
 
-.full-width-box {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
 
-.home-button {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translate(-50%,0)
-}
 
 
 
@@ -98,7 +87,7 @@
 }
 
 .home-info {
-  margin-top: 100px;
+  padding-top: 100px;
   padding-bottom: px;
   p{
     font-size: 20px;
@@ -115,3 +104,115 @@
   margin-left: 50%;
   transform: translateX(-50%);
 }
+
+
+
+
+
+
+ul.port-list {
+  li {
+    font-family: $serif;
+    color: $clr3;
+    font-weight: bold;
+    line-height: 1.2;
+    
+    &:first-child {
+      font-family: $sans-serif;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+.port-title {
+  color: $clr3;
+  font-weight: bolder;
+  letter-spacing: 0.02em;
+}
+
+
+
+
+.home-button {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%,0)
+}
+
+
+
+
+  a.home-button {
+      width: 50px;
+      height: 50px;
+
+      position: absolute;
+      left: 50%;
+      display: block;
+      outline: none;
+      z-index: 1000;
+      transform: translateX(-50%);
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: $clr3;
+        content: '';
+        transition: 0.4s;
+        // opacity: 0;
+      }
+
+      &:hover:before {
+        background: $clr2;
+      }
+  }
+
+
+
+
+
+.icon-wrap:before,
+.icon-wrap:after {
+    position: absolute;
+    top:85%;
+    width: 50%;
+    height: 3px;
+    background: lighten($clr3, 20%);
+    content: '';
+    transition: 0.4s;
+}
+
+.icon-wrap {
+  position: relative;
+  display: block;
+  margin: 0 10% 0 10%;
+  width: 80%;
+  height: 80%;
+  &:before {
+    transform: rotate(30deg);
+    transform-origin: 140% 0;
+
+    .home-button:hover & {
+      transform: rotate(40deg);
+      background: white;
+    }
+
+  }
+  &:after {
+    // top: 50%;
+    left: 50%;
+    transform: rotate(-30deg);
+    transform-origin: -40% 0;
+
+    .home-button:hover & {
+      transform: rotate(-40deg);
+      background: white;
+    }
+  }
+}
+

@@ -1,9 +1,9 @@
-<header class="header portfolio-header">
+<header class="header portfolio-header bluebg">
 	<div class="grid">
 		<div class="col-1-1">
-			<a href="/">Niall Henn</a>
+			<a class="header-logo" href="/">Niall Henn</a>
 			<ul class="dropdown right">
-				<li><a class="">{{this.collection}}</a>
+				<li><a class="">Commercial</a>
 					<ul>
 						{{#each commercial-print}}
 							<li class="dropdown-item">
@@ -13,6 +13,19 @@
 					</ul>
 				</li>
 			</ul>
+
+			<ul class="dropdown right">
+				<li><a class="">Experiments</a>
+					<ul>
+						{{#each commercial-print}}
+							<li class="dropdown-item">
+								<a href="/{{{ this.path }}}/">{{this.title}}</a>
+							</li>
+						{{/each}}
+					</ul>
+				</li>
+			</ul>
+
 		</div>
 	</div>
 </header>

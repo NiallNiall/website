@@ -42,31 +42,3 @@ body {
   border-bottom: 6px solid $clr2;
 }
 
-.center-block {
-  text-align: center;
-  font-weight: bolder;
-  color: $clr3;
-  h2 {
-    font-size: 48px;
-  }
-}
-
-ul.port-list {
-  li {
-    font-family: $serif;
-    color: $clr3;
-    font-weight: bold;
-    line-height: 1.2;
-    
-    &:first-child {
-      font-family: $sans-serif;
-      letter-spacing: 0.05em;
-    }
-  }
-}
-
-.port-title {
-  color: $clr3;
-  font-weight: bolder;
-  letter-spacing: 0.02em;
-}
