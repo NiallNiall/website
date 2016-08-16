@@ -85,7 +85,7 @@
     text-transform: uppercase;
     transition: background-color .33s ease;
     transform: translate(-50%,-50%);
-    z-index: 999;
+    z-index: 90;
 }
 
 .video-btn {
@@ -107,7 +107,7 @@
 }
 
 .video-close {
-    z-index: 2;
+    z-index: 5;
     position: absolute;
     right: $alpha;
     top: $alpha;

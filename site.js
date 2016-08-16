@@ -13,19 +13,19 @@ module.exports = {
       "sociallinks": [
             {
               "img": "LinkedIn-black.svg",
-              "link": "http://www.linkedin.com",
+              "link": "https://uk.linkedin.com/in/niall-henn-14691156",
             },
             {
               "img": "Twitter-black.svg",
-              "link": "http://www.twitter.com",
+              "link": "http://www.twitter.com/niallhenn",
             },
             {
               "img": "Soundcloud-black.svg",
-              "link": "http://www.soundcloud.com",
+              "link": "https://soundcloud.com/nialll",
             },
             {
               "img": "Vimeo-black.svg",
-              "link": "http://www.vimeo.com",
+              "link": "http://www.vimeo.com/niallhenn",
             }
       ]
     },

@@ -3,10 +3,20 @@ $.easing.custom = function (x, t, b, c, d) {
     }
 
 
-  $("#home-button").click(function() {
-    event.preventDefault();
-    // alert('hai hai');
-    $('html, body').animate({
-        scrollTop: $("#home-info").offset().top
-    }, 700, "custom");
-  });
+$(".home-button").click(function() {
+	event.preventDefault(); 
+	var defaultAnchorOffset = 0;
+
+	var anchor = $(this).attr('data-attr-scroll');
+	        
+	var anchorOffset = $('#'+anchor).attr('data-scroll-offset');
+	if (!anchorOffset)
+	    anchorOffset = defaultAnchorOffset; 
+
+	$('html,body').animate({ 
+	    scrollTop: $('#'+anchor).offset().top - anchorOffset
+	}, 700, "custom");
+});
+
+
+
