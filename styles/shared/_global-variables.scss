@@ -21,7 +21,7 @@ $clr3: #567483;
 
 $red: #E63000;
 
-$paper: #FEE9D6;
+$paper: lighten(#FEE9D6, 5%);
 $ink: #3f4444;
 $light-ink: lighten($ink, 35);
 $mid-ink: lighten($ink, 20);
