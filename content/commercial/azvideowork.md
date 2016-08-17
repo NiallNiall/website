@@ -8,5 +8,7 @@ layout: video.html
 date: 2015-11-01
 draft: false
 vimeolink: 6659209
+bgvideolink: "http://niallhenn.com/website-vids/az-loop.mp4"
+nooverlay: true
 ---
 Working at Pebble, I produced a series of videos outlining various processes and methods within AstraZeneca's working practice.

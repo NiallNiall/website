@@ -9,16 +9,25 @@
 
     {{> portfolio-info}}
 
+
+    {{#if nooverlay}}
+
+    {{else}}
     <div id="fs-video" class="video-play-outer" class="">
         <button class="video-btn video-btn-txt shadow-box">play</button>
     </div>
+    {{/if}}
 
     <video class="bgvideo" id="officespace" preload="" src="{{bgvideolink}}" autoplay="" loop=""></video>
     
+    {{#if nooverlay}}
+
+    {{else}}
     <div id="fs-video-container" class="video-fullscreen">
       <button class="btn-close video-btn video-btn-txt video-close shadow-box">close</button>
       <iframe src="https://player.vimeo.com/video/{{vimeolink}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
+    {{/if}}
 
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>
