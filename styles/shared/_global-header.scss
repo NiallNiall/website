@@ -4,9 +4,6 @@
 
 $gbl-nav-item-padding: 6px;
 
-
-
-
 .dropdown {
   margin: 0;
   right:0;
@@ -14,21 +11,29 @@ $gbl-nav-item-padding: 6px;
 
   .dropdown-first {
     margin-top: 4px;
-    border-top: 4px solid darken($clr3, 10%);
-    background: darken($clr3, 10%);
-    background: $clr2; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient($clr2, $clr3); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient($clr2, $clr3); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient($clr2, $clr3); /* For Firefox 3.6 to 15 */
-    background: linear-gradient($clr2, $clr3); /* Standard syntax */
+    // border-top: 4px solid darken($clr3, 10%);
+    background: $paper;
+    // background: darken($clr3, 10%);
+    // background: $clr2; /* For browsers that do not support gradients */
+    // background: -webkit-linear-gradient($clr2, $clr3); /* For Safari 5.1 to 6.0 */
+    // background: -o-linear-gradient($clr2, $clr3); /* For Opera 11.1 to 12.0 */
+    // background: -moz-linear-gradient($clr2, $clr3); /* For Firefox 3.6 to 15 */
+    // background: linear-gradient($clr2, $clr3); /* Standard syntax */
     padding: 0;
+    padding-bottom: 8px;
     display: none;
     opacity: 0;
     transition: 0.2s;
     position: absolute;
     width: 200px;
     right: 0px;
-    color: white;
+    // color: white;
+    a {
+      color: $clr3;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   & > li {
@@ -46,14 +51,14 @@ $gbl-nav-item-padding: 6px;
 }
 
 .dropdown-first li {
-  padding: 6px;
+  padding: 0 12px ;
 }
 
 .dropdown-item {
   right: 0;
-  background: darken($clr3, 5%);
+  // background: darken($clr3, 5%);
   &:hover {
-    background: lighten($clr3, 20%);
+    // background: lighten($clr3, 20%);
   }
 }
 
@@ -64,14 +69,17 @@ $gbl-nav-item-padding: 6px;
 
 }
 .dropdown li:hover .top-level {
-  background: darken($clr3, 10%);
+  background: $paper;//darken($clr3, 10%);
+  color: $clr3;
 }
 
 .dd-title {
-  color: lighten($clr3, 40%);
+  color: $clr3;//lighten($clr3, 40%);
   font-family: $sans-serif;
+  font-weight: bold;
   letter-spacing: 0.05em;
-  border-bottom: 4px solid lighten($clr3, 20%);
+  margin: 6px 0;
+  // border-bottom: 4px solid lighten($clr3, 20%);
 }
 
 

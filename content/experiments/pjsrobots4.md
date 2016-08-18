@@ -10,3 +10,4 @@ draft: false
 paperscripts:
 - experiments/probo-wobbly
 ---
+Version 4 of some autonomous drawing robots made in paperJS

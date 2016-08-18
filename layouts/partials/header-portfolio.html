@@ -4,17 +4,22 @@
 			<a class="header-logo" href="/">Niall Henn</a>
 
 			<ul class="dropdown right">
-				<li><a class="top-level">Commercial</a>
-	
+				<li><a class="top-level">Experiments</a>
 					<ul class="dropdown-first">
-						<li class="dd-title">Print</li>
-						{{#each commercial-print}}
+						<li class="dd-title rborder">Browser</li>
+						{{#each experiments}}
 							<li class="dropdown-item">
 								<a href="/{{{ this.path }}}/">{{this.title}}</a>
 							</li>
 						{{/each}}
-						<li class="dd-title">Video</li>
-						{{#each commercial-video}}
+						<li class="dd-title rborder">Videos</li>
+						{{#each videos}}
+							<li class="dropdown-item">
+								<a href="/{{{ this.path }}}/">{{this.title}}</a>
+							</li>
+						{{/each}}
+						<li class="dd-title rborder">Artwork</li>
+						{{#each artwork}}
 							<li class="dropdown-item">
 								<a href="/{{{ this.path }}}/">{{this.title}}</a>
 							</li>
@@ -24,22 +29,17 @@
 			</ul>
 
 			<ul class="dropdown right">
-				<li><a class="top-level">Experiments</a>
+				<li><a class="top-level">Commercial</a>
+	
 					<ul class="dropdown-first">
-						<li class="dd-title">Browser</li>
-						{{#each experiments}}
+						<li class="dd-title rborder">Print</li>
+						{{#each commercial-print}}
 							<li class="dropdown-item">
 								<a href="/{{{ this.path }}}/">{{this.title}}</a>
 							</li>
 						{{/each}}
-						<li class="dd-title">Videos</li>
-						{{#each videos}}
-							<li class="dropdown-item">
-								<a href="/{{{ this.path }}}/">{{this.title}}</a>
-							</li>
-						{{/each}}
-						<li class="dd-title">Artwork</li>
-						{{#each artwork}}
+						<li class="dd-title rborder">Video</li>
+						{{#each commercial-video}}
 							<li class="dropdown-item">
 								<a href="/{{{ this.path }}}/">{{this.title}}</a>
 							</li>
@@ -47,6 +47,10 @@
 					</ul>
 				</li>
 			</ul>
+
+			
+			
+
 
 		</div>
 	</div>

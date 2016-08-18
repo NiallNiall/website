@@ -10,3 +10,4 @@ draft: false
 paperscripts:
 - experiments/probo-erratic
 ---
+Version 3 of some autonomous drawing robots made in paperJS

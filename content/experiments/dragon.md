@@ -10,3 +10,4 @@ draft: false
 paperscripts:
 - experiments/dragon
 ---
+Originally a processing sketch for a hackathon, this is a dragon made with SVGs and Javascript

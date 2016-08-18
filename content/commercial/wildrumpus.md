@@ -2,8 +2,8 @@
 title: Wild Rumpus Video
 url: commercial
 description: Test Post
-collection: commercial-video
-paginate: commercial-video
+collection: videos
+paginate: videos
 layout: video.html
 date: 2015-11-01
 draft: false
