@@ -1,5 +1,5 @@
 ---
-title: Video Hexagong
+title: Two Little Animations
 url: experiments
 description: Test Post
 collection: videos
@@ -7,7 +7,7 @@ paginate: videos
 layout: video.html
 date: 2015-11-01
 draft: false
-vimeolink: 6659209
+vimeolink: 6657354
 ---
 
-Here's a video / track I made of some cardboard hexagons moving about.
+Here's another littler audiovisual piece. Quite old now.

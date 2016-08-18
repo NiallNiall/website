@@ -17,10 +17,6 @@
             <a class="home-button down-arrow-outer" data-attr-scroll="home-info" id="info-button">
               <span class="down-arrow"></span>
             </a>
-
-            <div class="fluidBG" style="width: 100%; height: 100%; position: absolute; left: 0;">
-
-            </div>
         
         <!-- <div class="home-canvas"></div> -->
 
@@ -30,6 +26,9 @@
 
 		</div>
 	</div>
+
+  <div class="fluidBG" style="width: 100%; height: 100%; position: absolute; left: 0; transform: scaleX(-1);">
+</div>
 
   <div id="home-info" class="home-info full-width-box">
     <p>Hi there, my name is Niall.</p>
@@ -54,27 +53,27 @@
   </div>
     <div class="col-1-3 mainwrap">
       <ul class="port-list">
-        <li class="homeport-title">Digital</li>
-  	    {{#each commercial-digital}}
-  			<li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
-  		{{/each}}
+        <li class="homeport-title">Video</li>
+        {{#each commercial-video}}
+        <li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
+      {{/each}}
       </ul>
     </div>
     <div class="col-1-3 mainwrap">
       <ul class="port-list">
         <li class="homeport-title">Print</li>
-	    {{#each commercial-print}}
-			<li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
-		{{/each}}
+      {{#each commercial-print}}
+      <li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
+    {{/each}}
       </ul>
     </div>
     <div class="col-1-3 mainwrap">
       <ul class="port-list">
-        <li class="homeport-title">Video</li>
-	    {{#each commercial-video}}
-			<li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
-		{{/each}}
-    </ul>
+        <li class="homeport-title">Digital</li>
+  	    {{#each commercial-digital}}
+  			<li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
+  		{{/each}}
+      </ul>
     </div>
 
     <div class="port-section col-1-1">
@@ -82,7 +81,7 @@
     </div>
     <div class="col-1-3 mainwrap">
       <ul class="port-list">
-      	<li class="homeport-title">Online</li>
+      	<li class="homeport-title">Browser</li>
 	    {{#each experiments}}
 			<li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
 		{{/each}}

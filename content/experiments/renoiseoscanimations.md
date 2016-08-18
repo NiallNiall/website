@@ -1,5 +1,5 @@
 ---
-title: Video Hexagong
+title: Renoise OSC Experiments
 url: experiments
 description: Test Post
 collection: videos
@@ -7,7 +7,7 @@ paginate: videos
 layout: video.html
 date: 2015-11-01
 draft: false
-vimeolink: 6659209
+vimeolink: 56643721
 ---
 
-Here's a video / track I made of some cardboard hexagons moving about.
+An application to generate graphics from a music creation program.
