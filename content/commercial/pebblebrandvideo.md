@@ -10,4 +10,4 @@ draft: false
 vimeolink: 179031071
 bgvideolink: "https://s3-eu-west-1.amazonaws.com/pebblecodecom/officeloop-bw.mp4"
 ---
-Working at Pebble, I produced a series of videos outlining various processes and methods within AstraZeneca's working practice.
+At pebble, I handled all the video work. Producing videos of monthly events and brand videos to sell the company externally.

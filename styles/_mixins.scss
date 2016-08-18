@@ -11,6 +11,10 @@
   }
 }
 
+.clearfix {
+  @include clearfix;
+}
+
 // HIDE TEXT
 // @include hide-text;
 @mixin hide-text {
@@ -38,6 +42,9 @@
   background-size: cover;
 }
 
+.fluidBG {
+  @include fluidBG;
+}
 
 // gradientBG
 // @include gradientBG
