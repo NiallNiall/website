@@ -8,18 +8,15 @@
     min-height: $alpha;
     padding-top: 22px;
     padding-bottom: 48px;
+
+    @media screen and ( max-width: $medium ) {
+        text-align: center;
+    }
+
 }
 
 .gbl-foot-legal {
   margin-bottom: 20px;
-}
-
-.social-icon {
-	width: 25px;
-	height: 25px;
-	padding: 5px;
-	background: lighten($clr3, 20%);
-	margin-right: 6px;
 }
 
 .foot-info {
@@ -30,4 +27,32 @@
     a {
         color: lighten($clr3, 30%);
     }
+
+    @media screen and ( max-width: $medium ) {
+        float:none;
+    }
+}
+
+.social-icon {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    background: lighten($clr3, 20%);
+    margin-right: 6px;
+    float: right;
+    @media screen and ( max-width: $medium ) {
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+        display: inline-block;
+        float: none;
+    }
+}
+
+.footer-social {
+  @media screen and ( max-width: $medium ) {
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+  }
 }

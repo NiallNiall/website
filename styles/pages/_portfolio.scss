@@ -1,6 +1,7 @@
 //===============================================================================
 // Portfolio
 //===============================================================================
+
 .portfolio-images {
 	float: left;
 	width: 100%;
@@ -43,11 +44,21 @@
 	@include clearfix;
 	background: $paper;
 	padding:$delta;
+	padding-top: 32px;
 	color: $clr3;
 
 	@media screen and ( max-width: $medium ) {
-		padding: 0 $delta;
+		// padding: 0 $delta;
+		padding-top: $delta;
 	}
+}
+
+.port-content {
+
+	@media screen and ( max-width: $medium ) {
+		display: none;
+	}
+
 }
 
 .button-previous {
