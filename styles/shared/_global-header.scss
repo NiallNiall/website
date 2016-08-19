@@ -9,16 +9,27 @@ $gbl-nav-item-padding: 6px;
   right:0;
   text-align: left;
 
+
+
   .dropdown-first {
-    margin-top: 4px;
-    // border-top: 4px solid darken($clr3, 10%);
+
+
+    $dropdownmargin: 4px;
+    $doubledropdownmargin: $dropdownmargin * 2;
+    &:before {
+      content: "";
+      width: calc(100% + #{$doubledropdownmargin});//$doubledropdownmargin);
+      height: calc(100% + #{$dropdownmargin});
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -$dropdownmargin;
+      @include litegradientBG;
+      z-index: -1;
+    }
+
+    margin-top: 5px;
     background: $paper;
-    // background: darken($clr3, 10%);
-    // background: $clr2; /* For browsers that do not support gradients */
-    // background: -webkit-linear-gradient($clr2, $clr3); /* For Safari 5.1 to 6.0 */
-    // background: -o-linear-gradient($clr2, $clr3); /* For Opera 11.1 to 12.0 */
-    // background: -moz-linear-gradient($clr2, $clr3); /* For Firefox 3.6 to 15 */
-    // background: linear-gradient($clr2, $clr3); /* Standard syntax */
     padding: 0;
     padding-bottom: 8px;
     display: none;

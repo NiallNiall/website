@@ -91,10 +91,10 @@
 .video-btn {
     padding: 20px;
     background: $clr2;
-    transition: background 0.4s;
+    transition: 0.4s;
 
     &:hover {
-      background: $clr3;
+      background: darken($clr2, 10%);
     }
 }
 
@@ -104,6 +104,9 @@
   font-family: $sans-serif;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  &:hover {
+    color: white;
+  }
 }
 
 .video-close {
@@ -111,8 +114,6 @@
     position: absolute;
     right: $alpha;
     top: $alpha;
-    // width: 45px;
-    // height: 45px;
 }
 
 
@@ -142,8 +143,8 @@
     height: 100%;
 }
 
-  .touch-device .bgvideo {
-    background: url(../img/features/video-fallback.jpg);
-    background-position: center;
-    background-size: cover;
-  }
+  // .touch-device .bgvideo {
+  //   background: url(../img/features/video-fallback.jpg);
+  //   background-position: center;
+  //   background-size: cover;
+  // }
