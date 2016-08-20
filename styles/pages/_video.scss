@@ -95,6 +95,7 @@
 
     &:hover {
       background: darken($clr2, 10%);
+      // transform: translateX(-50%) scale(1.1);
     }
 }
 

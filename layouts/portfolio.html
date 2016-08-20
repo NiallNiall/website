@@ -16,11 +16,15 @@
       </div>
       {{/each}}
     <!-- </div> -->
-    
+        <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+    $(".port-showinfo").click(function() {
+      event.preventDefault();
+      // var portinfo = document.getElementById("portfolio-info");
+      $( "#portfolio-info" ).toggleClass( "open" );
 
-    <script src="/assets/vendor.js" async></script>
-    <script src="/assets/app.js" async></script>
-
+    });
+    </script>
 
   </body>
 </html>

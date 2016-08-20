@@ -2,21 +2,23 @@
 
 <div class="col-1-1-">
 
-<div class="portfolio-info shadow-box">
+<div id="portfolio-info" class="portfolio-info shadow-box">
   <div class="portfolio-inner">
     
       <h3 class="port-title rborder">{{title}}</h3>
+
       <div class="port-content">
         {{{contents}}}
       </div>
     
+      <a id="port-showinfo" class="port-showinfo"><span class="open">View Info</span><span class="close">Hide Info</span></a>
 
     {{#if this.previous}}
-      <a class="button-previous left" href="/{{this.previous.path}}">Previous Project</a>
+      <a class="portnav-buttons left" href="/{{this.previous.path}}">Previous <span>Project</span></a>
     {{/if}}
 
     {{#if this.next}}
-      <a class="button-next right" href="/{{this.next.path}}">Next Project</a>
+      <a class="portnav-buttons right" href="/{{this.next.path}}">Next <span>Project</span></a>
     {{/if}}
 
   </div>
