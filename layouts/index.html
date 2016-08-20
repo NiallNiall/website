@@ -18,9 +18,6 @@
 		</div>
 	</div>
 
-<!--   <div class="fluidBG" style="width: 100%; height: 100%; position: absolute; left: 0; transform: scaleX(-1);">
-  </div> -->
-
   <div id="home-info" class="full-width-box home-info">
 
     <div class="central-block">
@@ -32,16 +29,15 @@
 
     <!-- <p><a href="">More about me</a></p> -->
 
-
       <button id="fs-video" class="video-btn video-btn-txt shadow-box showreel-btn">Showreel</button>
     </div>
 
-      <a class="home-button" data-attr-scroll="home-portfolio" id="portfolio-button">
+      <a class="home-button down-button-portfolio" data-attr-scroll="home-portfolio" id="portfolio-button">
         View some selected work
       </a>
   </div>
 
-	<div id="home-portfolio" class="grid home-lower">
+	<div id="home-portfolio" class="grid home-portfolio">
   <div class="port-section col-1-1">
     <h3 class="port-title rborder">Commercial Portfolio</h3>
   </div>
@@ -107,6 +103,7 @@
   {{/content}}
 
   {{#content "scripts"}}
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="/assets/home.js"></script>
     <script src="https://player.vimeo.com/api/player.js"></script>

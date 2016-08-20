@@ -86,9 +86,6 @@
   }
 }
 
-.home-lower {
-  padding-bottom: 128px;
-}
 
 .home-info {
   padding-top: 100px;
@@ -181,7 +178,9 @@ ul.port-list {
 
 
 .home-portfolio {
-  min-height: 100%;
+  // min-height: 100%;
+  padding-bottom: 64px;
+  padding-top: 64px;
 }
 
 .homeport-title {
@@ -205,7 +204,8 @@ a.down-arrow-outer {
     display: block;
     outline: none;
     z-index: 50;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1.0);
+    transition: 0.4s;
 
     &:before {
       position: absolute;
@@ -220,11 +220,20 @@ a.down-arrow-outer {
       // opacity: 0;
     }
 
+    &:hover {
+      transform: translateX(-50%) scale(1.2);
+    }
+
     &:hover:before {
       background: darken($clr2, 10%);
+      // border: 8px solid $clr2;
     }
 }
 
+a.down-button-portfolio {
+  bottom: 12px;
+  text-decoration: underline;
+}
 
 .down-arrow:before,
 .down-arrow:after {
@@ -246,7 +255,7 @@ a.down-arrow-outer {
   &:before {
     transform: translateY(0%) rotate(30deg);
     transform-origin: 140% 0;
-    animation: arrow-squidgeL 2s linear 2s infinite;
+    // animation: arrow-squidgeL 2s linear 2s infinite;
 
     .home-button:hover & {
       transform: translateY(100%) rotate(40deg);
@@ -259,7 +268,7 @@ a.down-arrow-outer {
     left: 50%;
     transform: translateY(0%) rotate(-30deg);
     transform-origin: -40% 0;
-    animation: arrow-squidgeR 2s linear 2s infinite;
+    // animation: arrow-squidgeR 2s linear 2s infinite;
 
     .home-button:hover & {
       transform: translateY(100%) rotate(-40deg);
@@ -271,14 +280,14 @@ a.down-arrow-outer {
 
 
 
-@keyframes arrow-squidgeL {
-    0%   {transform: translateY(0%) rotate(30deg);}
-    50%  {transform: translateY(100%) rotate(40deg);}
-    100%  {transform: translateY(0%) rotate(30deg);}
-}
+// @keyframes arrow-squidgeL {
+//     0%   {transform: translateY(0%) rotate(30deg);}
+//     50%  {transform: translateY(100%) rotate(40deg);}
+//     100%  {transform: translateY(0%) rotate(30deg);}
+// }
 
-@keyframes arrow-squidgeR {
-    0%   {transform: translateY(0%) rotate(-30deg);}
-    50%  {transform: translateY(100%) rotate(-40deg);}
-    100%  {transform: translateY(0%) rotate(-30deg);}
-}
+// @keyframes arrow-squidgeR {
+//     0%   {transform: translateY(0%) rotate(-30deg);}
+//     50%  {transform: translateY(100%) rotate(-40deg);}
+//     100%  {transform: translateY(0%) rotate(-30deg);}
+// }
