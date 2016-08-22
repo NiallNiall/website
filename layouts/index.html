@@ -7,7 +7,7 @@
 			<div class="header-text-outer">
 				<div class="header-text-inner">
 					<h1 class="home-logo">Niall Henn</h1>
-          <h3 class="home-sub">Design Generalist and an Artist of sorts</h3>
+          <h3 class="home-sub">Craft and Code</h3>
 				</div>			
 			</div>
         
@@ -60,9 +60,10 @@
     <div class="col-1-3 mainwrap">
       <ul class="port-list">
         <li class="homeport-title">Digital</li>
-  	    {{#each commercial-digital}}
+        <li> - </li>
+  	    <!-- {{#each commercial-digital}}
   			<li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
-  		{{/each}}
+  		{{/each}} -->
       </ul>
     </div>
 
@@ -79,19 +80,20 @@
     </div>
     <div class="col-1-3 mainwrap">
       <ul class="port-list">
-        <li class="homeport-title">Offline</li>
-	    {{#each artwork}}
-			<li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
-		{{/each}}
-      </ul>
+        <li class="homeport-title">Films</li>
+      {{#each videos}}
+      <li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
+    {{/each}}
+    </ul>
     </div>
     <div class="col-1-3 mainwrap">
       <ul class="port-list">
-        <li class="homeport-title">Films</li>
-	    {{#each videos}}
+        <li class="homeport-title">Offline</li>
+        <li> - </li>
+<!-- 	    {{#each artwork}}
 			<li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
-		{{/each}}
-    </ul>
+		{{/each}} -->
+      </ul>
     </div>
   </div>
 

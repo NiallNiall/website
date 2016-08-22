@@ -15,4 +15,4 @@ imgs:
 - class: 
   img: david_newby_2.jpg
 ---
-Working at pebble, I produced a series of videos outlining various processes and methods within AstraZeneca, one of the world's largest pharmaceutical companies.
+A site for Fashion Photographer; David Newby
