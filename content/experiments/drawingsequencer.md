@@ -8,7 +8,7 @@ layout: experiment-sequencer.html
 date: 2015-11-01
 draft: false
 extrascripts:
-- experiments/pennerEq
+- experiments/pennereq
 - experiments/drawClass
 - experiments/draw
 ---

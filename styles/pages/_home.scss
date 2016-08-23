@@ -91,6 +91,8 @@
   padding-top: 100px;
   // padding-bottom: px;
   min-height: 100%;
+  width: 100%;
+  position: relative;
 
   &:before{
     content: "";
@@ -141,6 +143,7 @@
   margin: 50px 0;
   margin-left: 50%;
   transform: translateX(-50%);
+  margin-bottom: 84px;
 }
 
 
