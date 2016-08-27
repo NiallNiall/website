@@ -1,5 +1,5 @@
 ---
-title: Index
+title: Niall Henn
 url: /
 description: Index Page
 layout: index.html
