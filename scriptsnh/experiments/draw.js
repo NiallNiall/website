@@ -9,6 +9,11 @@ var synth = new Tone.SimpleSynth().connect(fbDelay);
 synth.oscillator.type = "triangle";
 
 
+var playing = true;
+
+function playpause() {
+    playing = !playing;
+}
 
 paper.install(window);
   // Only executed our code once the DOM is ready.
@@ -20,17 +25,20 @@ paper.install(window);
     paper.setup(canvas);
 
 
-    // Create an empty array of twigs
-    var allTwigs = [];
-
     // Set scroller
     var countr = 1;
 
-
     var steps = [];
 
-    for(var i = 50; i < paper.view.bounds.width-50; i +=50){
-        for(var j = 50; j < paper.view.bounds.height-50; j +=50){
+    var startGrid = 50;
+    var endGrid = paper.view.bounds.width-50;
+    var width = endGrid - startGrid;
+    var distThing = Math.floor(width / 50);
+    var dist = width / distThing;
+    console.log(distThing + ' ' + dist);
+
+    for(var i = 50; i < paper.view.bounds.width-49; i +=dist){
+        for(var j = 50; j < paper.view.bounds.height-49; j +=dist){
             var tempStep = createKick(new paper.Point(i, j));
             var note = i;
             var octave = j;
@@ -74,12 +82,10 @@ paper.install(window);
       }
 
 
-      for(var i = 0; i <veins.length; i++){
-        veins[i].loop();
-
-        // var veinPos = veins[i].getPHPos();
-
-
+      if(playing){
+        for(var i = 0; i <veins.length; i++){
+            veins[i].loop();
+        }
       }
 
       for(var i = 0; i < steps.length; i++){
@@ -135,10 +141,48 @@ paper.install(window);
 
     }
 
+    mouseTool.onKeyDown = function(event) {
+        if (event.key == 'space') {
+            playpause();
+        }
+
+        if (event.key == 'q') {
+            veins = [];
+        }
+
+        if (event.key == 'w') {
+            var tempVein = veins[veins.length-1];
+            tempVein.removeVein();
+        }
+
+    }
+
     // Draw the view now:
     paper.view.draw();
 
+    function resetVeins() {
+        for(var i = 0; i < veins.length; i++){
+            var tempVein = veins[i];
+            tempVein.removeVein();
+        }
+        veins = [];
+    }
+
+
+    var seqPause = document.getElementById("seq-pause")
+    seqPause.addEventListener('click', function(e) {
+        e.preventDefault();
+        playpause()
+        seqPause.classList.toggle('seqPaused');
+    });
+
+    document.getElementById("seq-reset").onclick = function () {resetVeins() };
+
+    // seq-pause
+
   }
+
+
 
 
 

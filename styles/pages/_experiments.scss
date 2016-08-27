@@ -35,3 +35,44 @@ $darkcanvascolour: #113;
   top: 0;
   z-index: 1;
 }
+
+.bottom-buttons {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.paper-button {
+  padding: 8px;
+  background: $clr2;
+  font-family: $sans-serif;
+  transition: 0.2s;
+  &:first-child {
+    margin-right: 8px;
+  }
+  &:hover {
+    background: darken($clr2, 10%);
+    color: white;
+  }
+
+  .seq-pause {
+    display: inline;
+  }
+
+  .seq-play {
+    display: none;
+  }
+
+  &.seqPaused {
+    .seq-pause {
+      display: none;
+    }
+    .seq-play {
+      display: inline;
+    }
+  }
+
+}

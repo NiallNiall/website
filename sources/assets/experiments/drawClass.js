@@ -19,12 +19,28 @@ function createVein(initialPos) {
   var endShape = new paper.Path.Circle(initialPos, 10);
   endShape.fillColor = 'Tomato';
 
+  var moving = true;
+
   var vein = {
     veinPath: veinPath,
     addPoints: addPoints,
     loop: loop,
     playHeadPos: playHeadPos,
-    getPHPos: getPHPos
+    getPHPos: getPHPos,
+    veinPHPos: veinPHPos,
+    playHead: playHead,
+    startShape: startShape,
+    endShape: endShape,
+    removeVein: removeVein
+  }
+
+  function removeVein() {
+    playHead.remove();
+    startShape.remove();
+    endShape.remove();
+    playHead.remove();
+    veinPath.remove();
+    moving = false;
   }
 
 
@@ -42,20 +58,20 @@ function createVein(initialPos) {
       } else {
         pointPos = 0.001;
       }
-
       // console.log(pointPos);
-
       movePlayhead(veinPath, pointPos);
   }
 
   function movePlayhead(tempVein, tempPointPos) {
 
-    var getLength = tempVein.length;
-    // console.log(getLength);
-    var pos = getLength * tempPointPos;
+    if(moving){
+      var getLength = tempVein.length;
+      // console.log(getLength);
+      var pos = getLength * tempPointPos;
 
-    playHeadPos = tempVein.getPointAt(pos);
-    playHead.position = playHeadPos;
+      playHeadPos = tempVein.getPointAt(pos);
+      playHead.position = playHeadPos;
+    }
   }
 
   function getPHPos() {
