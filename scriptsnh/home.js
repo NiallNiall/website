@@ -4,16 +4,16 @@ $.easing.custom = function (x, t, b, c, d) {
 
 
 $(".home-button").click(function() {
-	event.preventDefault(); 
+	event.preventDefault();
 	var defaultAnchorOffset = 0;
 
 	var anchor = $(this).attr('data-attr-scroll');
-	        
+
 	var anchorOffset = $('#'+anchor).attr('data-scroll-offset');
 	if (!anchorOffset)
-	    anchorOffset = defaultAnchorOffset; 
+	    anchorOffset = defaultAnchorOffset;
 
-	$('html,body').animate({ 
+	$('html,body').animate({
 	    scrollTop: $('#'+anchor).offset().top - anchorOffset
 	}, 700, "custom");
 });
