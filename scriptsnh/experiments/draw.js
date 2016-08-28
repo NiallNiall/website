@@ -35,18 +35,23 @@ paper.install(window);
     var width = endGrid - startGrid;
     var distThing = Math.floor(width / 50);
     var dist = width / distThing;
-    console.log(distThing + ' ' + dist);
+    // console.log(distThing + ' ' + dist);
 
-    for(var i = 50; i < paper.view.bounds.width-49; i +=dist){
-        for(var j = 50; j < paper.view.bounds.height-49; j +=dist){
-            var tempStep = createKick(new paper.Point(i, j));
-            var note = i;
-            var octave = j;
-            tempStep.setPitch(note, octave)
-            steps.push(tempStep);
+    function makeAlltheSteps() {
+
+        for(var i = 50; i < paper.view.bounds.width-49; i +=dist){
+            for(var j = 50; j < paper.view.bounds.height-49; j +=dist){
+                var tempStep = createKick(new paper.Point(i, j));
+                var note = i;
+                var octave = j;
+                tempStep.setPitch(note, octave)
+                steps.push(tempStep);
+            }
         }
+
     }
 
+    makeAlltheSteps();
 
     // Create a vector for the playhead
     var playHeadPos = new paper.Point(paper.view.center);
@@ -119,6 +124,23 @@ paper.install(window);
 
     }
 
+
+    function removeAllSteps() {
+        for(var i = 0; i < steps.length; i++){
+            var tempStep = steps[i];
+            var tempShape = tempStep.getThisShape();
+            var tempOutline = tempStep.getOutlineShape();
+            tempShape.remove();
+            tempOutline.remove();
+        }
+        steps = [];
+    }
+
+    // function redrawSteps() {
+    //     removeAllSteps();
+    //     makeAlltheSteps();
+    // }
+
     var veins = [];
 
 
@@ -146,9 +168,10 @@ paper.install(window);
             playpause();
         }
 
-        if (event.key == 'q') {
-            veins = [];
-        }
+        // if (event.key == 'q') {
+        //     removeAllSteps();
+        //     makeAlltheSteps();
+        // }
 
         if (event.key == 'w') {
             var tempVein = veins[veins.length-1];
@@ -156,6 +179,8 @@ paper.install(window);
         }
 
     }
+
+
 
     // Draw the view now:
     paper.view.draw();
@@ -169,16 +194,23 @@ paper.install(window);
     }
 
 
-    var seqPause = document.getElementById("seq-pause")
+    var seqPause = document.getElementById("seq-pause");
     seqPause.addEventListener('click', function(e) {
         e.preventDefault();
         playpause()
         seqPause.classList.toggle('seqPaused');
     });
 
-    document.getElementById("seq-reset").onclick = function () {resetVeins() };
+    var seqReset = document.getElementById("seq-reset");
+    seqReset.addEventListener('click', function(e) {
+        e.preventDefault();
+        resetVeins();
+    });
+
+    // document.getElementById("seq-reset").onclick = function () {resetVeins() };
 
     // seq-pause
+    // window.addEventListener("resize", redrawSteps);
 
   }
 

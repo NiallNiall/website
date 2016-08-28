@@ -234,8 +234,19 @@ function createStep(constructPos, clr) {
     setAvail: setAvail,
     setPitch: setPitch,
     setPitchEvent: setPitchEvent,
-    loop: loop
+    loop: loop,
+    getThisShape: getThisShape,
+    getOutlineShape: getOutlineShape
   }
+
+  function getThisShape() {
+    return thisShape;
+  }
+
+  function getOutlineShape() {
+    return outlinePulse;
+  }
+
 
   return step;
 
@@ -306,10 +317,10 @@ function createStep(constructPos, clr) {
 
     } else {
       if(!available) {
-        console.log("out");
+        // console.log("out");
         triggerEvent();
       } else {
-        console.log("in");
+        // console.log("in");
         triggerOn();
       }
     }
