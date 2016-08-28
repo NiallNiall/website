@@ -49,11 +49,11 @@
 // gradientBG
 // @include gradientBG
 @mixin gradientBG {
-  background: $clr2; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient($clr2, $clr3); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient($clr2, $clr3); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient($clr2, $clr3); /* For Firefox 3.6 to 15 */
-  background: linear-gradient($clr2, $clr3); /* Standard syntax */
+  background: $nhpink; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($nhpink, $nhdarkblue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($nhpink, $nhdarkblue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($nhpink, $nhdarkblue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($nhpink, $nhdarkblue); /* Standard syntax */
 }
 
 
@@ -62,7 +62,7 @@ $litegdclr1: #d4f0fd;//lighten(#FEE9D6, 5%);
 $litegdclr2: #ffA6B2;
 
 @mixin litegradientBG {
-  background: $clr2; /* For browsers that do not support gradients */
+  background: $nhpink; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient($paper, $litegdclr2); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient($paper, $litegdclr2); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient($paper, $litegdclr2); /* For Firefox 3.6 to 15 */

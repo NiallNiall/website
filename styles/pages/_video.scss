@@ -8,7 +8,6 @@
 
   &::after {
     // @include pseudo;
-    background-color: rgba($primary, 0.86);
     top: 0;
     width: 100%;
     height: 100%;
@@ -26,7 +25,6 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: $pink;
     object-fit: cover;
 
     .edge &,
@@ -90,18 +88,18 @@
 
 .video-btn {
     padding: 20px;
-    background: $clr2;
+    background: $nhpink;
     transition: 0.4s;
 
     &:hover {
-      background: darken($clr2, 10%);
+      background: darken($nhpink, 10%);
       // transform: translateX(-50%) scale(1.1);
     }
 }
 
 .video-btn-txt {
   font-weight: bold;
-  color: $clr3;
+  color: $nhdarkblue;
   font-family: $sans-serif;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -126,7 +124,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: $clr3;
+    background-color: $nhdarkblue;
     object-fit: cover;
     z-index: 0;
 }

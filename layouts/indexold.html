@@ -1,0 +1,88 @@
+{{#extend "default"}}
+  {{#content "main"}}
+
+	<div class="header-image full-width-box">
+		<div class="header-inner">
+
+			<div class="header-text-outer">
+				<div class="header-text-inner">
+					<h1 class="home-logo">Niall Henn</h1>
+          <h3 class="home-sub">Craft and Code</h3>
+				</div>
+			</div>
+
+      <a class="home-button down-arrow-outer" data-attr-scroll="home-info" id="info-button">
+        <span class="down-arrow"></span>
+      </a>
+
+		</div>
+	</div>
+
+  <div id="home-info" class="home-info">
+
+    <div class="central-block">
+
+    {{{contents}}}
+
+      <button id="fs-video" class="video-btn video-btn-txt shadow-box showreel-btn">Showreel</button>
+    </div>
+
+      <a class="home-button down-button-portfolio" data-attr-scroll="home-portfolio" id="portfolio-button">
+        View selected work
+      </a>
+  </div>
+
+
+
+	<div id="home-portfolio" class="grid home-portfolio">
+  <div class="port-section col-1-1">
+    <h3 class="port-title">Commercial Portfolio</h3>
+  </div>
+
+  {{> home-port port-title="Video"
+      port-collect=commercial-video
+      port-bgimage="/img/home/pb-gordon.jpg" }}
+
+  {{> home-port port-title="Print"
+      port-collect=commercial-print
+      port-bgimage="/img/home/lyleandscott.jpg" }}
+
+  {{> home-port port-title="Digital"
+      port-collect=commercial-digital
+      port-bgimage="/img/home/az-adf.jpg" }}
+
+
+    <div class="port-section col-1-1">
+      <h3 class="port-title">Experiments</h3>
+    </div>
+
+  {{> home-port port-title="Browser"
+      port-collect=experiments
+      port-bgimage="/img/home/dragon.jpg" }}
+
+  {{> home-port port-title="Films"
+      port-collect=videos
+      port-bgimage="/img/home/two-little.jpg" }}
+
+  {{> home-port port-title="Offline"
+      port-collect=artwork
+      port-bgimage="/img/home/moon_landing.jpg" }}
+
+
+  </div>
+
+    <div id="fs-video-container" class="video-fullscreen">
+      <button class="btn-close video-btn video-btn-txt video-close shadow-box">close</button>
+      <iframe src="https://player.vimeo.com/video/{{vimeolink}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+
+  {{/content}}
+
+  {{#content "scripts"}}
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/home.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script type="text/javascript" src="/assets/video.js"></script>
+  {{/content}}
+{{/extend}}

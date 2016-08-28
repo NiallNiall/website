@@ -3,20 +3,6 @@
 //===============================================================================
 
 
-// AZ Colours
-$mulberry: #830051;
-$medi-blue: #003865;
-$imed-blue: #00add0;
-$blue: #68d3df;
-$green: #c4d600;
-$pink: #d0006f;
-$orange: #f0ab00;
-$purple: #3c1053;
-$grey: #3f4444;
-$stone: #9db0ac;
-$l_grey: #babdba;
-
-
 //Niall Colours
 $sunsetpink: #ffA6B2;
 $sunsetblue: #d4f0fd;
@@ -24,17 +10,18 @@ $nhred: #C76758;
 $nhblue: #567483;
 $nhturq: #8AB7AF;
 
-$clr2: $sunsetpink;
-$clr3: $nhblue;
+$nhpink: #ffa6b2;
+$lightpink: #ffc1c9;
+$nhdarkblue: #003f5d;
+$nearwhite: white;
 
 
 $red: #E63000;
 
-$paper: #FFFAF9;//lighten(#FEE9D6, 5%);
-$ink: #3f4444;
+$paper: #FFF;//lighten(#FEE9D6, 5%);
+$ink: $nhdarkblue;
 $light-ink: lighten($ink, 35);
 $mid-ink: lighten($ink, 20);
-$primary: $pink;
 
 
 // Typography

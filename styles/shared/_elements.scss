@@ -35,23 +35,6 @@ input, textarea {
   }
 }
 
-// Arrow button
-.agile-arrow-btn {
-  h3:after {
-    content: ">";
-    font-weight: bold;
-    transition: 0.3s;
-    margin-left: $zeta;
-    color: $orange;
-  }
-
-  &:hover {
-    h3:after {
-    margin-left: $alpha;
-    }
-  }
-}
-
 .shadow-box {
   -webkit-box-shadow: 2px 2px 39px -4px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 39px -4px rgba(0,0,0,0.75);

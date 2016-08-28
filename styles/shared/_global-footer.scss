@@ -3,7 +3,7 @@
 //===============================================================================
 .gbl-foot {
     @include clearfix;
-	background: $clr3;
+	background: $nhdarkblue;
 	width: 100%;
     min-height: $alpha;
     padding-top: 22px;
@@ -25,7 +25,7 @@
         margin-bottom: 0;
     }
     a {
-        color: lighten($clr3, 30%);
+        color: lighten($nhdarkblue, 30%);
     }
 
     @media screen and ( max-width: $medium ) {
@@ -37,7 +37,7 @@
     width: 25px;
     height: 25px;
     padding: 5px;
-    background: lighten($clr3, 20%);
+    background: lighten($nhdarkblue, 20%);
     margin-right: 6px;
     float: right;
     @media screen and ( max-width: $medium ) {

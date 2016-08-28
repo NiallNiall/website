@@ -97,21 +97,18 @@ img {
 // Links
 a {
   // font-family: $sans-serif;
-  color: $clr3;
+  color: $nhdarkblue;
   text-decoration: none;
 
   &:hover, &.hover {
     cursor: pointer;
-    // color: $primary;
   }
 
   &:active, &.active {
-    // color: darken($primary, 10);
   }
 
   &:visited,
   &.visited {
-    // color: darken($ink, 15);
   }
 }
 
@@ -120,5 +117,5 @@ a {
 .boldlink {
   font-weight: bold;
   letter-spacing: 0.05em;
-  color: $clr2;
+  color: $nhpink;
 }

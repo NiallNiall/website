@@ -47,14 +47,14 @@ $darkcanvascolour: #113;
 
 .paper-button {
   padding: 8px;
-  background: $clr2;
+  background: $nhpink;
   font-family: $sans-serif;
   transition: 0.2s;
   &:first-child {
     margin-right: 8px;
   }
   &:hover {
-    background: darken($clr2, 10%);
+    background: darken($nhpink, 10%);
     color: white;
   }
 
