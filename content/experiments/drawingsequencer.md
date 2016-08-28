@@ -13,3 +13,5 @@ extrascripts:
 - experiments/draw
 ---
 Partly for a hackathon, this is a javascript based sequencer where you draw lines and beats move along those lines. Magic!
+
+<!-- Code is on [GitHub](https://github.com/NiallNiall/dragon-browser) -->

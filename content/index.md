@@ -7,3 +7,10 @@ permalink: false
 function: home
 vimeolink: 178930876
 ---
+Hi there, my name is Niall.
+
+I'm a multidisciplinary designer working professionally since 2009, in that time shifting from print to digital to motion. Currently the Lead Motion Designer at pebble {code}.
+
+I live and work in London.
+
+[More about me?](/about/)

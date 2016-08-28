@@ -1,0 +1,11 @@
+<div class="col-1-3 mainwrap">
+<div class="homeport-thumb" style="background-image:url({{port-bgimage}});" >
+  <h4 class="rborder homeport-title">{{port-title}}</h4>
+</div>
+  <ul class="port-list">
+    <!-- <li class="homeport-title">{{port-title}}</li> -->
+    {{#each port-collect}}
+    <li><a href="/{{{ this.path }}}/">{{this.title}}</a></li>
+  {{/each}}
+  </ul>
+</div>
