@@ -19,16 +19,22 @@
 				</div>
 			</div>
 
-      <a class="home-button down-arrow-outer" data-attr-scroll="home-info" id="info-button">
-        <span class="down-arrow"></span>
-      </a>
+    <button id="fs-video" class="btn-showreel">Showreel</button>
+    </div>
 
 		</div>
 	</div>
 
+<div id="fs-video-container" class="video-fullscreen">
+      <button class="btn-close video-btn video-btn-txt video-close shadow-box">close</button>
+      <iframe src="https://player.vimeo.com/video/{{vimeolink}}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
 
     <script src="/assets/vendor/paper-full.js"></script>
     <script type="text/javascript" src="/assets/homecanvas.js"></script>
+
+    <script src="/assets/vendor/jquery-3.1.0.min.js"></script><script src="https://player.vimeo.com/api/player.js"></script>
+    <script type="text/javascript" src="/assets/video.js"></script>
 
   </body>
 </html>

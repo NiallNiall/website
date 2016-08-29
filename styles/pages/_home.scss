@@ -333,6 +333,30 @@ a.down-button-portfolio {
 
 
 
+.btn-showreel {
+  font-family: $sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 18px;
+  left:50%;
+  bottom: 24px;
+  position: absolute;
+  padding: 8px 16px;
+  background: $lightpink;//white;//rgba($nhdarkblue,0.5);//darken($nhpink, 10%);
+  color: $nhdarkblue;//white;
+  // border-radius: 24px;
+  border:3px solid $nhdarkblue;
+  transform:translateX(-50%);
+  transition: 0.2s;
+
+  &:hover {
+    background: $lightpink;//rgba($nhdarkblue, 0.8);
+    transform: translateX(-50%) scale(1.1);
+  }
+
+}
+
+
+
 
 // @keyframes arrow-squidgeL {
 //     0%   {transform: translateY(0%) rotate(30deg);}

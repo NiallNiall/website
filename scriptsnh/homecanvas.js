@@ -137,7 +137,7 @@ paper.install(window);
 
 
     makeBubbles(totalBubbles, bubbles, firstCanvasSize);
-
+    bubGap = firstCanvasSize.width / 12;
 
     paper.view.onFrame = function(event) {
        for(var i=0; i <= bubbles.length-1; i ++) {
