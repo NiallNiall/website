@@ -7,15 +7,17 @@ function randomGap(min,max)
 }
 
 // Check the distance between passed Variable and this one.
-function getDistance(position1, position2) {
+function getDistance(position1, position2, tempGap) {
 
     var distGap = position2.subtract(position1);
 
     var tempLength = distGap.length;
     var rtnLength = 0;
 
-    if(tempLength < 110) {
-        rtnLength = 110 - tempLength;
+    var bubGap = tempGap;
+
+    if(tempLength < bubGap) {
+        rtnLength = bubGap - tempLength;
     } else {
         rtnLength = 0;
     }
@@ -113,6 +115,7 @@ function deleteAllBubbles(){
     bubbles = [];
 }
 
+var bubGap = 110;
 
 paper.install(window);
 
@@ -132,6 +135,7 @@ paper.install(window);
     var totalBubbles = 60;
     var firstCanvasSize = new paper.Size(paper.view.bounds.width, paper.view.bounds.height);
 
+
     makeBubbles(totalBubbles, bubbles, firstCanvasSize);
 
 
@@ -149,7 +153,7 @@ paper.install(window);
                     var bubble2 = bubbles[j];
                     var bubble2Pos = bubble2.getBubblePos();
 
-                    var testDist = getDistance(bubble2Pos, bubble1Pos);
+                    var testDist = getDistance(bubble2Pos, bubble1Pos, bubGap);
                     tempRad += testDist;
                 }
             }
@@ -169,11 +173,14 @@ paper.install(window);
 
      var newCanvasSize = new paper.Size(paper.view.bounds.width, paper.view.bounds.height);
 
+     bubGap = newCanvasSize.width / 12;
+     // console.log(bubGap);
+
 
     for(var i=0; i <= bubbles.length-1; i ++) {
         var bubble1 = bubbles[i];
         // bubble1.setCanvasBounds(newCanvasSize);
         bubble1.resizeCanvas(newCanvasSize);
     }
-c
+
   });
