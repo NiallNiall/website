@@ -35,6 +35,8 @@ function createBubble(initialPos) {
         // bubbleShape.scaling = 1.0;
         bubbleShape.size = new paper.Size(10,10);
 
+    var canvasSize = new paper.Size(paper.view.bounds.width, paper.view.bounds.height);
+
     function getBubbleShape() {
         return bubbleShape;
     }
@@ -43,53 +45,94 @@ function createBubble(initialPos) {
         return bubblePos;
     }
 
-    // console.log(bubbleShape);
-
     function setBubbleRadius(scal) {
         bubbleShape.bounds.width = scal;
         bubbleShape.bounds.height = scal;
     }
 
     function moveBubble() {
-        if( bubblePos.x >= paper.view.bounds.width || bubblePos.x <= 0)
+        if( bubblePos.x >= canvasSize.width || bubblePos.x <= 0)
             { bubbleDirection.x = bubbleDirection.x * -1;}
-        if( bubblePos.y >= paper.view.bounds.height || bubblePos.y <= 0)
+        if( bubblePos.y >= canvasSize.height || bubblePos.y <= 0)
             { bubbleDirection.y = bubbleDirection.y * -1;}
-
 
         bubblePos = bubblePos.add(bubbleSpeed.multiply(bubbleDirection));
         bubbleShape.position = bubblePos;
+    }
+
+    function removeBubble(){
+        bubbleShape.remove();
+    }
+
+
+    function setCanvasBounds(tempCanSize){
+        canvasSize = tempCanSize;
+    }
+
+    function resizeCanvas(tempCanSize){
+        setCanvasBounds(tempCanSize);
+
+        if(bubblePos.x > tempCanSize.width+2){bubblePos.x = tempCanSize.width-2;}
+        if(bubblePos.y > tempCanSize.height+2){bubblePos.y = tempCanSize.height-2;}
+
+        if(bubblePos.x < -2){bubblePos.x = 2;}
+        if(bubblePos.y < -2){bubblePos.y = 2;}
     }
 
     var bubble = {
       getBubbleShape: getBubbleShape,
       setBubbleRadius: setBubbleRadius,
       getBubblePos: getBubblePos,
-      moveBubble: moveBubble
+      moveBubble: moveBubble,
+      removeBubble: removeBubble,
+      setCanvasBounds: setCanvasBounds,
+      resizeCanvas: resizeCanvas
     }
 
     return bubble;
 }
 
+function makeBubbles(amount, array, tempCanSize){
+
+    var bubbleTotal = amount;
+
+    for(var i=0; i < bubbleTotal; i ++) {
+        var tempPos = new paper.Point(tempCanSize.width, tempCanSize.height).multiply(paper.Point.random());
+        var tempBubble = createBubble(tempPos);
+        tempBubble.setCanvasBounds(tempCanSize);
+        array.push(tempBubble);
+    }
+
+}
+
+function deleteAllBubbles(){
+    for(var i=0; i <= bubbles.length-1; i ++) {
+       var bubble1 = bubbles[i];
+       bubble1.removeBubble();
+    }
+    bubbles = [];
+}
 
 
 paper.install(window);
-  // Only executed our code once the DOM is ready.
-  window.onload = function() {
+
+    //instantiate bubbles
+    var bubbles = [];
+
+    // Only executed our code once the DOM is ready.
+    window.onload = function() {
 
     // Get a reference to the canvas object
     var canvas = document.getElementById('papercanvas');
+
     // Create an empty project and a view for the canvas:
     paper.setup(canvas);
 
-    var totalBubbles = 60;
-    var bubbles = [];
 
-    for(var i=0; i < totalBubbles; i ++) {
-        var tempPos = new paper.Point(paper.view.bounds.width, paper.view.bounds.height).multiply(paper.Point.random());
-        var tempBubble = createBubble(tempPos);
-        bubbles.push(tempBubble);
-    }
+    var totalBubbles = 60;
+    var firstCanvasSize = new paper.Size(paper.view.bounds.width, paper.view.bounds.height);
+
+    makeBubbles(totalBubbles, bubbles, firstCanvasSize);
 
 
     paper.view.onFrame = function(event) {
@@ -117,29 +160,20 @@ paper.install(window);
 
     }
 
-
-    var mouseTool = new paper.Tool();
-
-
-
-    mouseTool.onMouseDown = function(event) {
-    }
-
-    mouseTool.onMouseDrag = function(event) {
-    }
-
-    mouseTool.onMouseUp = function(event) {
-    }
-
-    mouseTool.onKeyDown = function(event) {
-    }
-
     // Draw the view now:
     paper.view.draw();
-
 
   }
 
   window.addEventListener("resize", function(){
-    // alert('resizing');
+
+     var newCanvasSize = new paper.Size(paper.view.bounds.width, paper.view.bounds.height);
+
+
+    for(var i=0; i <= bubbles.length-1; i ++) {
+        var bubble1 = bubbles[i];
+        // bubble1.setCanvasBounds(newCanvasSize);
+        bubble1.resizeCanvas(newCanvasSize);
+    }
+c
   });
