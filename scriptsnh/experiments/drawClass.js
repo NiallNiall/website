@@ -164,35 +164,47 @@ function createStep(constructPos, clr) {
     // Create an empty shape
     var thisShape = new paper.Path();
 
-    var outlinePulse = new paper.Path();
+    // var outlinePulse = new paper.Path();
     var outlineMoving = false;
     var outlineSize = 0;
     var outlineOpac = 1.0;
-    createOutlinePulse(constructPos);
+    var ogOutlineSize = 5;
+    var outlinePulse = createOutlinePulse(constructPos, ogOutlineSize);
 
-    function createOutlinePulse(constructPos, outlineSize) {
+
+    function createOutlinePulse(tempConstructPos, tempOutlineSize) {
       // Create an empty shape
-      outlinePulse = new paper.Path.Circle(constructPos, 25);
-      outlinePulse.fillColor = 'LightGray';
+      var tempPulse = new paper.Path.Circle(tempConstructPos, tempOutlineSize);
+      tempPulse.fillColor = 'LightGray';
       // outlinePulse.strokeWidth = 3.0;
-      outlinePulse.scaling = 0.1;
-
+      tempPulse.scaling = 1.0;
+      return tempPulse;
     }
 
     function moveOutline(){
+      var tempScaling = 0;
+
       if(outlineMoving) {
-        if(outlineSize < 5){
+        if(outlineSize < 20){
           outlineSize += 0.05;
-          outlineOpac = jsMap(outlineSize,0,5.05,0.6,0)
+          // outlineOpac = jsMap(outlineSize,0,5.05,0.6,0)
           // console.log(outlineOpac);
-          // outlineOpac -= 0.01;
+          tempScaling = ogOutlineSize + outlineSize * 10;
+          if(outlineOpac > 0.01){
+            outlineOpac -= 0.005;
+          }
+
         } else {
           // outlineSize = 0;
-          // outlineOpac = 0;
+          outlineOpac = 0;
           outlineMoving = false;
+          tempScaling = 0;
         }
         // console.log(outlinePulse);
-        outlinePulse.scaling = outlineSize;
+        // outlinePulse.scaling = outlineSize;
+        outlinePulse.bounds.width = tempScaling;
+        outlinePulse.bounds.height = tempScaling;
+        outlinePulse.position = constructPos;
         outlinePulse.opacity = outlineOpac;
       }
     }

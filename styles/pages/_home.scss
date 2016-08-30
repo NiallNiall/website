@@ -41,7 +41,7 @@
       font-size: 86px;
     }
     @media screen and ( max-width: $small ) {
-      font-size: 48px;
+      font-size: 54px;
     }
     @media screen and ( min-width: $xlarge ) {
       font-size: 186px;
@@ -69,15 +69,15 @@
   font-weight: light;
   font-style: italic;
   font-size: 34px;
-  margin-top: 14px;
+  margin-top: 20px;
   opacity: 1.0;
   transition: 0.4s;
 
   @media screen and ( max-width: $medium ) {
-    font-size: 20px;
+    font-size: 26px;
   }
   @media screen and ( max-width: $small ) {
-    font-size: 16px;
+    font-size: 22px;
   }
 
   .wf-loading &{

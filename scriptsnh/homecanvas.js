@@ -1,6 +1,17 @@
-var lightPink = '#ffc1c9';
+// ================================
+// Some Variables
+// ================================
+
+var bubbleColour = '#ffc1c9';
+var totalBubbles = 60;
 
 
+// ================================
+// Functions
+// ================================
+
+
+// Function to return a random between two values
 function randomGap(min,max)
 {
     return Math.floor(Math.random()*(max-min+1)+min);
@@ -24,7 +35,7 @@ function getDistance(position1, position2, tempGap) {
     return rtnLength;
 }
 
-
+// Create Bubble Object function
 function createBubble(initialPos) {
 
     var bubblePos = initialPos;
@@ -33,7 +44,7 @@ function createBubble(initialPos) {
     var bubbleDirection = new paper.Point(1,1);
 
     var bubbleShape = new paper.Path.Circle(bubblePos, bubbleRadius);
-        bubbleShape.fillColor = lightPink;
+        bubbleShape.fillColor = bubbleColour;
         // bubbleShape.scaling = 1.0;
         bubbleShape.size = new paper.Size(10,10);
 
@@ -94,6 +105,7 @@ function createBubble(initialPos) {
     return bubble;
 }
 
+// Function to make all the bubbles
 function makeBubbles(amount, array, tempCanSize){
 
     var bubbleTotal = amount;
@@ -107,6 +119,7 @@ function makeBubbles(amount, array, tempCanSize){
 
 }
 
+// Function to delete all the bubbles
 function deleteAllBubbles(){
     for(var i=0; i <= bubbles.length-1; i ++) {
        var bubble1 = bubbles[i];
@@ -115,15 +128,22 @@ function deleteAllBubbles(){
     bubbles = [];
 }
 
+
+// ================================
+// Main
+// ================================
+
+
+// Set a default value for distance between bubbles (gets overriden by initial canvas value)
 var bubGap = 110;
 
 paper.install(window);
 
-    //instantiate bubbles
-    var bubbles = [];
+//instantiate bubbles
+var bubbles = [];
 
-    // Only executed our code once the DOM is ready.
-    window.onload = function() {
+// Only executed our code once the DOM is ready.
+window.onload = function() {
 
     // Get a reference to the canvas object
     var canvas = document.getElementById('papercanvas');
@@ -132,7 +152,6 @@ paper.install(window);
     paper.setup(canvas);
 
 
-    var totalBubbles = 60;
     var firstCanvasSize = new paper.Size(paper.view.bounds.width, paper.view.bounds.height);
 
 
@@ -167,15 +186,13 @@ paper.install(window);
     // Draw the view now:
     paper.view.draw();
 
-  }
+}
 
-  window.addEventListener("resize", function(){
+window.addEventListener("resize", function(){
 
-     var newCanvasSize = new paper.Size(paper.view.bounds.width, paper.view.bounds.height);
+    var newCanvasSize = new paper.Size(paper.view.bounds.width, paper.view.bounds.height);
 
-     bubGap = newCanvasSize.width / 12;
-     // console.log(bubGap);
-
+    bubGap = newCanvasSize.width / 12;
 
     for(var i=0; i <= bubbles.length-1; i ++) {
         var bubble1 = bubbles[i];
@@ -183,4 +200,4 @@ paper.install(window);
         bubble1.resizeCanvas(newCanvasSize);
     }
 
-  });
+});

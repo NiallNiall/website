@@ -2,22 +2,68 @@
 
 }()); // end 'use strict'
 
+// ==================================================
+// Tone sound bits
+// ==================================================
+
 var fbDelay = new Tone.FeedbackDelay("8n", 0.4).toMaster();
 
 //create one of Tone's built-in synthesizers and connect it to the master output
 var synth = new Tone.SimpleSynth().connect(fbDelay);
 synth.oscillator.type = "triangle";
 
+// ==================================================
 
+// Set Boolean for the track playing or not.
 var playing = true;
+
+// Instantiate empty array outside of onload scope
+var steps = [];
 
 function playpause() {
     playing = !playing;
 }
 
+
+function getCalculatedWidth(tempBorder) {
+        var startGrid = tempBorder;
+        var endGrid = paper.view.bounds.width-tempBorder;
+        var width = endGrid - startGrid;
+        var distThing = Math.floor(width / tempBorder);
+        var dist = width / distThing;
+        return dist
+    }
+
+function makeAlltheSteps(tempBorder, tempDist, tempArray) {
+
+    var smallTempBorder = tempBorder - 1;
+
+    for(var i = tempBorder; i < paper.view.bounds.width-smallTempBorder; i +=tempDist){
+        for(var j = tempBorder; j < paper.view.bounds.height-smallTempBorder; j +=tempDist){
+            var tempStep = createKick(new paper.Point(i, j));
+            var note = i;
+            var octave = j;
+            tempStep.setPitch(note, octave)
+            tempArray.push(tempStep);
+        }
+    }
+}
+
+function removeAllSteps() {
+    for(var i = 0; i < steps.length; i++){
+        var tempStep = steps[i];
+        var tempShape = tempStep.getThisShape();
+        var tempOutline = tempStep.getOutlineShape();
+        tempShape.remove();
+        tempOutline.remove();
+    }
+    steps = [];
+}
+
+
 paper.install(window);
-  // Only executed our code once the DOM is ready.
-  window.onload = function() {
+// Only executed our code once the DOM is ready.
+window.onload = function() {
 
     // Get a reference to the canvas object
     var canvas = document.getElementById('papercanvas');
@@ -28,30 +74,11 @@ paper.install(window);
     // Set scroller
     var countr = 1;
 
-    var steps = [];
 
-    var startGrid = 50;
-    var endGrid = paper.view.bounds.width-50;
-    var width = endGrid - startGrid;
-    var distThing = Math.floor(width / 50);
-    var dist = width / distThing;
-    // console.log(distThing + ' ' + dist);
+    var edgeBorder = 50;
+    var dist = getCalculatedWidth(edgeBorder)
 
-    function makeAlltheSteps() {
-
-        for(var i = 50; i < paper.view.bounds.width-49; i +=dist){
-            for(var j = 50; j < paper.view.bounds.height-49; j +=dist){
-                var tempStep = createKick(new paper.Point(i, j));
-                var note = i;
-                var octave = j;
-                tempStep.setPitch(note, octave)
-                steps.push(tempStep);
-            }
-        }
-
-    }
-
-    makeAlltheSteps();
+    makeAlltheSteps(edgeBorder, dist, steps);
 
     // Create a vector for the playhead
     var playHeadPos = new paper.Point(paper.view.center);
@@ -67,13 +94,6 @@ paper.install(window);
 
     var startPos = centerPos.x-halfPHLength;
     var endPos = centerPos.x+halfPHLength;
-
-    // Create an top group:
-    var baseGroup = new Group();
-    // Create an top group:
-    var midGroup = new Group();
-    // Create an top group:
-    var topGroup = new Group();
 
 
     var pointPos = 0.01;
@@ -125,16 +145,7 @@ paper.install(window);
     }
 
 
-    function removeAllSteps() {
-        for(var i = 0; i < steps.length; i++){
-            var tempStep = steps[i];
-            var tempShape = tempStep.getThisShape();
-            var tempOutline = tempStep.getOutlineShape();
-            tempShape.remove();
-            tempOutline.remove();
-        }
-        steps = [];
-    }
+
 
     // function redrawSteps() {
     //     removeAllSteps();
@@ -167,11 +178,6 @@ paper.install(window);
         if (event.key == 'space') {
             playpause();
         }
-
-        // if (event.key == 'q') {
-        //     removeAllSteps();
-        //     makeAlltheSteps();
-        // }
 
         if (event.key == 'w') {
             var tempVein = veins[veins.length-1];
@@ -207,14 +213,18 @@ paper.install(window);
         resetVeins();
     });
 
-    // document.getElementById("seq-reset").onclick = function () {resetVeins() };
-
-    // seq-pause
-    // window.addEventListener("resize", redrawSteps);
-
   }
 
 
+
+window.addEventListener("resize", function(){
+    removeAllSteps();
+    var dist = getCalculatedWidth(50);
+
+    makeAlltheSteps(50, dist, steps);
+    // alert("resizing...");
+
+});
 
 
 
