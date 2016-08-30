@@ -6,6 +6,7 @@ layout: index.html
 permalink: false
 function: home
 vimeolink: 180631550
+subtitle: Creative Engineer
 ---
 Hi there, my name is Niall.
 
