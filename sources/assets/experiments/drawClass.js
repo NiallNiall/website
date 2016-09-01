@@ -1,14 +1,14 @@
-function createVein(initialPos) {
+function createBranch(initialPos) {
 
-  var veinPath = new paper.Path();
-      veinPath.strokeColor = 'Tomato';
-      veinPath.strokeWidth = 3.0;
-      veinPath.strokeCap = 'round';
-      veinPath.add(initialPos);
-      veinPath.add(initialPos);
+  var branchPath = new paper.Path();
+      branchPath.strokeColor = 'Tomato';
+      branchPath.strokeWidth = 3.0;
+      branchPath.strokeCap = 'round';
+      branchPath.add(initialPos);
+      branchPath.add(initialPos);
 
-  var veinPHPos = initialPos;
-  var playHead = new paper.Path.Circle(veinPHPos, 8);
+  var branchPHPos = initialPos;
+  var playHead = new paper.Path.Circle(branchPHPos, 8);
   playHead.fillColor = 'FireBrick';
 
   var playHeadPos = initialPos;
@@ -21,31 +21,31 @@ function createVein(initialPos) {
 
   var moving = true;
 
-  var vein = {
-    veinPath: veinPath,
+  var branch = {
+    branchPath: branchPath,
     addPoints: addPoints,
     loop: loop,
     playHeadPos: playHeadPos,
     getPHPos: getPHPos,
-    veinPHPos: veinPHPos,
+    branchPHPos: branchPHPos,
     playHead: playHead,
     startShape: startShape,
     endShape: endShape,
-    removeVein: removeVein
+    removeBranch: removeBranch
   }
 
-  function removeVein() {
+  function removeBranch() {
     playHead.remove();
     startShape.remove();
     endShape.remove();
     playHead.remove();
-    veinPath.remove();
+    branchPath.remove();
     moving = false;
   }
 
 
   function addPoints(pointPos) {
-    veinPath.add(pointPos);
+    branchPath.add(pointPos);
     endShape.position = pointPos;
   }
 
@@ -59,17 +59,17 @@ function createVein(initialPos) {
         pointPos = 0.001;
       }
       // console.log(pointPos);
-      movePlayhead(veinPath, pointPos);
+      movePlayhead(branchPath, pointPos);
   }
 
-  function movePlayhead(tempVein, tempPointPos) {
+  function movePlayhead(tempBranch, tempPointPos) {
 
     if(moving){
-      var getLength = tempVein.length;
+      var getLength = tempBranch.length;
       // console.log(getLength);
       var pos = getLength * tempPointPos;
 
-      playHeadPos = tempVein.getPointAt(pos);
+      playHeadPos = tempBranch.getPointAt(pos);
       playHead.position = playHeadPos;
     }
   }
@@ -81,7 +81,7 @@ function createVein(initialPos) {
 
   }
 
-  return vein;
+  return branch;
 
 }
 
@@ -342,7 +342,6 @@ function createStep(constructPos, clr) {
 
   function loop() {
     moveOutline();
-    // console.log("yo yo");
   }
 
   function triggerEvent(){

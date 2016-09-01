@@ -19,6 +19,7 @@ var playing = true;
 
 // Instantiate empty array outside of onload scope
 var steps = [];
+var branchs = [];
 
 function playpause() {
     playing = !playing;
@@ -58,6 +59,14 @@ function removeAllSteps() {
         tempOutline.remove();
     }
     steps = [];
+}
+
+function resetbranchs() {
+    for(var i = 0; i < branchs.length; i++){
+        var tempBranch = branchs[i];
+        tempBranch.removeBranch();
+    }
+    branchs = [];
 }
 
 
@@ -108,8 +117,8 @@ window.onload = function() {
 
 
       if(playing){
-        for(var i = 0; i <veins.length; i++){
-            veins[i].loop();
+        for(var i = 0; i <branchs.length; i++){
+            branchs[i].loop();
         }
       }
 
@@ -120,10 +129,10 @@ window.onload = function() {
         // Create an empty array for the Booleans
         var boolArray = [];
 
-        for(var j = 0; j < veins.length; j++){
-            var veinPos = veins[j].getPHPos();
+        for(var j = 0; j < branchs.length; j++){
+            var branchPos = branchs[j].getPHPos();
 
-            var checkMovr = steps[i].checkDistance(veinPos);
+            var checkMovr = steps[i].checkDistance(branchPos);
             boolArray.push(checkMovr);
 
             // console.log(checkMovr);
@@ -146,26 +155,16 @@ window.onload = function() {
 
 
 
-
-    // function redrawSteps() {
-    //     removeAllSteps();
-    //     makeAlltheSteps();
-    // }
-
-    var veins = [];
-
-
     var mouseTool = new paper.Tool();
 
 
-
     mouseTool.onMouseDown = function(event) {
-        var newBranch = createVein(event.point);
-        veins.push(newBranch);
+        var newBranch = createBranch(event.point);
+        branchs.push(newBranch);
     }
 
     mouseTool.onMouseDrag = function(event) {
-        var tempBranch = veins[veins.length-1];
+        var tempBranch = branchs[branchs.length-1];
         tempBranch.addPoints(event.point);
 
     }
@@ -180,8 +179,8 @@ window.onload = function() {
         }
 
         if (event.key == 'w') {
-            var tempVein = veins[veins.length-1];
-            tempVein.removeVein();
+            var tempbranch = branchs[branchs.length-1];
+            tempbranch.removebranch();
         }
 
     }
@@ -191,15 +190,8 @@ window.onload = function() {
     // Draw the view now:
     paper.view.draw();
 
-    function resetVeins() {
-        for(var i = 0; i < veins.length; i++){
-            var tempVein = veins[i];
-            tempVein.removeVein();
-        }
-        veins = [];
-    }
 
-
+    // Pause Button Function
     var seqPause = document.getElementById("seq-pause");
     seqPause.addEventListener('click', function(e) {
         e.preventDefault();
@@ -207,10 +199,11 @@ window.onload = function() {
         seqPause.classList.toggle('seqPaused');
     });
 
+    // Reset Button Function
     var seqReset = document.getElementById("seq-reset");
     seqReset.addEventListener('click', function(e) {
         e.preventDefault();
-        resetVeins();
+        resetbranchs();
     });
 
   }
@@ -222,8 +215,6 @@ window.addEventListener("resize", function(){
     var dist = getCalculatedWidth(50);
 
     makeAlltheSteps(50, dist, steps);
-    // alert("resizing...");
-
 });
 
 
