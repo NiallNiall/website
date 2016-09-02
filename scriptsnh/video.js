@@ -21,7 +21,7 @@ if (videoPlay) {
   }
 
   videoPlay.addEventListener('click', function(e) {
-    
+
     player.play();
 
     $('#fs-video-container').fadeIn(350, function() {
@@ -29,3 +29,13 @@ if (videoPlay) {
     });
   });
 }
+
+
+
+
+
+
+$("#homemenu").click(function() {
+  // alert("yoyo");
+  $('#home-hero').toggleClass( "showmenu" )
+});
