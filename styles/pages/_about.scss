@@ -2,18 +2,25 @@
 // About
 //===============================================================================
 
+.para-below {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 10;
+	background: $lightpink;
+}
 
 .about-block {
-	width:500px;
+	// width:500px;
 	// margin: auto;
 	font-size: 24px;
-	background: $lightpink;
+	// background: $lightpink;
 	padding: $beta;
-	left: 0;
-	position: absolute;
+	// left: 0;
+	// position: absolute;
 	z-index: 10;
 
-	top: 30px;
+	// top: 30px;
 
 	// border-bottom: 6px white solid;
 }
@@ -26,6 +33,7 @@
 	background-image: url('/img/abouttint.jpg');
 	background-position: center;
 	z-index: 1;
+	position: fixed;
 }
 
 .full-page-container {
@@ -47,6 +55,7 @@
 	z-index: 8;
 
 	background: $lightpink;
+	text-align: center;
 }
 
 
@@ -54,7 +63,7 @@
 	background: $nhpink;
 	height: 30px;
 	padding: 3px 16px;
-	float: left;
+	// float: left;
 	color: $nhdarkblue;
 	font-family: $sans-serif;
 	font-weight: bolder;
@@ -66,29 +75,32 @@
   font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
 }
 
-.menu-item {
-	float: right;
-	// right: 0;
+.menu-top {
+	width: 100%;
 	background: $nhdarkblue;
-	// width: 150px;
+}
+.menu-item {
+	display: inline-block;
+	// background: $nhdarkblue;
 	height: 30px;
-	// position: absolute;
 	padding: 3px 16px;
 
 	color: white;
-	font-family: $sans-serif;
-
-	font-weight: bolder;
+	font-style: italic;
 	letter-spacing: 0.05em;
 	font-size:18px;
+
+	a {
+		color: white;
+	}
 }
 
-// .menu-item-border {
-// 	color: $nhdarkblue;
-// 	background: $lightpink;
-// 	border: 3px solid $nhdarkblue;
-// 	padding-top: 1px;
-// 	&:first-of-type {
-// 		border-left:none;
-// 	}
-// }
+.menu-item-border {
+	color: $nhdarkblue;
+	background: $lightpink;
+	border: 3px solid $nhdarkblue;
+	padding-top: 1px;
+	&:first-of-type {
+		border-left:none;
+	}
+}

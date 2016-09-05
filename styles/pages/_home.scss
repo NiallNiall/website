@@ -136,7 +136,7 @@
     font-size: 26px;
   }
   @media screen and ( max-width: $small ) {
-    font-size: 22px;
+    font-size: 18px;
   }
 
 }
@@ -164,11 +164,10 @@
   @media screen and ( max-width: $medium ) {
     margin-left: 12px;
     margin-right: 12px;
-    // width: 200px;
   }
   @media screen and ( max-width: $small ) {
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-left: 2px;
+    margin-right: 2px;
   }
 
   &:after {
@@ -179,8 +178,8 @@
     z-index: 5;
     position: absolute;
 
-    margin-top: 12px;
     bottom: 0;
+    width: 100%;
 
     width: 0;
     left: 50%;
@@ -190,6 +189,7 @@
     .showmenu & {
       width: 100%;
       left: 0;
+
     }
   }
 
