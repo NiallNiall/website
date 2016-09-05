@@ -174,7 +174,7 @@
   &:after {
     content: "";
     background: $nearwhite;//url('/img/shared/fluidgraphic-strip.jpg');
-    height:6px;
+    height: 6px;
     display: block;
     z-index: 5;
     position: absolute;
@@ -189,7 +189,7 @@
 
     .showmenu & {
       width: 100%;
-      left:0;
+      left: 0;
     }
   }
 

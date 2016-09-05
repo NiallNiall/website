@@ -22,22 +22,11 @@
 	}
 }
 
-
-
-
-
-
-//===============================================================================
-// Portfolio
-//===============================================================================
-
-
-
 .portfolio-info {
 	@include litegradientBG;
 	position: fixed;
-	left: 0;
-	top: $beta;
+	left: 20px;
+	top: 40px;
 	width: 280px;
 	padding: 6px;
 	z-index: 90;
@@ -53,7 +42,7 @@
 
 .portfolio-inner {
 	@include clearfix;
-	background: $lightpink;//$light-pink;//$paper;
+	background: $paper;
 	padding:$delta;
 	padding-top: 32px;
 	color: $nhdarkblue;

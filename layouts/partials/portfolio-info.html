@@ -1,29 +1,29 @@
 <div class="grid">
 
-<div class="col-1-1-">
+  <div class="col-1-1-">
 
-<div id="portfolio-info" class="portfolio-info shadow-box">
-  <div class="portfolio-inner">
+  <div id="portfolio-info" class="portfolio-info">
+    <div class="portfolio-inner">
 
-      <h3 class="port-title rborder">{{title}}</h3>
+        <h3 class="port-title rborder">{{title}}</h3>
 
-      <div class="port-content">
-        {{{contents}}}
-      </div>
+        <div class="port-content">
+          {{{contents}}}
+        </div>
 
-      <a id="port-showinfo" class="port-showinfo"><span class="open">View Info</span><span class="close">Hide Info</span></a>
+        <a id="port-showinfo" class="port-showinfo"><span class="open">View Info</span><span class="close">Hide Info</span></a>
 
-    {{#if this.previous}}
-      <a id="portnav-prev" class="portnav-buttons left" href="/{{this.previous.path}}">Previous <span>Project</span></a>
-    {{/if}}
+      {{#if this.previous}}
+        <a id="portnav-prev" class="portnav-buttons left" href="/{{this.previous.path}}">Previous <span>Project</span></a>
+      {{/if}}
 
-    {{#if this.next}}
-      <a id="portnav-next" class="portnav-buttons right" href="/{{this.next.path}}">Next <span>Project</span></a>
-    {{/if}}
+      {{#if this.next}}
+        <a id="portnav-next" class="portnav-buttons right" href="/{{this.next.path}}">Next <span>Project</span></a>
+      {{/if}}
+
+    </div>
+  </div>
 
   </div>
-</div>
-
-</div>
 
 </div>
