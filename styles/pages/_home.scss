@@ -2,9 +2,7 @@
 // Full Width home Image
 //===============================================================================
 
-.header-image {
-  // background-size: cover;
-  // background: url('/img/shared/fluidgraphic-full.jpg');
+.homehero-outer {
   background: $lightpink;
   padding: $beta;
 
@@ -13,21 +11,20 @@
   }
 
 }
-.header-inner {
+.homehero-inner {
   width:100%;
   height: 100%;
   background: $nhpink;
-  // background: url('/img/shared/fluidgraphic-full.jpg');
 
 }
 
-.header-text-outer {
+.homehero-text-outer {
     display: table;
     width: 100%;
     height: 100%;
 }
 
-.header-text-inner {
+.homehero-text-inner {
   display: table-cell;
   position: relative;
   vertical-align: middle;
@@ -65,19 +62,14 @@
 
 
 .homesub-container {
-  margin-top: 20px;
+  margin-top: 12px;
   opacity: 1.0;
   transition: 0.4s;
 
   overflow: hidden;
   min-height: 75px;
+  position: relative;
 
-  @media screen and ( max-width: $medium ) {
-    font-size: 26px;
-  }
-  @media screen and ( max-width: $small ) {
-    font-size: 22px;
-  }
 
   .wf-loading &{
     opacity: 0;
@@ -87,68 +79,70 @@
 
 .homesub-tag {
 
-  margin:0;
-  // background: #808;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding-top: 8px;
+  transition: margin-top 0.8s;
 
   &:before {
     content: "";
     width: 80px;
-    background: $nearwhite;//url('/img/shared/fluidgraphic-strip.jpg');
-    height:6px;
+    background: $nearwhite;
+    height: 6px;
     display: block;
     left: 50%;
-    position: relative;
     margin-left: -40px;
     margin-bottom: 4px;
-    // top:0;
     position: absolute;
-    // margin-top: -12px;
-    // animation-name: hs-tag-shrink;
-    animation-duration: 0.8s;
+    margin-top: -8px;
 
-    animation: hs-tag-margin 0.8s, hs-tag-bounce 1s ;//cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-
-  animation-name: popdown;
-  animation-duration: 0.8s;
-  overflow: hidden;
-
-  .showmenu & {
-    display: none;
+    // Details the transition as it comes in
+    transition:
+      margin-top 0.8s,
+      width 0.8s cubic-bezier(.12,4.5,.89,1.26),
+      margin-left 0.8s cubic-bezier(.12,4.5,.89,1.26);
   }
 }
 
-@keyframes popdown {
-    from {margin-top: -50px;}
-    to {margin-top: 0px;}
+.showmenu .homesub-tag {
+
+  margin-top: - 50px;
+
+  &:before {
+    margin-top: 42px;
+    width: 0;
+    margin-left: 0;
+
+    // Details the transition as it leaves
+    transition:
+      margin-top 0.8s,
+      width 0.8s cubic-bezier(.12,-4.5,.66,-0.49),
+      margin-left 0.8s cubic-bezier(.12,-4.5,.66,-0.49);
+
+  }
 }
 
-@keyframes hs-tag-margin {
-    from {margin-top: 50px;}
-    to {margin-top: 0px;}
-}
 
-@keyframes hs-tag-bounce {
-    0% {width: 0px; margin-left:0px;}
-    25% {width: 300px; margin-left:-150px;}
-    100% {width: 80px; margin-left:-40px;}
-}
 
 .homesub-text {
   font-family: $serif;
   font-weight: light;
   font-style: italic;
   font-size: 34px;
+
+   @media screen and ( max-width: $medium ) {
+    font-size: 26px;
+  }
+  @media screen and ( max-width: $small ) {
+    font-size: 22px;
+  }
+
 }
 
 .homesub-menu {
-  display: none;
   text-align: center;
-
-  .showmenu & {
-    display: block;
-  }
-
 }
 
 .homesub-menu li {
@@ -158,15 +152,7 @@
   margin-right: 24px;
   overflow: hidden;
   text-align:center;
-  padding-bottom: 6px;
-
-  .showmenu & {
-    // width:100%;
-    // max-width: 500px;
-    // transition: 0.8s;
-    // transition-delay: 0.4s;
-
-  }
+  position: relative;
 
   &:last-child {
     margin-right: 0;
@@ -175,86 +161,67 @@
     margin-left: 0;
   }
 
+  @media screen and ( max-width: $medium ) {
+    margin-left: 12px;
+    margin-right: 12px;
+    // width: 200px;
+  }
+  @media screen and ( max-width: $small ) {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
   &:after {
     content: "";
     background: $nearwhite;//url('/img/shared/fluidgraphic-strip.jpg');
-    height:5px;
+    height:6px;
     display: block;
-    margin-bottom: -6px;
     z-index: 5;
-    position: relative;
+    position: absolute;
+
+    margin-top: 12px;
+    bottom: 0;
+
+    width: 0;
+    left: 50%;
+
+    transition: 0.4s;
+
+    .showmenu & {
+      width: 100%;
+      left:0;
+    }
   }
+
 
   &:hover:after {
     background: $nhdarkblue;
-    margin-bottom: -8px;
   }
+}
 
+.homesub-menu li {
   h3 {
-    margin-bottom: 0px;
+    margin-bottom: -100px;
     transition: 0.4s;
-    // margin-bottom: -100px;
-    animation-name: popup;
-    animation-duration: 0.2s;
+    padding-bottom: 4px;
+
+    .showmenu & {
+      margin-bottom: 0;
+    }
+}
+
+  &:nth-child(2){
+    h3, &:after{transition: 0.4s;}
   }
-  &:nth-child(2) h3{
-    animation-duration: 0.4s;
+  &:nth-child(3){
+    h3, &:after{transition: 0.8s;}
   }
-  &:nth-child(3) h3{
-    animation-duration: 0.8s;
-  }
-  &:nth-child(4) h3{
-    animation-duration: 1s;
+  &:nth-child(4){
+    h3, &:after{transition: 1s;}
   }
 
 }
 
-
-@keyframes popup {
-    from {margin-bottom: -100px;}
-    to {margin-bottom: 0px;}
-}
-
-
-
-.home-info {
-  padding-top: 100px;
-  // padding-bottom: px;
-  min-height: 100%;
-  width: 100%;
-  position: relative;
-
-  &:before{
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    top:0;
-    @include fluidBG;
-    z-index: -2;
-    position: absolute;
-  }
-
-   &:after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top:0;
-    background: $nhpink; /* For browsers that do not support gradients */
-    background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba($paper,0.8) 10%, $paper 70%); /* Standard syntax */
-    z-index: -1;
-  }
-
-  p{
-    font-size: 20px;
-    color: $nhdarkblue;
-    font-style: italic;
-
-  }
-
-}
 
 .central-block {
   max-width: 550px;
@@ -267,13 +234,6 @@
     padding-left: $gutter;
     padding-right: $gutter;
   }
-}
-
-.showreel-btn {
-  margin: 50px 0;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 84px;
 }
 
 
@@ -296,227 +256,101 @@
 
 
 
-ul.port-list {
-  li {
-    font-family: $serif;
-    color: $nhdarkblue;
-    font-weight: bold;
-    line-height: 1.2;
-    // text-align: center;
-
-    &:first-child {
-      font-family: $sans-serif;
-      letter-spacing: 0.05em;
-    }
-  }
-  a {
-    font-weight: normal;
-    &:hover {
-      color: lighten($nhdarkblue, 20%);
-      text-decoration: underline;
-    }
-  }
-}
-
-.port-title {
-  color: $nhdarkblue;
-  font-weight: bolder;
-  letter-spacing: 0.03em;
-  line-height: 1.0;
-  margin-bottom: 8px;
-}
 
 
-.home-portfolio {
-  // min-height: 100%;
-  padding-bottom: 64px;
-  padding-top: 64px;
-}
 
-.homeport-thumb {
-  width: 100%;
-  // height: 80px;
-  // background: url('/img/home/pb-gordon.jpg');
-  background-size: cover;
-  background-position: center;
 
-  // text-align: center;
-  padding:0;
-  padding-top: 120px;
-  line-height: 1.0;
-}
-
-.homeport-title {
-  // font-weight: bold;
-  color: white;
-  font-size: 18px;
-  margin-bottom: 4px;
-  background: rgba($nhpink, 0.9);
-  display: block;
-  // width: 100px;
-  letter-spacing: 0.05em;
-  padding-top: 8px;
+.home-btn-container {
   text-align: center;
-  // margin: auto;
-}
-
-
-.home-button {
+  bottom: 24px;
   position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translate(-50%,0)
+  width: 100%;
+  left: 0;
 }
-
-a.down-arrow-outer {
-    width: 40px;
-    height: 40px;
-
-    position: absolute;
-    left: 50%;
-    display: block;
-    outline: none;
-    z-index: 50;
-    transform: translateX(-50%) scale(1.0);
-    transition: 0.4s;
-
-    &:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: $nhpink;
-      content: '';
-      transition: 0.4s;
-      // opacity: 0;
-    }
-
-    &:hover {
-      transform: translateX(-50%) scale(1.2);
-    }
-
-    &:hover:before {
-      background: darken($nhpink, 10%);
-      // border: 8px solid $nhpink;
-    }
-}
-
-a.down-button-portfolio {
-  bottom: 12px;
-  text-decoration: underline;
-}
-
-.down-arrow:before,
-.down-arrow:after {
-    position: absolute;
-    top:85%;
-    width: 50%;
-    height: 3px;
-    background: $nhdarkblue;
-    content: '';
-    transition: 0.4s;
-}
-
-.down-arrow {
-  position: relative;
-  display: block;
-  margin: 0 10% 0 10%;
-  width: 80%;
-  height: 80%;
-  &:before {
-    transform: translateY(0%) rotate(30deg);
-    transform-origin: 140% 0;
-    // animation: arrow-squidgeL 2s linear 2s infinite;
-
-    .home-button:hover & {
-      transform: translateY(100%) rotate(40deg);
-      background: white;
-    }
-
-  }
-  &:after {
-    // top: 50%;
-    left: 50%;
-    transform: translateY(0%) rotate(-30deg);
-    transform-origin: -40% 0;
-    // animation: arrow-squidgeR 2s linear 2s infinite;
-
-    .home-button:hover & {
-      transform: translateY(100%) rotate(-40deg);
-      background: white;
-    }
-  }
-}
-
 
 
 .btn-showreel {
   font-family: $sans-serif;
   letter-spacing: 0.05em;
   font-size: 18px;
-  left:50%;
-  bottom: 24px;
-  position: absolute;
   padding: 8px 16px;
-  background: $lightpink;//white;//rgba($nhdarkblue,0.5);//darken($nhpink, 10%);
-  color: $nhdarkblue;//white;
-  // border-radius: 24px;
+  background: $lightpink;
+  color: $nhdarkblue;
   border:3px solid $nhdarkblue;
-  transform:translateX(-50%);
   transition: 0.2s;
 
   &:hover {
     background: $lightpink;//rgba($nhdarkblue, 0.8);
-    transform: translateX(-50%) scale(1.1);
+    transform: scale(1.1);
   }
 
 }
 
-.btn-hm2 {
-  left: 56%;
-  border-color: transparent;
-  background: $nhdarkblue;
-  padding: 6px;
+.btn-showmenu {
+
+  border-radius: 50px;
+  color: $nhdarkblue;
+
   width:50px;
   height: 50px;
-  border-radius: 50px;
-  color: white;
-}
+  margin-left: 8px;
 
-$btn-hm-color: $nhdarkblue;//rgba($nhdarkblue, 0.5);
+  background: $lightpink;
+  top: 0;
 
-.btn-homemenu {
-  font-family: $sans-serif;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: $btn-hm-color;
-  // font-style: italic;
-  font-size: 14px;
-  bottom: 4px;
-  padding-bottom: 4px;
+
+  $crosssize: 20px;
+  transition: background 0.6s;
+
+
   &:before {
     content: "";
-    width: 100%;
-    background: $btn-hm-color;
-    height:3px;
+    width: $crosssize;
+    height: 3px;
     position: absolute;
-    bottom: 0;
+    display: block;
+    background: $nhdarkblue;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
+
+  &:after {
+    content: "";
+    width: 3px;
+    height: $crosssize;
+    position: absolute;
+    display: block;
+    background: $nhdarkblue;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 0.4s;
+  }
+
+  &:hover {
+    background: $nhpink;
+  }
+
+  .showmenu & {
+    background: $nhdarkblue;
+
+    &:before {
+      background: white;
+    }
+
+    &:after {
+      height: 0;
+      background: white;
+    }
+  }
+
+
+
+
 }
 
 
-
-// @keyframes arrow-squidgeL {
-//     0%   {transform: translateY(0%) rotate(30deg);}
-//     50%  {transform: translateY(100%) rotate(40deg);}
-//     100%  {transform: translateY(0%) rotate(30deg);}
-// }
-
-// @keyframes arrow-squidgeR {
-//     0%   {transform: translateY(0%) rotate(-30deg);}
-//     50%  {transform: translateY(100%) rotate(-40deg);}
-//     100%  {transform: translateY(0%) rotate(-30deg);}
-// }
