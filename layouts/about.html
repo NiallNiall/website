@@ -3,55 +3,83 @@
 
   {{> head}}
 
-  <body data-function="{{function}}">
+<body data-function="{{function}}">
 
+  <div id="about-header" class="about-header">
+    <a class="menu-logo" href="/">Niall Henn</a>
+  </div>
+
+  <div class="menu-top">
+    <ul>
+      <li class="menu-item"><a href="/about.html">About</a></li>
+      <li class="menu-item"><a href="">Work</a></li>
+      <li class="menu-item"><a href="">Experiments</a></li>
+      <li class="menu-item"><a href="">Contact</a></li>
+    </ul>
+    <button id="about-menu-btn" class="about-menu-btn"></button>
+  </div>
 
 	<div class="full-page-container dark">
+    <div class="fw-bg-img"></div>
+  </div>
 
-    <div class="about-header">
-      <a class="menu-logo" href="/">Niall Henn</a>
-      <ul class="menu-top">
-        <li class="menu-item"><a href="/about.html">About</a></li>
-        <li class="menu-item"><a href="">Work</a></li>
-        <li class="menu-item"><a href="">Experiments</a></li>
-        <li class="menu-item"><a href="">Contact</a></li>
-      </ul>
+  <div class="homehero-text-outer hero-text-outer">
+    <div class="homehero-text-inner">
+    <h1 class="home-logo">Hello</h1>
+    </div>
+  </div>
+
+  <div class="para-below">
+    <div class="para-below-blue-1"></div>
+    <div class="para-below-blue-2"></div>
+    <div class="para-below-blue-3"></div>
+    <div class="para-below-blue-4"></div>
+
+    <div class="about-block">
+      {{{contents}}}
     </div>
 
-    <div class="fw-bg-img">
-
-      <div class="homehero-text-outer">
-        <div class="homehero-text-inner">
-          <h1 class="home-logo" style="color: white">Hi There</h1>
-          </div>
-          </div>
-
-    </div>
-
-
-
-      <!-- <img src="/img/abouttint.jpg" /> -->
-
-    <!--   <div class="about-block">
-        {{{contents}}}
-      </div> -->
-
-
-
-	</div>
-
-      <div class="para-below">
-          <div class="about-block">
-        {{{contents}}}
-      </div>
-    </div>
+  </div>
 
 
     <script src="/assets/vendor/paper-full.js"></script>
     <script type="text/javascript" src="/assets/homecanvas.js"></script>
 
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script><script src="https://player.vimeo.com/api/player.js"></script>
-    <script type="text/javascript" src="/assets/video.js"></script>
+
+    <script>
+      $("#about-menu-btn").click(function(event) {
+        event.preventDefault();
+        // alert("yoyo");
+        $('.menu-top').toggleClass( "showmenu" )
+      });
+
+      $(document).ready(function() {
+        $(window).scroll( function(){
+          var scrollTop = $(window).scrollTop();
+
+          if(scrollTop >= 100) {
+            $('body').addClass( "scrolleddown" );
+          }
+
+          if(scrollTop <= 100) {
+            $('body').removeClass( "scrolleddown" );
+          }
+
+
+          $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.45))+"px");
+          $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.30))+"px");
+          $('.para-below-blue-3').css("margin-top", (0 - (scrollTop*0.15))+"px");
+
+          //  $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.50))+"px");
+          // $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.25))+"px");
+          // $('.para-below-blue-3').css("margin-top", (0 - (scrollTop*0.50))+"px");
+
+
+        });
+      });
+    </script>
+
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
