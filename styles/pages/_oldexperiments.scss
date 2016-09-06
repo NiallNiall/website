@@ -1,0 +1,83 @@
+$lightcanvascolour: #FCF7E9;
+$darkcanvascolour: #113;
+
+.bgcanvas {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  position: absolute;
+}
+
+.bgcanvas[resize] {
+    width: 100%;
+    height: 100%;
+}
+
+.canvasheader {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 999;
+  background: $paper;
+  width: 100%;
+}
+
+.ltcanvas {
+  background: $lightcanvascolour;
+}
+
+.drkcanvas {
+  background: $darkcanvascolour;
+}
+
+.dragon-background {
+  background: url('/img/experiments/dragon-bg.png');
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.bottom-buttons {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.paper-button {
+  padding: 8px;
+  background: $nhpink;
+  font-family: $sans-serif;
+  transition: 0.2s;
+  &:first-child {
+    margin-right: 8px;
+  }
+  &:hover {
+    background: darken($nhpink, 10%);
+    color: white;
+  }
+
+  .seq-pause {
+    display: inline;
+  }
+
+  .seq-play {
+    display: none;
+  }
+
+  &.seqPaused {
+    .seq-pause {
+      display: none;
+    }
+    .seq-play {
+      display: inline;
+    }
+  }
+
+}

@@ -8,6 +8,8 @@
     min-height: $alpha;
     padding-top: 22px;
     padding-bottom: 48px;
+    position: relative;
+    z-index: 50;
 
     @media screen and ( max-width: $medium ) {
         text-align: center;
@@ -25,7 +27,7 @@
         margin-bottom: 0;
     }
     a {
-        color: lighten($nhdarkblue, 30%);
+        color: $nhpink;//lighten($nhdarkblue, 30%);
     }
 
     @media screen and ( max-width: $medium ) {
@@ -37,7 +39,7 @@
     width: 25px;
     height: 25px;
     padding: 5px;
-    background: lighten($nhdarkblue, 20%);
+    background: $nhpink;//lighten($nhdarkblue, 20%);
     margin-right: 6px;
     float: right;
     @media screen and ( max-width: $medium ) {
