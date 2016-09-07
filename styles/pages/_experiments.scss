@@ -2,7 +2,7 @@ ul.experiments {
   width: 100%;
   height: 100%;
   padding: $beta $beta/2;
-  background: $nhpink;
+  background: $nhdarkblue;//$nhpink;
 
   padding-top: $beta *3;
   text-align: center;
@@ -28,7 +28,7 @@ ul.experiments {
 }
 
 .experiment-inner {
-     background: $lightpink;
+     background: $nhdarkblue;//$lightpink;
      height: 200px;
 
       background-size: cover;
@@ -37,13 +37,40 @@ ul.experiments {
       position: relative;
       display: block;
       // padding: 100px;
+      border: 3px solid $nearwhite;
 
      h3 {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
+      font-weight: bold;
+      color: $nhdarkblue;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+
+      &:after {
+        content: "";
+        display: block;
+        background: $nearwhite;
+        height: 6px;
+        width: 50px;
+        margin: auto;
+        margin-top: 6px;
+      }
      }
+
+     &:hover:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: rgba($nhdarkblue, 0.8);
+     }
+
+    &:hover h3 {
+      color: $nhpink;
+    }
 
 }
 
@@ -51,7 +78,9 @@ ul.experiments {
 .experiment-hero-outer {
   height: 50%;
   position: relative;
-  background:$nhpink;
+  background-image: url('/img/experiments/dragon-thumb.gif');
+  background-size: cover;
+  //$nhpink;
 }
 
 

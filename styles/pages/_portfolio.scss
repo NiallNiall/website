@@ -42,6 +42,8 @@
 	padding: 6px;
 	z-index: 90;
 
+	display: none;
+
 	@media screen and ( max-width: $medium ) {
 	    position: absolute;
 	    left: 0;

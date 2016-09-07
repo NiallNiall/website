@@ -1,12 +1,13 @@
 ---
-title: Paper Robots Wobbly
+title: Paper Robots
 url: experiments
 description: Test Post
 collection: experiments
 paginate: experiments
 layout: experiment.html
-date: 2015-11-01
+date: 2015-03-03
 draft: false
+thumb: /img/experiments/robots-wo-thumb.gif
 paperscripts:
 - experiments/probo-wobbly
 ---

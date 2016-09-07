@@ -5,8 +5,9 @@ description: Test Post
 collection: experiments
 paginate: experiments
 layout: experiment-dragon.html
-date: 2015-11-01
+date: 2015-02-02
 draft: false
+thumb: /img/experiments/dragon-thumb.gif
 paperscripts:
 - experiments/dragon
 ---
