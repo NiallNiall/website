@@ -5,7 +5,7 @@
 
   <body data-function="{{function}}">
 
-    {{> header-portfolio}}
+    {{> header}}
 
     {{> portfolio-info}}
 
@@ -20,6 +20,14 @@
     {{#each paperscripts}}
       <script type="text/paperscript" canvas="papercanvas" src="/assets/{{this}}.js"></script>
     {{/each}}
+
+    <script>
+      $("#about-menu-btn").click(function(event) {
+        event.preventDefault();
+        // alert("yoyo");
+        $('.menu-top').toggleClass( "showmenu" )
+      });
+    </script>
 
     <svg xmlns="http://www.w3.org/2000/svg"
          xmlns:xlink="http://www.w3.org/1999/xlink"
