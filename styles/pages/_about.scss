@@ -143,6 +143,8 @@
 	z-index: 5;
 	padding: 0;
 
+	// border-bottom: 4px solid $nhdarkblue;
+
 	ul {
 		margin:0;
 		z-index: 5;
@@ -155,7 +157,7 @@
 	padding-top: 0;
 	transition: 0.4s cubic-bezier(.12,-1.5,.66,-0.49);
 
-	&.showmenu {
+	&.showmenu, &:hover {
 		padding-top:30px;
 		transition: 0.4s cubic-bezier(.12,2.5,.66,1.29);
 	}
@@ -263,4 +265,28 @@
     		opacity: 0;
     	}
     }
+}
+
+
+
+// ====================================================
+// Contact Page
+// ====================================================
+.contact-social {
+	display: absolute;
+	margin-top: 70px;
+
+	.social-icon {
+		width: 40px;
+		height: 40px;
+		padding: 4px;
+		margin-right: 6px;
+
+		background: $nhdarkblue;
+		 svg {
+	    g {
+	      fill: $nhpink;
+	    }
+	  }
+	}
 }

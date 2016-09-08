@@ -3,10 +3,7 @@ title: about
 url: /
 description: Index Page
 layout: about.html
-permalink: false
-function: home
-vimeolink: 180631550
-subtitle: Creative Engineer
+permalink: true
 ---
 Hi there, my name is Niall.
 

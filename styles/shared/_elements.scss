@@ -40,3 +40,37 @@ input, textarea {
   -moz-box-shadow: 2px 2px 39px -4px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 39px -4px rgba(0,0,0,0.75);
 }
+
+
+.social-icon{
+  svg {
+    width: 100%;
+    height: 100%;
+    g {
+      transition: 0.2s;
+      fill: $nhdarkblue;
+    }
+  }
+}
+
+
+.social-icon {
+
+    background: $nhpink;//lighten($nhdarkblue, 20%);
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+
+    a {
+      width: 100%;
+      height: 100%;
+      padding: 3px;
+      display: block;
+    }
+
+    transition: 0.2s;
+    &:hover {
+      transform: scale(1.2);
+    }
+
+}

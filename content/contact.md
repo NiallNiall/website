@@ -3,6 +3,6 @@ title: Contact
 url: /
 description: Index Page
 layout: contact.html
-permalink: false
+permalink: true
 function: home
 ---

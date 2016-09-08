@@ -6,14 +6,9 @@
 				<p>This website is built with <a href="http://www.metalsmith.io/">Metalsmith,</a> <a href="http://gulpjs.com/">Gulp,</a> and <a href="http://sass-lang.com/">Sass</a> <!-- from <a href="https://github.com/patrickheeney">Patrick Heeney's</a> base.</p> -->
 			</div>
 
-			
+
 			<ul class="footer-social right">
-				{{#each sociallinks}}
-					<li class="social-icon">
-						<a href="{{this.link}}">
-						<img src="/img/social/{{this.img}}"/></a>
-					</li>
-	 			{{/each}}
+			{{>socialicons}}
 			</ul>
 
 		</div>
