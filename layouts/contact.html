@@ -7,21 +7,26 @@
 
   {{> header}}
 
-	<div class="full-page-container dark">
-    <div class="fw-bg-img"></div>
-  </div>
+  <div id="home-hero" class="homehero-outer full-width-box">
+  <canvas id="papercanvas" class="homecanvas" resize></canvas>
+    <div class="homehero-inner">
+      <div class="homehero-text-outer">
+        <div class="homehero-text-inner">
+          <h1 class="home-logo">Contact</h1>
+          <div class="homesub-container homesub-layout">
+            <h3 class= "homesub-text homesub-tag">yo at niallhenn dot com</h3>
+          </div>
+        </div>
+      </div>
 
-  <div class="homehero-text-outer hero-text-outer">
-    <div class="homehero-text-inner">
-    <h1 class="home-logo">yo at niallhenn.com</h1>
-    </div>
   </div>
 
 
     <script src="/assets/vendor/paper-full.js"></script>
-    <script type="text/javascript" src="/assets/homecanvas.js"></script>
+    <script type="text/javascript" src="/assets/contactcanvas.js"></script>
 
-    <script src="/assets/vendor/jquery-3.1.0.min.js"></script><script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 
     <script>
       $("#about-menu-btn").click(function(event) {
