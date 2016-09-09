@@ -6,7 +6,7 @@
 	background: $nhdarkblue;
 	width: 100%;
     min-height: $alpha;
-    padding-top: 22px;
+    padding-top: 32px;
     padding-bottom: 48px;
     position: relative;
     z-index: 50;
@@ -25,6 +25,7 @@
     p {
         line-height: 1.0;
         margin-bottom: 0;
+        color: $lightpink;
     }
     a {
         color: $nhpink;//lighten($nhdarkblue, 30%);

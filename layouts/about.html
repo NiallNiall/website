@@ -27,6 +27,41 @@
         {{{contents}}}
       </div>
 
+      <div class="about-block available-block">
+        Available for Contract Work<br />
+        <a href="/contact/">Let's Talk</a>
+      </div>
+      <div class="about-block skills-block">
+        <h3 class="skills-title">Skills</h3>
+        <ul class="skills">
+          {{#each skills}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="about-block skills-block">
+        <h3 class="skills-title">Software</h3>
+        <ul class="skills">
+          {{#each software}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="about-block skills-block">
+        <h3 class="skills-title">Web Frameworks</h3>
+        <ul class="skills">
+          {{#each frameworks}}
+            <li>
+              {{this}}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+
     </div>
   </div>
   {{>footer}}

@@ -4,13 +4,21 @@
 
 .para-below {
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	position: relative;
 	z-index: 3;
 	// background: $lightpink;
 
+	// @media screen and (max-width: $medium) {
+	// 	padding-bottom: 128px;
+	// }
+
 
 }
+
+//===============================================================================
+// Parallax Bits
+//===============================================================================
 
 .para-below-blue-1 {
 	width: 100%;
@@ -46,7 +54,7 @@
 	top:0;
 	background: lighten($nhpink, 2%);
 	background: rgba(lighten($nhpink, 2%), 0.5);
-	background-image: url('/img/about/bubble1.svg');
+	// background-image: url('/img/about/bubble1.svg');
 	// border: 4px solid #000;
 
 	z-index: 3;
@@ -55,30 +63,45 @@
 .para-below-blue-4 {
 	width: 100%;
 	min-height: 100%;
-	position: absolute;
+	position: relative;
 	top:0;
 	background: $nhpink;
 	// border: 4px solid #000;
 
 	z-index: 4;
 	padding-top: 86px;
+
+
+	padding-bottom: 205px;
 }
+
+
+// ====================================================
+// Central Block
+// ====================================================
 
 .about-block {
 	width:500px;
 	margin: auto;
 	font-size: 24px;
 	padding: $beta;
+	padding-bottom: 0;
+
 	z-index: 5;
 	// position: absolute;
 	// left: 50%;
 	// margin-left: -250px;
+	// margin-top: 0px;
 
 	@media screen and (max-width: $small) {
  		width: 100%;
   }
 
 }
+
+// ====================================================
+//  Full Width Image
+// ====================================================
 
 .fw-bg-img {
 	position: absolute;
@@ -101,6 +124,80 @@
 
 }
 
+// ====================================================
+// Available
+// ====================================================
+
+.available-block {
+ padding: 0 $beta;
+ // text-align: center;
+ margin-bottom: 24px;
+
+ a {
+ 	font-style: italic;
+ 	&:before {
+ 		content: "";
+ 		display: block;
+ 		width: 50px;
+ 		height: 6px;
+ 		background: $nearwhite;
+ 		// margin: auto;
+ 		margin-top: 6px;
+ 		margin-bottom: 6px;
+ 	}
+ }
+}
+
+
+// ====================================================
+// Skills
+// ====================================================
+
+.skills-block {
+	// padding-bottom: 0;
+}
+
+.skills-title {
+	letter-spacing: 0.1em;
+	margin-bottom: 6px;
+	font-weight: bolder;
+	color: rgba($nhdarkblue, 0.8);
+	font-size: 16px;
+
+	&:after {
+		content: "";
+		width: 50px;
+		height: 4px;
+		background: $lightpink;
+		display: block;
+	}
+}
+
+.skills {
+	font-size: 14px;
+	color: rgba($nhdarkblue, 0.8);
+	@include clearfix;
+	margin-bottom: 0px;
+
+	li {
+		float: left;
+		margin-right: 4px;
+		&:after {
+			content: ",";
+			margin-left: -3px;
+		}
+		&:last-of-type:after {
+			content: none;
+		}
+	}
+}
+
+
+
+// ====================================================
+// Menu Bits
+// ====================================================
+
 .about-header {
 	position: fixed;
 	left: 0;
@@ -113,7 +210,6 @@
 	text-align: center;
 
 }
-
 
 .menu-logo {
 	// background: $nhpink;
@@ -288,5 +384,15 @@
 	      fill: $nhpink;
 	    }
 	  }
+
+    animation-name: bounceIn;
+    animation-duration: 1.1s;
+
+		&:nth-of-type(2){ animation-duration: 1.3s; }
+		&:nth-of-type(3){ animation-duration: 1.5s; }
+		&:nth-of-type(4){ animation-duration: 1.7s; }
+
 	}
 }
+
+
