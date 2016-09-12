@@ -37,7 +37,6 @@
     <script>
       $("#about-menu-btn").click(function(event) {
         event.preventDefault();
-        // alert("yoyo");
         $('.menu-top').toggleClass( "showmenu" )
       });
 
@@ -53,15 +52,9 @@
             $('body').removeClass( "scrolleddown" );
           }
 
-
           $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.45))+"px");
           $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.30))+"px");
           $('.para-below-blue-3').css("margin-top", (0 - (scrollTop*0.15))+"px");
-
-          //  $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.50))+"px");
-          // $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.25))+"px");
-          // $('.para-below-blue-3').css("margin-top", (0 - (scrollTop*0.50))+"px");
-
 
         });
       });

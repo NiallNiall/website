@@ -31,7 +31,9 @@ frameworks:
 ---
 Hi there, my name is Niall.
 
-I'm a multidisciplinary designer working professionally since 2009, in that time shifting from print to digital to motion. Previously Lead Motion Designer <br />at pebble {code}.
+I'm a Motion Designer and Technologist working professionally since 2009.<br />
+Finding the middle ground between experiments and efficiency to engineer the right solution.
+Previously Lead Motion Designer at [pebble {code}.](http://pebblecode.com/)
 
 I live and work in London.
 
