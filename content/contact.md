@@ -1,7 +1,7 @@
 ---
 title: Contact
 url: /
-description: Index Page
+description: Let's Talk
 layout: contact.html
 permalink: true
 function: home

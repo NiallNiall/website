@@ -13,25 +13,25 @@
 
   <div class="homehero-text-outer hero-text-outer">
     <div class="homehero-text-inner">
-    <h1 class="home-logo">Hello</h1>
+    <h1 class="hero-title">Hello</h1>
     </div>
   </div>
 
   <div class="para-below">
-    <div class="para-below-blue-1"></div>
-    <div class="para-below-blue-2"></div>
-    <div class="para-below-blue-3"></div>
-    <div class="para-below-blue-4">
+    <div class="parallax-bg-1"></div>
+    <div class="parallax-bg-2"></div>
+    <div class="parallax-bg-3"></div>
+    <div class="parallax-content">
 
-      <div class="about-block">
+      <div class="central-block">
         {{{contents}}}
       </div>
 
-      <div class="about-block available-block">
+      <div class="central-block available-block">
         Available for Contract Work<br />
         <a href="/contact/">Let's Talk</a>
       </div>
-      <div class="about-block skills-block">
+      <div class="central-block skills-block">
         <h3 class="skills-title">Skills</h3>
         <ul class="skills">
           {{#each skills}}
@@ -41,18 +41,8 @@
           {{/each}}
         </ul>
       </div>
-      <div class="about-block skills-block">
-        <h3 class="skills-title">Software</h3>
-        <ul class="skills">
-          {{#each software}}
-            <li>
-              {{this}}
-            </li>
-          {{/each}}
-        </ul>
-      </div>
-      <div class="about-block skills-block">
-        <h3 class="skills-title">Web Frameworks</h3>
+      <div class="central-block skills-block">
+        <h3 class="skills-title">Tools</h3>
         <ul class="skills">
           {{#each frameworks}}
             <li>
@@ -92,9 +82,9 @@
           }
 
 
-          $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.45))+"px");
-          $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.30))+"px");
-          $('.para-below-blue-3').css("margin-top", (0 - (scrollTop*0.15))+"px");
+          $('.parallax-bg-1').css("margin-top", (0 - (scrollTop*0.45))+"px");
+          $('.parallax-bg-2').css("margin-top", (0 - (scrollTop*0.30))+"px");
+          $('.parallax-bg-3').css("margin-top", (0 - (scrollTop*0.15))+"px");
 
           //  $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.50))+"px");
           // $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.25))+"px");

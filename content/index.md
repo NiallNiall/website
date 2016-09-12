@@ -1,7 +1,7 @@
 ---
 title: Niall Henn
 url: /
-description: Index Page
+description: Digital and Motion Designer
 layout: index.html
 permalink: false
 function: home

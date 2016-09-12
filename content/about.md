@@ -1,21 +1,20 @@
 ---
 title: about
 url: /
-description: Index Page
+description: Niall Henn
 layout: about.html
 permalink: true
 skills:
  - Motion Design
  - Digital Design
  - Front End Development
+ - Creative Coding
 
-software:
+frameworks:
  - After Effects
  - Cinema 4D
  - Illustrator
  - Sketch
-
-frameworks:
  - HTML
  - CSS
  - Sass
