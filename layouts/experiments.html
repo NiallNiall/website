@@ -8,14 +8,15 @@
   {{> header}}
 
   <div class="experiment-hero-outer">
-  <div class="homehero-text-outer hero-text-outer">
-    <div class="homehero-text-inner">
-      <h1 class="home-logo">Experiments</h1>
-      <div class="homesub-container homesub-layout">
-              <h3 class= "homesub-text homesub-tag">Tests, Hackathons</h3>
+    <canvas id="papercanvas" class="homecanvas" resize></canvas>
+    <div class="homehero-text-outer hero-text-outer">
+      <div class="homehero-text-inner">
+        <h1 class="hero-title">Experiments</h1>
+        <div class="homesub-container homesub-layout">
+          <h3 class= "homesub-text homesub-tag">Tests, Hackathons</h3>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 
 
@@ -38,7 +39,7 @@
 
 
     <script src="/assets/vendor/paper-full.js"></script>
-    <script type="text/javascript" src="/assets/homecanvas.js"></script>
+    <script type="text/javascript" src="/assets/expericanvas.js"></script>
 
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script><script src="https://player.vimeo.com/api/player.js"></script>
 
@@ -65,10 +66,6 @@
           $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.45))+"px");
           $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.30))+"px");
           $('.para-below-blue-3').css("margin-top", (0 - (scrollTop*0.15))+"px");
-
-          //  $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.50))+"px");
-          // $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.25))+"px");
-          // $('.para-below-blue-3').css("margin-top", (0 - (scrollTop*0.50))+"px");
 
 
         });

@@ -1,5 +1,6 @@
 ul.experiments {
-  min-height: 50%;
+  position: relative;
+  min-height: 100%;
   width: 100%;
   padding: $beta $beta/2;
   background: $nhdarkblue;//$nhpink;
@@ -88,10 +89,11 @@ ul.experiments {
 
 
 .experiment-hero-outer {
-  height: 50%;
+  height: 100%;
   position: relative;
-  background-image: url('/img/experiments/dragon-thumb.gif');
-  background-size: cover;
+  background: $nhpink;
+  // background-image: url('/img/experiments/dragon-thumb.gif');
+  // background-size: cover;
   //$nhpink;
   .homehero-text-outer h1{
     color:  $nhdarkblue;
