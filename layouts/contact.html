@@ -32,33 +32,7 @@
     <script type="text/javascript" src="/assets/contactcanvas.js"></script>
 
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
-
-    <script>
-      $("#about-menu-btn").click(function(event) {
-        event.preventDefault();
-        $('.menu-top').toggleClass( "showmenu" )
-      });
-
-      $(document).ready(function() {
-        $(window).scroll( function(){
-          var scrollTop = $(window).scrollTop();
-
-          if(scrollTop >= 100) {
-            $('body').addClass( "scrolleddown" );
-          }
-
-          if(scrollTop <= 100) {
-            $('body').removeClass( "scrolleddown" );
-          }
-
-          $('.para-below-blue-1').css("margin-top", (0 - (scrollTop*0.45))+"px");
-          $('.para-below-blue-2').css("margin-top", (0 - (scrollTop*0.30))+"px");
-          $('.para-below-blue-3').css("margin-top", (0 - (scrollTop*0.15))+"px");
-
-        });
-      });
-    </script>
+    <script type="text/javascript" src="/assets/site.js"></script>
 
 
     <script>

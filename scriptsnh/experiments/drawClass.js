@@ -297,7 +297,7 @@ function createStep(constructPos, clr) {
     thisColor = new Color(iVar, jVar/2, iVar/2);
     clr1 = thisColor;
     thisShape.fillColor = clr1;
-    thisShape.opacity = 0.2;
+    thisShape.opacity = 0.4;
   }
 
   function getPosition() {

@@ -8,9 +8,11 @@ ul.experiments {
   text-align: center;
   margin: 0;
 
-  li {
-    width: 25%;
+  padding-top: 148px;
 
+  li {
+    // width: 25%;
+    width: 50%;
 
     display: inline-block;
 
@@ -168,8 +170,14 @@ $darkcanvascolour: #113;
 .paper-button {
   padding: 8px;
   background: $nhpink;
-  font-family: $sans-serif;
   transition: 0.2s;
+  font-family: $sans-serif;
+
+  span {
+   font-family: $sans-serif;
+  }
+
+
   &:first-child {
     margin-right: 8px;
   }
@@ -178,13 +186,7 @@ $darkcanvascolour: #113;
     color: white;
   }
 
-  .seq-pause {
-    display: inline;
-  }
 
-  .seq-play {
-    display: none;
-  }
 
   &.seqPaused {
     .seq-pause {
@@ -197,5 +199,11 @@ $darkcanvascolour: #113;
 
 }
 
+.seq-pause {
+    display: inline;
+}
 
+.seq-play {
+    display: none;
+}
 
