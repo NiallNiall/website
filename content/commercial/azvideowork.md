@@ -1,5 +1,5 @@
 ---
-title: AstraZeneca Video Work
+title: AZ Video Work
 url: commercial
 description: Test Post
 collection: motion
