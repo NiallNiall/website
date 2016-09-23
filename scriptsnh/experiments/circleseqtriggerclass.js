@@ -1,3 +1,15 @@
+var darkBlueClr = '#003f5d';
+var lightBlueClr = '#d3ebef';
+var lightOrangeClr = '#ff9c4f';
+var darkOrangeClr = '#FF6347';
+var darkRedClr = '#c2240c';
+var darkPinkClr = '#ffa6b2';
+
+var mainStepClr = darkPinkClr;
+var mainhighlightClr = darkOrangeClr;
+var movrPathClr = darkOrangeClr;
+var movrCircClr = darkOrangeClr;
+
 function createTrigger() {
 
   var available = true;
@@ -81,7 +93,7 @@ function createStep(constructPos, clr) {
       thisShape.fillColor = clr1;
     }
 
-    var strokeOnColor = 'NavajoWhite';
+    var strokeOnColor = mainhighlightClr;
     var strokeOnWidth = 15.0;
     var strokeOffWidth = 5.0;
 
@@ -186,7 +198,7 @@ function createStep(constructPos, clr) {
 
 function createSnare(constructPos) {
 
-    var snareStep = createStep(constructPos, 'Tomato');
+    var snareStep = createStep(constructPos, mainStepClr);
     radius = 20;
 
     function createShape(constructPos) {
@@ -210,7 +222,7 @@ function createSnare(constructPos) {
 
 function createKick(constructPos) {
 
-    var kickStep = createStep(constructPos, 'DarkCyan');
+    var kickStep = createStep(constructPos, mainStepClr);
     radius = 20;
 
     function createShape(constructPos) {
@@ -235,10 +247,10 @@ function createKick(constructPos) {
 
 function createPulse(constructPos) {
 
-    var pulseClr = 'DarkCyan';
+    var pulseClr = mainStepClr;
     var pulseSize = '5.0';
 
-    var kickStep = createStep(constructPos, 'DarkCyan');
+    var kickStep = createStep(constructPos, mainStepClr);
     radius = 20;
 
 
@@ -249,7 +261,7 @@ function createPulse(constructPos) {
 
     kickStep.setTrigEvent(trigEventVar);
 
-    kickStep.setOnStroke('Tomato', '8.0');
+    kickStep.setOnStroke(mainhighlightClr, '8.0');
     kickStep.setOffStroke(pulseClr, pulseSize);
 
     function createShape(constructPos) {
@@ -288,7 +300,7 @@ function createMovr(constructPos) {
   var from = originalPos;
   var to = originalPos;
   var movePath = new Path.Line(from, to);
-  movePath.strokeColor = 'NavajoWhite';
+  movePath.strokeColor = movrPathClr;
   movePath.strokeWidth = '5.0';
 
 
@@ -312,7 +324,7 @@ function createMovr(constructPos) {
 
   function create(constructPos) {
     myShape = new paper.Path.Circle(constructPos, 10);
-    myShape.fillColor = 'SaddleBrown';
+    myShape.fillColor = movrCircClr;
     return myShape;
     // movng = true;
   }
@@ -330,10 +342,7 @@ function createMovr(constructPos) {
       newPos = new paper.Point(originalPos.x + (normed.x * dist), originalPos.y + (normed.y * dist));
       var startPos = new paper.Point(originalPos.x - (normed.x * dist), originalPos.y - (normed.y * dist));
       movePath.segments[1].point = newPos;
-      // movePath.segments[0].point = startPos;
-      // console.log(movePath.segments[1].point);
       thisShape.position = newPos;
-      // startShape.position = startPos;
 
       life += 1;
       if(dist >= movrLength){
@@ -377,7 +386,7 @@ function distanceTest(testPosition) {
 
 function createTriangr(constructPos) {
 
-    var triangR = createMovr(constructPos, 'DarkCyan');
+    var triangR = createMovr(constructPos, mainStepClr);
 
 
     return triangR;

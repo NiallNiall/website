@@ -1,3 +1,13 @@
+var darkBlueClr = '#003f5d';
+var midBlueClr = '#17557D';
+var lightBlueClr = '#d3ebef';
+var lightOrangeClr = '#ff9c4f';
+var darkOrangeClr = '#FF6347';
+var darkRedClr = '#c2240c';
+
+var playHeadClr = darkOrangeClr;
+var playHeadPathClr = midBlueClr;
+
 (function () { 'use strict';
 
 }()); // end 'use strict'
@@ -52,11 +62,11 @@ var getCirclePos = function(centerPos, inc, Radius) {
 var rotrPos = new paper.Point(paper.view.center);
 
 var playHeadPath = new paper.Path.Circle(paper.view.center, phRadius);
-playHeadPath.strokeColor = 'NavajoWhite';
-playHeadPath.strokeWidth = 5.0;
+playHeadPath.strokeColor =  playHeadPathClr;
+playHeadPath.strokeWidth = 8.0;
 
 var playHead = new paper.Path.Circle(rotrPos, 20);
-playHead.fillColor = 'LightSlateGray';
+playHead.fillColor = playHeadClr;
 
 var countr = 1;
 
@@ -98,13 +108,7 @@ paper.view.onFrame = function(event) {
         var checkMovr = allSteps[i].checkDistance(comparePos);
         // Add bool to Array
         boolArray.push(checkMovr);
-
-      // console.log(checkBool);
-      // console.log("allSteps: " + j + "  movrs: " + i + " checkBool: " + checkBool);
       }
-
-    // For Debugging, log the array.
-    // console.log(boolArray);
 
     // Check if any Bools return positive.
     var logr = isInArray(true, boolArray);
@@ -171,54 +175,55 @@ paper.view.onFrame = function(event) {
 
 
 
-  var bgRadius = 50;
-  var selectedIconPoint = new paper.Point(bgRadius, bgRadius);
-  var selectedBackground = new paper.Path.Rectangle(selectedIconPoint.subtract(bgRadius/2), bgRadius);
-  selectedBackground.fillColor = 'DimGray';
+  // var bgRadius = 50;
+  // var selectedIconPoint = new paper.Point(bgRadius, bgRadius);
+  // var selectedBackground = new paper.Path.Rectangle(selectedIconPoint.subtract(bgRadius/2), bgRadius);
+  // selectedBackground.fillColor = 'DimGray';
 
-  var selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
-  selectedIcon.fillColor ='DarkCyan';
+  // var selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
+  // selectedIcon.fillColor ='DarkCyan';
 
 
   var selectionIcon = function() {
 
-    switch(selectr) {
-      case 1:
-      // console.log("1");
-      selectedIcon.remove();
-      selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
-      selectedIcon.fillColor ='DarkCyan';
+    // switch(selectr) {
+    //   case 1:
+    //   // console.log("1");
+    //   selectedIcon.remove();
+    //   selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
+    //   selectedIcon.fillColor ='DarkCyan';
 
-      break;
-      case 2:
-      // console.log("2");
-      var rectRadius = 20;
-      selectedIcon.remove();
-      selectedIcon = new paper.Path.Rectangle(
-        selectedIconPoint.subtract(rectRadius/2),
-        rectRadius
-        );
-      selectedIcon.fillColor ='Tomato';
-      break;
-      case 3:
-      // console.log("3");
-      var rectRadius = 25;
-      selectedIcon.remove();
-      selectedIcon = new paper.Path.Rectangle(
-        new paper.Point(selectedIconPoint.x - rectRadius/2, selectedIconPoint.y - (rectRadius)),
-        new paper.Point(selectedIconPoint.x + rectRadius/2, selectedIconPoint.y +(rectRadius))
-        );
-      selectedIcon.fillColor ='NavajoWhite';
-      break;
-      case 4:
-      // console.log("4");
-      selectedIcon.remove();
-      selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
-      selectedIcon.fillColor ='SaddleBrown';
-      break;
-      default:
-      // console.log("0");
-    }
+    //   break;
+    //   case 2:
+    //   // console.log("2");
+    //   var rectRadius = 20;
+    //   selectedIcon.remove();
+    //   selectedIcon = new paper.Path.Rectangle(
+    //     selectedIconPoint.subtract(rectRadius/2),
+    //     rectRadius
+    //     );
+    //   selectedIcon.fillColor ='Tomato';
+    //   break;
+    //   case 3:
+    //   // console.log("3");
+    //   var rectRadius = 25;
+    //   selectedIcon.remove();
+    //   selectedIcon = new paper.Path.Rectangle(
+    //     new paper.Point(selectedIconPoint.x - rectRadius/2, selectedIconPoint.y - (rectRadius)),
+    //     new paper.Point(selectedIconPoint.x + rectRadius/2, selectedIconPoint.y +(rectRadius))
+    //     );
+    //   selectedIcon.fillColor = playHeadClr;
+    //   break;
+    //   case 4:
+    //   // console.log("4");
+    //   selectedIcon.remove();
+    //   selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
+    //   selectedIcon.fillColor ='SaddleBrown';
+    //   break;
+    //   default:
+    //   // console.log("0");
+    // }
+
   }
 
 
