@@ -19,10 +19,27 @@ var dragonEyelidClr = darkRedClr;
 var dragonEyeClr = midBlueClr;
 var dragonWhiskerClr = darkOrangeClr;
 // =========
-var mainStepClr = darkPinkClr;
+var mainStepClr = 'white';
 var mainhighlightClr = darkOrangeClr;
 // =========
+var anenomeClr = lightOrangeClr;
+// =========
+var outlinePulseClr = lightBlueClr;
+// =========
 var sinus = 100;//Math.sin(event.time * 10);
+
+// ==================================================
+// Groups
+// ==================================================
+var dragonGroup = new Group();
+var anenomeGroup = new Group();
+
+// ==================================================
+// Tone Stuff
+// ==================================================
+
+var synth = new Tone.SimpleSynth().toMaster();
+synth.oscillator.type = "sine";
 
 // ==================================================
 // Load SVGs and Colour Them
@@ -79,6 +96,20 @@ tailSegSVG.rotate(90);
 var tailSeg = new Symbol(tailSegSVG);
 
 
+// Anenome Segment ==================================
+
+var AnenomeSVG = project.importSVG(document.getElementById('anenome'));
+
+AnenomeSVG.children[0].fillColor = anenomeClr;
+AnenomeSVG.visible = true;
+AnenomeSVG.position = new Point(0, 0);
+// console.log(AnenomeSVG);
+var Anenome = new Symbol(AnenomeSVG);
+    // Anenome.bounds.bottomLeft;
+
+
+
+
 var hoverCircle = new Path.Circle(new Point(100, 70), 10);
 hoverCircle.fillColor = null;
 hoverCircle.strokeColor = 'white';
@@ -116,6 +147,26 @@ whisker2.strokeJoin = 'round';
 // whiskerSpot.strokeColor = edgeClr;
 // whiskerSpot.strokeWidth = 7;
 
+// ============================================
+// Functions ==================================
+
+// Converts from degrees to radians.
+Math.radians = function(degrees) {
+    return degrees * Math.PI / 180;
+};
+
+function jsMap(val, A, B, a, b){
+  var mapd = (val - A)*(b-a)/(B-A) + a
+  return mapd;
+}
+
+var getCirclePos = function(centerPos, inc, Radius) {
+    var angle = Math.radians(inc);
+    var x = centerPos.x + Math.sin(angle) * Radius;
+    var y = centerPos.y + Math.cos(angle) * Radius;
+    var pos = new paper.Point(x, y);
+    return pos;
+}
 
 
 var dragSegment = Base.extend({
@@ -280,6 +331,8 @@ function createTrigger() {
 
 function createStep(constructPos, clr) {
 
+    var dotSize = 20;
+
     // Set Availability Boolean
     var available = true;
     // Create a copy to store previous state
@@ -293,6 +346,47 @@ function createStep(constructPos, clr) {
     var position = constructPos;
     // Create an empty shape
     var thisShape = new paper.Path();
+
+     // var outlinePulse = new paper.Path();
+    var outlineMoving = false;
+    var outlineSize = 0;
+    var outlineOpac = 0;
+    var ogOutlineSize = dotSize;
+    var outlinePulse = createOutlinePulse(constructPos, ogOutlineSize /2);
+    outlinePulse.opacity = outlineOpac;
+
+    function createOutlinePulse(tempConstructPos, tempOutlineSize) {
+      // Create an empty shape
+      var tempPulse = new paper.Path.Circle(tempConstructPos, tempOutlineSize);
+      tempPulse.fillColor = outlinePulseClr;//'LightGray';
+      // outlinePulse.strokeWidth = 3.0;
+      tempPulse.scaling = 1.0;
+      anenomeGroup.addChild(tempPulse);
+      return tempPulse;
+    }
+
+    function moveOutline(){
+
+      var tempScaling = 0;
+
+      if(outlineMoving) {
+
+        if(outlineSize < 5){
+          outlineSize += 0.05;
+          outlineOpac = jsMap(outlineSize,0,5.05,0.6,0)
+          tempScaling = ogOutlineSize + outlineSize * 50;//ogOutlineSize *
+        } else {
+          tempScaling = ogOutlineSize;
+          outlineMoving = false;
+        }
+
+        outlinePulse.bounds.width = tempScaling;
+        outlinePulse.bounds.height = tempScaling;
+        outlinePulse.position = constructPos;
+        outlinePulse.opacity = outlineOpac;
+      }
+
+    }
 
     // create a locally scoped variable so it's not overwritten
     var trigEvent;
@@ -373,6 +467,9 @@ function createStep(constructPos, clr) {
 
   function triggerEvent(){
       trigger.triggerEvent(trigEvent);
+      outlineSize = 0;
+      outlineMoving = true;
+      outlineOpac = 1.0;
       shapeOn();
   }
 
@@ -392,6 +489,10 @@ function createStep(constructPos, clr) {
     strokeOffWidth = tempStrokeSize;
   }
 
+  function loop(){
+      moveOutline();
+  }
+
 
     var step = {
     position: getPosition,
@@ -407,7 +508,8 @@ function createStep(constructPos, clr) {
     setAvail: setAvail,
     setOnStroke: setOnStroke,
     setOffStroke: setOffStroke,
-    removeStep: removeStep
+    removeStep: removeStep,
+    loop: loop
   }
 
   return step;
@@ -421,16 +523,17 @@ function createStep(constructPos, clr) {
 function createSnare(constructPos) {
 
     var snareStep = createStep(constructPos, mainStepClr);
-    radius = 20;
+    radius = 10;
 
     function createShape(constructPos) {
-      var myShape = new paper.Path.Circle(constructPos.subtract(radius/2), radius);
+      var myShape = new paper.Path.Circle(constructPos, radius);
+          anenomeGroup.addChild(myShape);
       return myShape;
     }
 
     var trigEventVar = function(){
-      console.log("Snare Triggered!");
-      // snare.triggerAttackRelease("32n");
+      // console.log("Snare Triggered!");
+      // synth.triggerAttackRelease("C4", "32n");
     }
 
     snareStep.setTrigEvent(trigEventVar);
@@ -442,9 +545,33 @@ function createSnare(constructPos) {
 
 }
 
-var newPoint = new paper.Point(Point.random() * new paper.Point(view.bounds.width,view.bounds.height));
-var anenomeStep = createSnare(newPoint);
 
+// Create the Array of Points
+// =====================================================
+
+
+var points = [];
+
+for(var i = 0; i < 360; i+=15){
+
+    var newPoint = getCirclePos(new paper.Point(view.center.x, view.center.y), i, 200);
+
+    var newAnenome = Anenome.place(view.center);
+    newAnenome.pivot = new Point(0,130);//Anenome.bounds
+    newAnenome.position -= new Point(0, 130);
+    // newAnenome.position += new paper.Point(0,-100);
+    newAnenome.rotation = i;
+
+    anenomeGroup.addChild(newAnenome);
+
+    // var newPoint = new paper.Point(Point.random() * new paper.Point(view.bounds.width,view.bounds.height));
+    var anenomeStep = createSnare(newPoint);
+
+    points.push(anenomeStep);
+
+}
+
+// console.log(points);
 
 
 // =====================================================
@@ -592,7 +719,7 @@ var collideTest = function( vector1, vector2, distance) {
 
 //--------------------- main ---------------------
 
-var dragonGroup = new Group();
+
 
 var drgnSg = [];
 var numSegs = 15;
@@ -627,6 +754,21 @@ function onFrame(event) {
 
     for (var i = 0; i < numSegs; i++) {
         // dragonSegCollide(i, view.center);
+    }
+
+
+    for (var i = 0; i < points.length; i++) {
+
+        points[i].loop();
+
+        var comparePos = mousePos;
+        var checkMovr = points[i].checkDistance(comparePos);
+        // console.log(checkMovr);
+        if(checkMovr){
+            points[i].setAvail(false);
+        } else {
+            points[i].setAvail(true);
+        }
     }
 
 }

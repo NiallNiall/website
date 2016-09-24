@@ -9,14 +9,15 @@
 
     {{> portfolio-info}}
 
-    <div class="dragon-background"></div>
-    <canvas id="papercanvas" class="bgcanvas" style="cursor:none"></canvas>
+    <!-- <div class="dragon-background"></div> -->
+    <canvas id="papercanvas" class="bgcanvas drkcanvas" style="cursor:none"></canvas>
 
 
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
     <script src="/assets/portfolio.js"></script>
 
     <script src="/assets/vendor/paper-full.js" async></script>
+    <script src="/assets/vendor/Tone.js"></script>
     {{#each paperscripts}}
       <script type="text/paperscript" canvas="papercanvas" src="/assets/{{this}}.js"></script>
     {{/each}}
@@ -70,6 +71,13 @@
         s20.7,37.9,44.6,36.9c23.9,1,6-54.9,44.6-36.9S205.7,597.4,199.3,585.6z"/>
 
     </svg>
+    <svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     height="600" width="600" id="anenome" style="display:none">
+    <path fill="#000" d="M34,46.9C23,13.3,34.8,0,22.8,0S23,13.3,11.9,46.9C5.3,67.2-5.5,74.8,3.3,79.1C22.9,88.9,6.8,117,22.8,117
+        s0.1-28,19.7-37.8C51.3,74.8,40.7,67.2,34,46.9z"/>
+    </svg>
+
 
 
   </body>
