@@ -110,6 +110,9 @@ function createStep(constructPos, clr) {
       thisShape.strokeWidth = strokeOffWidth;
     }
 
+    var removeStep = function(){
+      thisShape.remove();
+    }
 
   var step = {
     position: getPosition,
@@ -124,7 +127,8 @@ function createStep(constructPos, clr) {
     getAvail: getAvail,
     setAvail: setAvail,
     setOnStroke: setOnStroke,
-    setOffStroke: setOffStroke
+    setOffStroke: setOffStroke,
+    removeStep: removeStep
   }
 
   return step;
@@ -324,7 +328,7 @@ function createMovr(constructPos) {
 
   function create(constructPos) {
     myShape = new paper.Path.Circle(constructPos, 10);
-    myShape.fillColor = movrCircClr;
+    myShape.fillColor = movrCircz1Clr;
     return myShape;
     // movng = true;
   }

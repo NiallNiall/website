@@ -1,7 +1,36 @@
+// ==================================================
+// Initialise Colours
+// ==================================================
+
+var darkBlueClr = '#003f5d';
+var midBlueClr = '#17557D';
+var lightBlueClr = '#d3ebef';
+var lightOrangeClr = '#ff9c4f';
+var darkOrangeClr = '#FF6347';
+var darkRedClr = '#c2240c';
+
+var branchPathClr = darkOrangeClr;
+var branchPathEndClr = darkOrangeClr;
+
+var playHeadClr = darkRedClr;
+
+var outlinePulseClr = lightBlueClr;
+
+var dotClr = midBlueClr;
+var dotOnClr = lightBlueClr;
+var dotOnStrokeClr = lightOrangeClr;
+
+// ==================================================
+
+var dotSize = 20;
+
+
+
+
 function createBranch(initialPos) {
 
   var branchPath = new paper.Path();
-      branchPath.strokeColor = 'Tomato';
+      branchPath.strokeColor = branchPathClr;
       branchPath.strokeWidth = 3.0;
       branchPath.strokeCap = 'round';
       branchPath.add(initialPos);
@@ -9,15 +38,15 @@ function createBranch(initialPos) {
 
   var branchPHPos = initialPos;
   var playHead = new paper.Path.Circle(branchPHPos, 8);
-  playHead.fillColor = 'FireBrick';
+  playHead.fillColor = playHeadClr;
 
   var playHeadPos = initialPos;
 
   var startShape = new paper.Path.Circle(initialPos, 10);
-  startShape.fillColor = 'Tomato';
+  startShape.fillColor = branchPathEndClr;
 
   var endShape = new paper.Path.Circle(initialPos, 10);
-  endShape.fillColor = 'Tomato';
+  endShape.fillColor = branchPathEndClr;
 
   var moving = true;
 
@@ -167,50 +196,44 @@ function createStep(constructPos, clr) {
     // var outlinePulse = new paper.Path();
     var outlineMoving = false;
     var outlineSize = 0;
-    var outlineOpac = 1.0;
-    var ogOutlineSize = 5;
-    var outlinePulse = createOutlinePulse(constructPos, ogOutlineSize);
-
+    var outlineOpac = 0;
+    var ogOutlineSize = dotSize;
+    var outlinePulse = createOutlinePulse(constructPos, ogOutlineSize /2);
+    outlinePulse.opacity = outlineOpac;
 
     function createOutlinePulse(tempConstructPos, tempOutlineSize) {
       // Create an empty shape
       var tempPulse = new paper.Path.Circle(tempConstructPos, tempOutlineSize);
-      tempPulse.fillColor = 'LightGray';
+      tempPulse.fillColor = outlinePulseClr;//'LightGray';
       // outlinePulse.strokeWidth = 3.0;
       tempPulse.scaling = 1.0;
       return tempPulse;
     }
 
     function moveOutline(){
+
       var tempScaling = 0;
 
       if(outlineMoving) {
-        if(outlineSize < 20){
-          outlineSize += 0.05;
-          // outlineOpac = jsMap(outlineSize,0,5.05,0.6,0)
-          // console.log(outlineOpac);
-          tempScaling = ogOutlineSize + outlineSize * 10;
-          if(outlineOpac > 0.01){
-            outlineOpac -= 0.005;
-          }
 
+        if(outlineSize < 5){
+          outlineSize += 0.05;
+          outlineOpac = jsMap(outlineSize,0,5.05,0.6,0)
+          tempScaling = ogOutlineSize + outlineSize * 10;//ogOutlineSize *
         } else {
-          // outlineSize = 0;
-          outlineOpac = 0;
+          tempScaling = ogOutlineSize;
           outlineMoving = false;
-          tempScaling = 0;
         }
-        // console.log(outlinePulse);
-        // outlinePulse.scaling = outlineSize;
+
         outlinePulse.bounds.width = tempScaling;
         outlinePulse.bounds.height = tempScaling;
         outlinePulse.position = constructPos;
         outlinePulse.opacity = outlineOpac;
       }
+
     }
 
     var thisNote = "D#4";
-
 
     var setTrigEvent = function(trigEventVar) {
       trigEvent = trigEventVar;
@@ -222,13 +245,14 @@ function createStep(constructPos, clr) {
     }
 
     function shapeOn(){
-      thisShape.strokeColor = 'NavajoWhite';
-      thisShape.strokeWidth = 15.0;
+      thisShape.fillColor = dotOnClr;//
+      // thisShape.strokeColor = dotOnStrokeClr;//'NavajoWhite';
+      // thisShape.strokeWidth = 8.0;
     }
 
     function shapeOff(){
       thisShape.fillColor = clr1;
-      thisShape.strokeColor = null;
+      // thisShape.strokeColor = null;
     }
 
 
@@ -295,9 +319,9 @@ function createStep(constructPos, clr) {
 
   function colorMap(iVar, jVar) {
     thisColor = new Color(iVar, jVar/2, iVar/2);
-    clr1 = thisColor;
+    clr1 = dotClr;//thisColor;
     thisShape.fillColor = clr1;
-    thisShape.opacity = 0.4;
+    // thisShape.opacity = 0.4;
   }
 
   function getPosition() {
@@ -377,11 +401,11 @@ function createKick(constructPos) {
 
     // var thisNote = "B#4";
 
-    var kickStep = createStep(constructPos, 'DarkCyan');
-    radius = 20;
+    var kickStep = createStep(constructPos, dotClr);
+    var radius = dotSize/2;
 
     function createShape(constructPos) {
-      var myShape = new paper.Path.Circle(constructPos, 10);
+      var myShape = new paper.Path.Circle(constructPos, radius);
       return myShape;
     }
 
