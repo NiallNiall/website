@@ -8,6 +8,7 @@ var lightBlueClr = '#d3ebef';
 var lightOrangeClr = '#ff9c4f';
 var darkOrangeClr = '#FF6347';
 var darkRedClr = '#c2240c';
+var darkPinkClr = '#ffa6b2';
 
 var branchPathClr = darkOrangeClr;
 var branchPathEndClr = darkOrangeClr;

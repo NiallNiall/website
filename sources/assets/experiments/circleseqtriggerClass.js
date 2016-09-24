@@ -328,7 +328,7 @@ function createMovr(constructPos) {
 
   function create(constructPos) {
     myShape = new paper.Path.Circle(constructPos, 10);
-    myShape.fillColor = movrCircz1Clr;
+    myShape.fillColor = movrCircClr;
     return myShape;
     // movng = true;
   }
