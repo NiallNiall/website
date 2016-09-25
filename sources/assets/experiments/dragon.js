@@ -122,6 +122,10 @@ hoverCircleInner.scaling = 5.0;
 
 mousePos = new Point(0, 0);
 target = new Point(0,0);
+var targets = [];
+// targets.push(target);
+var targetInd = 0;
+targetting = false;
 
 targetHeadRot = 0;
 currentHeadRot = 0;
@@ -520,9 +524,12 @@ function createStep(constructPos, clr) {
 // =====================================================
 // =====================================================
 
-function createSnare(constructPos) {
+var notes = ['D3','E3','F#3','G3','A3','B3','C#4','D4','E4','F#4','G4','A4','B4','C#5','D5','E5','F#5','G5','A5','B5','C#6','D6','E6','F#6','G6','A6','B6','C#7'];
 
-    var snareStep = createStep(constructPos, mainStepClr);
+
+function createSynthStep(constructPos, ind) {
+
+    var synthStep = createStep(constructPos, mainStepClr);
     radius = 10;
 
     function createShape(constructPos) {
@@ -531,17 +538,28 @@ function createSnare(constructPos) {
       return myShape;
     }
 
+    var noteNmb = ind;
+
+    if(noteNmb >= 13){
+      // noteNmb = 14;
+      noteNmb = 24 - ind;
+      // console.log(noteNmb);
+    } else {
+      // noteNmb = ind;
+    }
+    // var note = ind;
+
     var trigEventVar = function(){
-      // console.log("Snare Triggered!");
-      // synth.triggerAttackRelease("C4", "32n");
+      // console.log("synth Triggered!");
+      synth.triggerAttackRelease(notes[noteNmb], "32n");
     }
 
-    snareStep.setTrigEvent(trigEventVar);
+    synthStep.setTrigEvent(trigEventVar);
 
     var myShape = createShape(constructPos);
-    snareStep.createShape(myShape);
+    synthStep.createShape(myShape);
 
-    return snareStep;
+    return synthStep;
 
 }
 
@@ -551,6 +569,7 @@ function createSnare(constructPos) {
 
 
 var points = [];
+var ind =0;
 
 for(var i = 0; i < 360; i+=15){
 
@@ -564,8 +583,10 @@ for(var i = 0; i < 360; i+=15){
 
     anenomeGroup.addChild(newAnenome);
 
+    ind +=1;
+
     // var newPoint = new paper.Point(Point.random() * new paper.Point(view.bounds.width,view.bounds.height));
-    var anenomeStep = createSnare(newPoint);
+    var anenomeStep = createSynthStep(newPoint, ind);
 
     points.push(anenomeStep);
 
@@ -636,7 +657,7 @@ function moveWhisker(whisker, point1, direction, leftright) {
 function moveMouseBit() {
 
     hoverCircle.position = new Point(target.x, target.y);
-    hoverCircleInner.position = new Point(target.x, target.y);
+    // hoverCircleInner.position = new Point(target.x, target.y);
 
     var easing = 0.05;
 
@@ -648,8 +669,27 @@ function moveMouseBit() {
     var dy = target.y - mousePos.y;
     if(Math.abs(dy) > 1) {
         mousePos.y += dy * easing;
+    } else {
+      // console.log("at destination")
+
+      if(targetting){
+        incrementTarget();
+      }
+
+      // if(targetInd <= 2){
+        // targetInd +=1;
+      // } else {
+        // targetInd = 0;
+      // }
+      // target = targets[targetInd]
+      // incrementTarget();
+      // targetInd +=1;
     }
 
+    if(targets.length > 1){
+      target = targets[targetInd];
+      targetting = true;
+    }
 
     moveDragon(0, mousePos.x, mousePos.y);
     drgnSg[0].run();
@@ -741,9 +781,38 @@ project.activeLayer.insertChild(100, head);
 // myCircle.position = view.center;
 // myCircle.fillColor = 'white';
 
+function addTargettoArray(tempTarget){
+    var newPoint = tempTarget;
+    targets.push(newPoint);
+    console.log(targets);
+}
+
+function incrementTarget(){
+  if(targetInd < targets.length-1){
+    targetInd += 1;
+  } else {
+    targetInd = 0;
+  }
+}
 
 function onMouseMove(event) {
-    target = event.point;
+    if(!targetting){
+      target = event.point;
+    }
+    hoverCircleInner.position = event.point;
+}
+
+function onMouseDown(event) {
+    addTargettoArray(event.point);
+    // var newPoint = event.point;
+    // targets.push(newPoint);
+    // target = event.point;
+    // console.log(targets);
+
+    var hoverCircle = new Path.Circle(event.point, 10);
+    hoverCircle.fillColor = darkRedClr;
+    // targetInd +=1;
+
 }
 
 function onFrame(event) {
