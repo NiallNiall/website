@@ -7,6 +7,8 @@
 
     {{> header}}
 
+    {{>modal}}
+
     {{> portfolio-info}}
 
     <canvas id="papercanvas" class="bgcanvas drkcanvas" resize></canvas>
@@ -21,7 +23,6 @@
     </div>
 
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
-    <script src="/assets/portfolio.js"></script>
     <script src="/assets/site.js"></script>
 
     <script src="/assets/vendor/paper-full.js"></script>
@@ -29,14 +30,6 @@
     <script src="/assets/experiments/pennereq.js"></script>
     <script src="/assets/experiments/circleseqtriggerclass.js"></script>
     <script src="/assets/experiments/circleseq.js"></script>
-
-    <script>
-      $("#about-menu-btn").click(function(event) {
-        event.preventDefault();
-        // alert("yoyo");
-        $('.menu-top').toggleClass( "showmenu" )
-      });
-    </script>
 
   </body>
 </html>

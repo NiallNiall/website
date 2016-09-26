@@ -38,8 +38,15 @@ var anenomeGroup = new Group();
 // Tone Stuff
 // ==================================================
 
-var synth = new Tone.SimpleSynth().toMaster();
-synth.oscillator.type = "sine";
+// var fbDelay = new Tone.FeedbackDelay("2n", 0.8).toMaster();
+
+var synth = new Tone.PolySynth(6, Tone.Synth, {
+      "oscillator" : {
+        "partials" : [0, 2, 3, 4],
+      }
+    }).toMaster();
+
+
 
 // ==================================================
 // Load SVGs and Colour Them
@@ -110,18 +117,18 @@ var Anenome = new Symbol(AnenomeSVG);
 
 
 
-var hoverCircle = new Path.Circle(new Point(100, 70), 10);
+var hoverCircle = new Path.Circle(view.center, 10);
 hoverCircle.fillColor = null;
 hoverCircle.strokeColor = 'white';
 hoverCircle.scaling = 5.0;
 
-var hoverCircleInner = new Path.Circle(new Point(100, 70), 5);
+var hoverCircleInner = new Path.Circle(view.center, 5);
 hoverCircleInner.fillColor = edgeClr;
 hoverCircleInner.scaling = 5.0;
 
 
-mousePos = new Point(0, 0);
-target = new Point(0,0);
+mousePos = new Point(view.Center);
+target = new Point(view.Center);
 var targets = [];
 // targets.push(target);
 var targetInd = 0;
@@ -130,7 +137,7 @@ targetting = false;
 targetHeadRot = 0;
 currentHeadRot = 0;
 
-var whiskerSeg = [new Point(0,0), new Point(100,100) ]
+var whiskerSeg = [new Point(0,0), new Point(0,0) ]
 var whisker1 = new Path(whiskerSeg);
 whisker1.strokeColor = dragonWhiskerClr;
 whisker1.strokeWidth = 5;
@@ -144,12 +151,6 @@ whisker2.strokeWidth = 5;
 whisker2.strokeCap = 'round';
 whisker2.strokeJoin = 'round';
 
-// whisker1.smooth();
-
-// whiskerSpot = new Path.Circle(new Point(100, 70), 14);
-// whiskerSpot.fillColor = 'white';
-// whiskerSpot.strokeColor = edgeClr;
-// whiskerSpot.strokeWidth = 7;
 
 // ============================================
 // Functions ==================================
@@ -653,7 +654,6 @@ function moveWhisker(whisker, point1, direction, leftright) {
 
 
 
-
 function moveMouseBit() {
 
     hoverCircle.position = new Point(target.x, target.y);
@@ -667,27 +667,15 @@ function moveMouseBit() {
     }
 
     var dy = target.y - mousePos.y;
-    if(Math.abs(dy) > 1) {
+    if(Math.abs(dy) > 2) {
         mousePos.y += dy * easing;
     } else {
-      // console.log("at destination")
 
-      if(targetting){
-        incrementTarget();
-      }
-
-      // if(targetInd <= 2){
-        // targetInd +=1;
-      // } else {
-        // targetInd = 0;
-      // }
-      // target = targets[targetInd]
-      // incrementTarget();
-      // targetInd +=1;
     }
 
     if(targets.length > 1){
-      target = targets[targetInd];
+        // console.log(targets[targetInd].position);
+      target = targets[targetInd].position;
       targetting = true;
     }
 
@@ -726,6 +714,18 @@ function moveMouseBit() {
      tailEnd.position = drgnSg[drgSegArrayLength].position;
      tailEnd.rotation = angle;
 
+
+     if(targetting){
+        var dragonDist = collideTest(mousePos, target, 50);
+        if(dragonDist){
+          incrementTarget();
+        }
+      }
+
+     // var dragonDist = collideTest(mousePos, target, 20);
+
+     // console.log(dragonDist);
+
 }
 
 function map_range(value, low1, high1, low2, high2) {
@@ -761,6 +761,7 @@ var collideTest = function( vector1, vector2, distance) {
 
 
 
+
 var drgnSg = [];
 var numSegs = 15;
 for (var i = 0; i < numSegs; i++) {
@@ -784,7 +785,6 @@ project.activeLayer.insertChild(100, head);
 function addTargettoArray(tempTarget){
     var newPoint = tempTarget;
     targets.push(newPoint);
-    console.log(targets);
 }
 
 function incrementTarget(){
@@ -793,25 +793,26 @@ function incrementTarget(){
   } else {
     targetInd = 0;
   }
+  // targets[targetInd].fillColor = 'black';
 }
 
 function onMouseMove(event) {
-    if(!targetting){
-      target = event.point;
+
+    if(modalClear){
+      if(!targetting){
+        target = event.point;
+      }
+      hoverCircleInner.position = event.point;
     }
-    hoverCircleInner.position = event.point;
 }
 
 function onMouseDown(event) {
-    addTargettoArray(event.point);
-    // var newPoint = event.point;
-    // targets.push(newPoint);
-    // target = event.point;
-    // console.log(targets);
+    // addTargettoArray(event.point);
 
     var hoverCircle = new Path.Circle(event.point, 10);
     hoverCircle.fillColor = darkRedClr;
-    // targetInd +=1;
+
+    addTargettoArray(hoverCircle);
 
 }
 
@@ -819,7 +820,9 @@ function onFrame(event) {
 
     sinus = Math.sin(event.time * 2) * 25;
 
-    moveMouseBit();
+    if(playing && modalClear){
+      moveMouseBit();
+    }
 
     for (var i = 0; i < numSegs; i++) {
         // dragonSegCollide(i, view.center);
@@ -832,7 +835,6 @@ function onFrame(event) {
 
         var comparePos = mousePos;
         var checkMovr = points[i].checkDistance(comparePos);
-        // console.log(checkMovr);
         if(checkMovr){
             points[i].setAvail(false);
         } else {
@@ -841,3 +843,35 @@ function onFrame(event) {
     }
 
 }
+
+function resetTargets(){
+  for(var i = 0; i < targets.length; i++){
+    targets[i].remove();
+  }
+  targets = [];
+}
+
+var playing = true;
+
+function playpause(){
+  playing = !playing;
+}
+
+// Pause Button Function
+  var seqPause = document.getElementById("seq-pause");
+  seqPause.addEventListener('click', function(e) {
+      e.preventDefault();
+      playpause();
+      console.log("pause");
+      seqPause.classList.toggle('seqPaused');
+  });
+
+  // Reset Button Function
+  var seqReset = document.getElementById("seq-reset");
+  seqReset.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log("reset");
+      resetTargets();
+
+      targetting = false;
+  });

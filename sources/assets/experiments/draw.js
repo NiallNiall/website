@@ -116,7 +116,7 @@ window.onload = function() {
       }
 
 
-      if(playing){
+      if(playing && modalClear){
         for(var i = 0; i <branchs.length; i++){
             branchs[i].loop();
         }

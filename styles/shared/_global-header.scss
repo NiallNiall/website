@@ -140,7 +140,7 @@ $gbl-nav-item-padding: 6px;
   top: 0;
   // height: 30px;
   width: 100%;
-  z-index: 8;
+  z-index: 100;
 
   background: $lightpink;
   text-align: center;
@@ -155,7 +155,7 @@ $gbl-nav-item-padding: 6px;
   font-family: $sans-serif;
   font-weight: bolder;
   letter-spacing: 0.075em;
-  font-size:18px;
+  font-size: 18px;
 
   font-feature-settings: "kern" on, "liga" on, "calt" on, "ss01";
 
@@ -172,7 +172,7 @@ $gbl-nav-item-padding: 6px;
   background: $nhdarkblue;
   position: fixed;
   top: 0;
-  z-index: 5;
+  z-index: 99;
   padding: 0;
 
   // border-bottom: 4px solid $nhdarkblue;

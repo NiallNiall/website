@@ -119,3 +119,13 @@ a {
   letter-spacing: 0.05em;
   color: $nhpink;
 }
+
+
+
+
+p {
+  opacity: 1.0;
+  .wf-loading &{
+    opacity: 0;
+  }
+}

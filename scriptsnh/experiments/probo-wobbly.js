@@ -204,7 +204,7 @@ makeNewSquiggle();
 
 function onFrame(event) {
 
-    if(drawing) {
+    if(drawing && modalClear) {
 
       getLengthofAll(mainPaths[mainPaths.length - 1]);
 
@@ -225,7 +225,7 @@ function onFrame(event) {
 }
 
 function onKeyDown(event) {
-  if(drawing) {
+  if(drawing && modalClear) {
     makeNewSquiggle();
   }
 }

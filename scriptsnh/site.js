@@ -47,3 +47,83 @@ $(document).ready(function() {
 
 
 });
+
+
+
+// ==================================================
+// scroll through arrows click
+// ==================================================
+
+function arrowNavigation(btnName) {
+  var btn = document.getElementById(btnName);
+  if(btn){
+    var btnlink = btn.getAttribute("href");
+    window.location.href = btnlink;
+  } else {
+    console.log("cannot go in that direction");
+  }
+}
+
+function leftArrowPressed() {
+  arrowNavigation("portnav-prev");
+}
+
+function rightArrowPressed() {
+  arrowNavigation("portnav-next");
+}
+
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+    }
+};
+
+
+// ==================================================
+// Modal
+// ==================================================
+
+
+  var modalClear = false;
+
+  // Working on Removing jQuery. Removing classes with a prototype
+
+  HTMLElement.prototype.removeClass = function(remove) {
+    var newClassName = "";
+    var i;
+    var classes = this.className.split(" ");
+    for(i = 0; i < classes.length; i++) {
+        if(classes[i] !== remove) {
+            newClassName += classes[i] + " ";
+        }
+    }
+    this.className = newClassName;
+}
+
+  // Get Characters
+  var closeModalBtn = document.getElementById('closeModal');
+  var modal = document.getElementById('Modal');
+
+  var closeModal = function(tempModal) {
+    tempModal.removeClass("modalOpen");
+    modalClear = true;
+  }
+
+  if(closeModalBtn){
+    closeModalBtn.onclick = function() {
+      closeModal(modal);
+    }
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          closeModal(modal);
+      }
+  }

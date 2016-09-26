@@ -9,6 +9,6 @@ date: 2015-01-01
 draft: false
 thumb: /img/experiments/ombak-thumb.gif
 ---
-Partly for a hackathon, this is a javascript based sequencer where you draw lines and beats move along those lines. Magic!
+This is a circular sequencer
 
-<!-- Code is on [GitHub](https://github.com/NiallNiall/dragon-browser) -->
+Use your mouse to place Beats at various points in the cycle. The number keys will switch between different types of Beat.

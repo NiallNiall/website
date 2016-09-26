@@ -1,5 +1,7 @@
 (function() { 'use strict'; }()); // end 'use strict'
 
+
+
 // ==================================================
 // Initialise Colours
 // ==================================================
@@ -100,7 +102,7 @@ window.onload = function() {
 
     paper.view.onFrame = function(event) {
 
-        if (playing) {
+        if (playing && modalClear) {
 
             countr += 2;
 
