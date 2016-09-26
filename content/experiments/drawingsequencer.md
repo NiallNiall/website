@@ -12,6 +12,7 @@ extrascripts:
 - experiments/pennereq
 - experiments/drawClass
 - experiments/draw
+modalBtn: Quick Draw
 ---
 Traditionally sequencers just go from A to B, so here's one where you draw your own alphabet.
 

@@ -10,7 +10,7 @@ draft: false
 thumb: /img/experiments/dragon-thumb.gif
 paperscripts:
 - experiments/dragon
-
+modalBtn: Unleash the Dragon
 ---
 Here's a friendly javascript dragon that makes music for you.
 

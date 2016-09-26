@@ -1,6 +1,6 @@
 ul.experiments {
   position: relative;
-  min-height: 100%;
+  // min-height: 100%;
   width: 100%;
   padding: $beta $beta/2;
   background: $nhdarkblue;//$nhpink;
@@ -8,7 +8,7 @@ ul.experiments {
   text-align: center;
   margin: 0;
 
-  padding-top: 148px;
+  // padding-top: 148px;
 
   li {
     // width: 25%;
@@ -52,7 +52,20 @@ ul.experiments {
         display: block;
         width: 100%;
         height: 100%;
-        background: rgba($nhdarkblue, 0.8);
+        background: $nhdarkblue;
+      }
+
+      .experiments li:first-child a &{
+        background: $darkOrangeClr;
+      }
+      .experiments li:nth-of-type(2) a &{
+        background: $lightBlueClr;
+      }
+      .experiments li:nth-of-type(3) a &{
+        background: $nhdarkerpink;
+      }
+      .experiments li:nth-of-type(4) a &{
+        background: $lightOrangeClr;
       }
 
 

@@ -11,10 +11,15 @@
 
     {{{contents}}}
 
+    <p class="modal-disclaimer">
+      Ah, I'm really sorry, but this looks like it may be a bit patchy in your browser.
+      Make try something like Chrome?
+    </p>
 
 
-    <button id="goModal" class="btn-modal">Try it Out</button>
-
+    {{#if modalBtn}}
+      <button id="goModal" class="btn-modal">{{modalBtn}}</button>
+    {{/if}}
 
     <div class="modal-nav">
       {{#if this.previous}}

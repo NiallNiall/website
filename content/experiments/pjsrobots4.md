@@ -10,6 +10,7 @@ draft: false
 thumb: /img/experiments/robots-wo-thumb.gif
 paperscripts:
 - experiments/probo-wobbly
+modalBtn: Do the Robot
 ---
 Here's my favorite of many iterations of autonomous drawing robots. The points should never touch.
 

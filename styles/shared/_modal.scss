@@ -151,3 +151,16 @@
 	}
 }
 
+
+
+.modal-disclaimer {
+  margin-bottom:12px;
+  text-align: center;
+  color: $nhdarkerpink;
+  display: none;
+
+  .no-webaudio &, .no-canvas & {
+    display: inline;
+  }
+
+}
