@@ -10,12 +10,10 @@ draft: false
 thumb: /img/experiments/dragon-thumb.gif
 paperscripts:
 - experiments/dragon
-tech:
-- Javascript
-- ToneJS
----
-Originally a processing sketch for a hackathon, this is a dragon made with SVGs and Javascript.
 
-Use your mouse to move the dragon. Click in two or more places and they'll move between them.
+---
+Here's a friendly javascript dragon that makes music for you.
+
+Use your mouse to move the dragon. Click in two or more places and they'll move between the points.
 
 <!-- Code is on [GitHub](https://github.com/NiallNiall/dragon-browser) -->

@@ -11,4 +11,6 @@ thumb: /img/experiments/robots-wo-thumb.gif
 paperscripts:
 - experiments/probo-wobbly
 ---
-Version 4 of some autonomous drawing robots made in paperJS
+Here's my favorite of many iterations of autonomous drawing robots. The points should never touch.
+
+Just sit back and watch them draw

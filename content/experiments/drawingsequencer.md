@@ -13,6 +13,6 @@ extrascripts:
 - experiments/drawClass
 - experiments/draw
 ---
-Partly for a hackathon, this is a javascript based sequencer where you draw lines and beats move along those lines. Magic!
+Traditionally sequencers just go from A to B, so here's one where you draw your own alphabet.
 
 Use your mouse to draw Paths to make sequences

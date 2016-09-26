@@ -3,22 +3,30 @@
   <!-- Modal content -->
   <div class="modal-content">
 
+    <a id="closeModal" class="close"></a>
+
     <h3 class="modal-title bborder">{{title}}</h3>
 
-<!--     <a id="closeModal" class="close">x</a> -->
+
+
     {{{contents}}}
 
-    {{#if this.previous}}
-      <a id="portnav-prev" class="portnav-buttons left" href="/{{this.previous.path}}">Previous <span>Project</span></a>
-    {{/if}}
 
-    {{#if this.next}}
-      <a id="portnav-next" class="portnav-buttons right" href="/{{this.next.path}}">Next <span>Project</span></a>
-    {{/if}}
 
-    {{#each tech}}
-      {{this}}
-    {{/each}}
+    <button id="goModal" class="btn-modal">Try it Out</button>
+
+
+    <div class="modal-nav">
+      {{#if this.previous}}
+        <a id="portnav-prev" class="modalnav-buttons left" href="/{{this.previous.path}}">Previous <span>Project</span></a>
+      {{/if}}
+
+      {{#if this.next}}
+        <a id="portnav-next" class="modalnav-buttons right" href="/{{this.next.path}}">Next <span>Project</span></a>
+      {{/if}}
+    </div>
+
+
 
   </div>
 
