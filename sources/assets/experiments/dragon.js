@@ -572,15 +572,31 @@ function createSynthStep(constructPos, ind) {
 var points = [];
 var ind =0;
 
+var windowSize = paper.view.bounds;
+var smallWidth = false;
+var pointsRadius;
+// console.log(windowSize);
+if(windowSize.width > 500){
+  pointsRadius = 200;
+} else {
+  pointsRadius = 125;
+  smallWidth = true;
+}
+
 for(var i = 0; i < 360; i+=15){
 
-    var newPoint = getCirclePos(new paper.Point(view.center.x, view.center.y), i, 200);
+    var newPoint = getCirclePos(new paper.Point(view.center.x, view.center.y), i, pointsRadius);
 
     var newAnenome = Anenome.place(view.center);
+
     newAnenome.pivot = new Point(0,130);//Anenome.bounds
     newAnenome.position -= new Point(0, 130);
     // newAnenome.position += new paper.Point(0,-100);
     newAnenome.rotation = i;
+
+    if(smallWidth){
+      newAnenome.scale(0.6);
+    } else
 
     anenomeGroup.addChild(newAnenome);
 

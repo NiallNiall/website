@@ -73,9 +73,16 @@ window.onload = function() {
 
 
     var selectr = 1;
-    var oldSelector = 1;
 
-    var phRadius = 200;
+    var windowSize = paper.view.bounds;
+
+    var phRadius;
+
+    if(windowSize.width > 500){
+        phRadius = 200;
+    } else {
+        phRadius = 125;
+    }
 
     var getCirclePos = function(centerPos, inc, Radius) {
         var angle = Math.radians(inc);
@@ -154,13 +161,6 @@ window.onload = function() {
                 // console.log(movrs);
             }
 
-            if (selectr == oldSelector) {
-                // Do NOTHING
-            } else {
-                // console.log("selector changed to " + selectr);
-                selectionIcon();
-            }
-            oldSelector = selectr;
         }
     }
 
@@ -201,56 +201,54 @@ window.onload = function() {
     }
 
 
+    function incrementSelectr() {
+        if(selectr <= 4){
+            selectr +=1;
+        } else {
+            selectr = 1;
+        }
+        setSelectr(selectr);
+    }
 
-    // var bgRadius = 50;
-    // var selectedIconPoint = new paper.Point(bgRadius, bgRadius);
-    // var selectedBackground = new paper.Path.Rectangle(selectedIconPoint.subtract(bgRadius/2), bgRadius);
-    // selectedBackground.fillColor = 'DimGray';
+    function getSelectText(tempSelect) {
 
-    // var selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
-    // selectedIcon.fillColor ='DarkCyan';
+        var selectionName = 'None';
+
+        switch (tempSelect) {
+            case 1:
+                selectionName = 'Kick';
+                break;
+            case 2:
+                selectionName = 'Snare';
+                break;
+            case 3:
+                selectionName = 'Beep';
+                break;
+            case 4:
+                selectionName = 'Extension';
+                break;
+            default:
+                selectionName = 'None';
+        }
+
+        return selectionName;
 
 
-    var selectionIcon = function() {
+    }
 
-        // switch(selectr) {
-        //   case 1:
-        //   // console.log("1");
-        //   selectedIcon.remove();
-        //   selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
-        //   selectedIcon.fillColor ='DarkCyan';
+    function setSelectionText(tempSelect) {
+        var selectrText = document.getElementById("csq-slc-text");
+        var newSelectText = getSelectText(tempSelect);
 
-        //   break;
-        //   case 2:
-        //   // console.log("2");
-        //   var rectRadius = 20;
-        //   selectedIcon.remove();
-        //   selectedIcon = new paper.Path.Rectangle(
-        //     selectedIconPoint.subtract(rectRadius/2),
-        //     rectRadius
-        //     );
-        //   selectedIcon.fillColor ='Tomato';
-        //   break;
-        //   case 3:
-        //   // console.log("3");
-        //   var rectRadius = 25;
-        //   selectedIcon.remove();
-        //   selectedIcon = new paper.Path.Rectangle(
-        //     new paper.Point(selectedIconPoint.x - rectRadius/2, selectedIconPoint.y - (rectRadius)),
-        //     new paper.Point(selectedIconPoint.x + rectRadius/2, selectedIconPoint.y +(rectRadius))
-        //     );
-        //   selectedIcon.fillColor = playHeadClr;
-        //   break;
-        //   case 4:
-        //   // console.log("4");
-        //   selectedIcon.remove();
-        //   selectedIcon = new paper.Path.Circle(selectedIconPoint, 10);
-        //   selectedIcon.fillColor ='SaddleBrown';
-        //   break;
-        //   default:
-        //   // console.log("0");
-        // }
+        selectrText.innerHTML = newSelectText;
 
+        // console.log(selectText);
+    }
+
+
+    function setSelectr(tempSelect) {
+        selectr = tempSelect;
+        setSelectionText(tempSelect);
     }
 
 
@@ -258,19 +256,19 @@ window.onload = function() {
 
         switch (event.key) {
             case '1':
-                selectr = 1;
+                setSelectr(1);
                 break;
             case '2':
-                selectr = 2;
+                setSelectr(2);
                 break;
             case '3':
-                selectr = 3;
+                setSelectr(3);
                 break;
             case '4':
-                selectr = 4;
+                setSelectr(4);
                 break;
             default:
-                selectr = 1;
+                setSelectr(1);
         }
 
     }
@@ -296,6 +294,13 @@ window.onload = function() {
     seqReset.addEventListener('click', function(e) {
         e.preventDefault();
         resetbranchs();
+    });
+
+    var selectrBox = document.getElementById("csq-slc-box");
+    selectrBox.addEventListener('click', function(e) {
+        e.preventDefault();
+        incrementSelectr();
+
     });
 
 
