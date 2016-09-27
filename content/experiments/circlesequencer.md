@@ -12,4 +12,4 @@ modalBtn: Give it a whirl
 ---
 Here's a sequencer that goes in a circle.
 
-Use your mouse to place Beats at various points in the cycle. The number keys will switch between different types of Beat.
+Use your mouse to place Beats at various points in the cycle. Click on the selected box or press the number keys to switch between different types of Beat.

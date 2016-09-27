@@ -78,10 +78,10 @@ window.onload = function() {
 
     var phRadius;
 
-    if(windowSize.width > 500){
-        phRadius = 200;
-    } else {
+    if(windowSize.width < 500 || windowSize.height < 500){
         phRadius = 125;
+    } else {
+        phRadius = 200;
     }
 
     var getCirclePos = function(centerPos, inc, Radius) {
@@ -202,7 +202,7 @@ window.onload = function() {
 
 
     function incrementSelectr() {
-        if(selectr <= 4){
+        if(selectr <= 3){
             selectr +=1;
         } else {
             selectr = 1;

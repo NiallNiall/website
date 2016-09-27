@@ -1,7 +1,7 @@
 ---
 title: Experiments
 url: /
-description: Index Page
+description: Some Tests and Sketches, mainly browser Audio Visual stuff.
 layout: experiments.html
 permalink: true
 function: home

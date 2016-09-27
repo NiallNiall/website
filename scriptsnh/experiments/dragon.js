@@ -576,11 +576,11 @@ var windowSize = paper.view.bounds;
 var smallWidth = false;
 var pointsRadius;
 // console.log(windowSize);
-if(windowSize.width > 500){
-  pointsRadius = 200;
-} else {
+if(windowSize.width < 500 || windowSize.height < 500){
   pointsRadius = 125;
   smallWidth = true;
+} else {
+  pointsRadius = 200;
 }
 
 for(var i = 0; i < 360; i+=15){
@@ -596,7 +596,9 @@ for(var i = 0; i < 360; i+=15){
 
     if(smallWidth){
       newAnenome.scale(0.6);
-    } else
+    } else {
+
+    }
 
     anenomeGroup.addChild(newAnenome);
 

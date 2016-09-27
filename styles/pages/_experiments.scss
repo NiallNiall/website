@@ -79,6 +79,10 @@ ul.experiments {
       letter-spacing: 0.05em;
       line-height: 1.2;
 
+      @media screen and (max-width: $medium) {
+        font-size: 18px;
+      }
+
       &:after {
         content: "";
         display: block;
@@ -255,3 +259,79 @@ $darkcanvascolour: $nhdarkblue;
     margin-left: 4px;
   }
 }
+
+
+// CircleSeq
+// ===============================================
+
+
+.overnav-button:before,
+.overnav-button:after {
+    content: '';
+    position: absolute;
+    display: block;
+    // top:50%;
+    left: 25%;
+    width: 3px;
+    height: 50%;
+    background: $nhdarkblue;
+    transition: 0.4s;
+}
+
+
+.overnav-button {
+  background: $lightpink;
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border-radius: 30px;
+  margin-top: -15px;
+
+  transition: 0.2s;
+
+  &:before {
+    transform: translateX(-50%) rotate(40deg);
+    transform-origin: 0 100%;
+  }
+  &:after {
+    top:50%;
+    transform: translateX(-50%) rotate(-40deg);
+    transform-origin: 0 0;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    background: $nhdarkerpink;
+
+    &:before {
+      transform: translateX(-50%) rotate(50deg);
+      transform-origin: 0 100%;
+    }
+    &:after {
+      top:50%;
+      transform: translateX(-50%) rotate(-50deg);
+      transform-origin: 0 0;
+    }
+
+  }
+
+}
+
+.overnav-button.left-btn {
+  left: 15px;
+}
+
+.overnav-button.right-btn {
+  right: 15px;
+
+  transform: rotate(180deg);
+  &:hover {
+    transform: rotate(180deg) scale(1.2);
+  }
+
+}
+
+
