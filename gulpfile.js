@@ -9,7 +9,6 @@ var gm = require('gulp-gm');
 // Assets
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var webpack = require('webpack');
 
 // Site
 var site = require('./site');
@@ -94,18 +93,8 @@ gulp.task('styles', function() {
 });
 
 gulp.task('nhscripts', function() {
-    gulp.src('scriptsnh/**/*')
+    gulp.src('scripts/**/*')
     .pipe(gulp.dest(path.join(__dirname, site.metalsmith.config.assetRoot, 'assets')));
-});
-
-gulp.task('imgtest', function() {
-    gulp.src('imgtest/**/*')
-    .pipe(gm(function (gmfile) {
-      return gmfile.composite('gradient_lut.png').colorspace('Gray');//src('test.jpg').clut;
-    }, {
-      imageMagick: true
-    }))
-    .pipe(gulp.dest(path.join(__dirname, site.metalsmith.config.assetRoot)));
 });
 
 gulp.task('scripts', ['nhscripts']);
@@ -114,7 +103,7 @@ gulp.task('watch', ['default'], function() {
   gulp.watch(['gulpfile.js', 'site.js'], ['default']);
   gulp.watch([site.metalsmith.config.styleRoot+'/**/*.scss'], ['styles']);
   gulp.watch([site.metalsmith.config.scriptRoot+'/**/*'], ['scripts']);
-  gulp.watch('scriptsnh/**/*', ['scripts']);
+  gulp.watch('scripts/**/*', ['scripts']);
   gulp.watch([
     site.metalsmith.config.contentRoot+'/**/*',
     site.metalsmith.config.layoutRoot+'/**/*',
@@ -147,4 +136,4 @@ gulp.task('server', ['default', 'watch'], function(callback) {
   });
 });
 
-gulp.task('default', ['vendor', 'scripts', 'styles', 'metalsmith', 'imgtest']);
+gulp.task('default', ['vendor', 'scripts', 'styles', 'metalsmith']);

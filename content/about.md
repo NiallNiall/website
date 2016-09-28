@@ -4,13 +4,14 @@ url: /
 description: Niall Henn
 layout: about.html
 permalink: true
+skills-title: Skills
 skills:
  - Motion Design
  - Digital Design
  - Front End Development
  - Creative Coding
-
-frameworks:
+tools-title: Tools
+tools:
  - After Effects
  - Cinema 4D
  - Illustrator
@@ -26,7 +27,7 @@ frameworks:
  - Canvas
  - paperJS
  - Gulp
-
+hero-title: Hello
 
 ---
 Hi there, my name is Niall.

@@ -1,14 +1,14 @@
 ---
 title: Sketchy Sequencer
 url: experiments
-description: Test Post
+description: Drawing Sequencer
 collection: experiments
 paginate: experiments
 layout: experiment-sequencer.html
 date: 2015-01-01
 draft: false
 thumb: /img/experiments/ombak-thumb.gif
-extrascripts:
+extra-scripts:
 - experiments/pennereq
 - experiments/drawClass
 - experiments/draw

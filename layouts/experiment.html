@@ -1,26 +1,24 @@
 <!doctype html>
 <html lang="en">
 
-    {{> head-paper}}
+    {{> head}}
 
   <body data-function="{{function}}">
 
     {{> header}}
 
-    {{>modal}}
+    {{> modal}}
 
-    {{>prevnext}}
+    {{> prevnext}}
 
-    <canvas id="papercanvas" class="bgcanvas drkcanvas" resize></canvas>
+    {{> experiments/canvas}}
 
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
     <script src="/assets/site.js"></script>
 
     <script src="/assets/vendor/paper-full.js" async></script>
-    {{#each paperscripts}}
-      <script type="text/paperscript" canvas="papercanvas" src="/assets/{{this}}.js"></script>
-    {{/each}}
 
+    {{> experiments/paperscripts}}
 
   </body>
 </html>

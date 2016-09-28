@@ -1,7 +1,7 @@
 ---
 title: Circle Sequencer
 url: experiments
-description: Test Post
+description: Circle Sequencer
 collection: experiments
 paginate: experiments
 layout: experiment-circleseq.html
@@ -9,6 +9,12 @@ date: 2015-01-01
 draft: false
 thumb: /img/experiments/ombak-thumb.gif
 modalBtn: Give it a whirl
+
+extra-scripts:
+- experiments/pennereq
+- experiments/circleseqtriggerclass
+- experiments/circleseq
+
 ---
 Here's a sequencer that goes in a circle.
 

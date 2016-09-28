@@ -1,35 +1,27 @@
 <!doctype html>
 <html lang="en">
 
-    {{> head-paper}}
+    {{> head}}
 
   <body data-function="{{function}}">
 
     {{> header}}
 
-    {{>modal}}
+    {{> modal}}
 
-    {{>prevnext}}
+    {{> prevnext}}
 
-    <canvas id="papercanvas" class="bgcanvas drkcanvas" resize></canvas>
+    {{> experiments/canvas}}
 
-    <div class="bottom-buttons">
-        <a id="seq-pause" class="paper-button">
-        <span class="seq-pause">Pause</span><span class="seq-play">Play</span>
-        </a>
-        <a id="seq-reset" class="paper-button">
-        Reset
-        </a>
-    </div>
+    {{> experiments/buttons}}
 
     <script src="/assets/vendor/jquery-3.1.0.min.js"></script>
     <script src="/assets/site.js"></script>
 
     <script src="/assets/vendor/paper-full.js"></script>
     <script src="/assets/vendor/Tone.js"></script>
-    <script src="/assets/experiments/pennereq.js"></script>
-    <script src="/assets/experiments/drawClass.js"></script>
-    <script src="/assets/experiments/draw.js"></script>
+
+    {{> experiments/extrascripts}}
 
   </body>
 </html>

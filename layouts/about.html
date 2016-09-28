@@ -13,7 +13,7 @@
 
   <div class="homehero-text-outer hero-text-outer">
     <div class="homehero-text-inner">
-      <h1 class="hero-title">Hello</h1>
+      <h1 class="hero-title">{{hero-title}}</h1>
     </div>
     <a id="hero-down-btn" class="down-arrow-outer" data-attr-scroll="main-content">
       <span class="down-arrow"></span>
@@ -35,7 +35,7 @@
         <a href="/contact/">Let's Talk</a>
       </div>
       <div class="central-block skills-block">
-        <h3 class="skills-title">Skills</h3>
+        <h3 class="skills-title">{{skills-title}}</h3>
         <ul class="skills">
           {{#each skills}}
             <li>
@@ -45,9 +45,9 @@
         </ul>
       </div>
       <div class="central-block skills-block">
-        <h3 class="skills-title">Tools</h3>
+        <h3 class="skills-title">{{tools-title}}</h3>
         <ul class="skills">
-          {{#each frameworks}}
+          {{#each tools}}
             <li>
               {{this}}
             </li>

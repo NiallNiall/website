@@ -11,6 +11,9 @@ thumb: /img/experiments/dragon-thumb.gif
 paperscripts:
 - experiments/dragon
 modalBtn: Unleash the Dragon
+extra-styles:
+- "cursor: none;"
+
 ---
 Here's a friendly javascript dragon that makes music for you.
 
