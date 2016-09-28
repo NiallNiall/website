@@ -1,7 +1,7 @@
 ---
 title: AZ Video Work
 url: commercial
-description: Test Post
+description: AstraZeneca Animations and Video Work
 collection: motion
 paginate: motion
 layout: video.html

@@ -1,9 +1,9 @@
 ---
-title: Votes for Schools video
+title: Votes for Schools
 url: commercial
-description: Test Post
-collection: commercial-video
-paginate: commercial-video
+description: Votes for Schools Video
+collection: motion
+paginate: motion
 layout: video.html
 date: 2015-11-01
 draft: false

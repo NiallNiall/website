@@ -1,9 +1,9 @@
 ---
-title: Ricoh Videos
+title: Ricoh
 url: commercial
 description: Test Post
-collection: commercial-video
-paginate: commercial-video
+collection: motion
+paginate: motion
 layout: video.html
 date: 2015-11-01
 draft: false
