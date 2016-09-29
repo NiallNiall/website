@@ -17,8 +17,9 @@ paperscripts:
 - experiments/dragon
 modalBtn: Unleash the Dragon
 
-extra-styles:
-- "cursor: none;"
+canvas-classes:
+- drkcanvas
+- hide-cursor
 
 ---
 Here's a friendly javascript dragon that makes music for you.

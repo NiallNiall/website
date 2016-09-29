@@ -4,7 +4,7 @@ url: experiments
 description: Test Post
 collection: experiments
 paginate: experiments
-layout: experiment.html
+layout: experiment-plain.html
 date: 2015-03-03
 draft: false
 thumb: /img/experiments/robots-wo-thumb.gif
@@ -14,6 +14,9 @@ vendor-scripts:
 
 paperscripts:
 - experiments/probo-wobbly
+
+canvas-classes:
+- drkcanvas
 
 modalBtn: Do the Robot
 ---

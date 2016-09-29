@@ -18,6 +18,10 @@ extra-scripts:
 - experiments/drawClass
 - experiments/draw
 modalBtn: Quick Draw
+
+canvas-classes:
+- drkcanvas
+
 ---
 Traditionally sequencers just go from A to B, so here's one where you draw your own alphabet.
 

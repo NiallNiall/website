@@ -19,6 +19,9 @@ extra-scripts:
 - experiments/circleseqtriggerclass
 - experiments/circleseq
 
+canvas-classes:
+- drkcanvas
+
 ---
 Here's a sequencer that goes in a circle.
 
