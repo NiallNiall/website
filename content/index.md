@@ -7,6 +7,8 @@ permalink: false
 function: home
 vimeolink: 180631550
 subtitle: Creative Engineer
+page-scripts:
+- homecanvas
 ---
 Hi there, my name is Niall.
 

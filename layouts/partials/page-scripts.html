@@ -1,0 +1,12 @@
+<!-- Common Scripts -->
+{{#if site-script}}
+    <script type="text/javascript" src="/assets/site.js"></script>
+{{/if}}
+{{#if video-script}}
+    <script type="text/javascript" src="/assets/video.js"></script>
+{{/if}}
+
+<!-- Unique Scripts -->
+{{#each page-scripts}}
+  <script src="/assets/{{this}}.js"></script>
+{{/each}}
