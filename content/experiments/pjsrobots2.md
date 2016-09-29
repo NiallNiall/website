@@ -7,6 +7,10 @@ paginate: experiments
 layout: experiment.html
 date: 2015-11-01
 draft: true
+
+vendor-scripts:
+- paper-full
+
 paperscripts:
 - experiments/probo-straight
 ---

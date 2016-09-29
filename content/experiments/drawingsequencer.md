@@ -8,6 +8,11 @@ layout: experiment-sequencer.html
 date: 2015-01-01
 draft: false
 thumb: /img/experiments/ombak-thumb.gif
+
+vendor-scripts:
+- paper-full
+- Tone
+
 extra-scripts:
 - experiments/pennereq
 - experiments/drawClass

@@ -8,9 +8,15 @@ layout: experiment-dragon.html
 date: 2015-02-02
 draft: false
 thumb: /img/experiments/dragon-thumb.gif
+
+vendor-scripts:
+- paper-full
+- Tone
+
 paperscripts:
 - experiments/dragon
 modalBtn: Unleash the Dragon
+
 extra-styles:
 - "cursor: none;"
 

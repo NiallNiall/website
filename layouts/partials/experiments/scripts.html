@@ -2,5 +2,12 @@
 <!-- Unfortunately this needs to come after jquery -->
 <script src="/assets/site.js"></script>
 
-<script src="/assets/vendor/paper-full.js" async></script>
-<script src="/assets/vendor/Tone.js"></script>
+<!-- Removed Async tag from below -->
+{{#each vendor-scripts}}
+  <script src="/assets/vendor/{{this}}.js"></script>
+{{/each}}
+
+
+{{> experiments/extrascripts}}
+
+{{> experiments/paperscripts}}

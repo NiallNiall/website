@@ -10,6 +10,10 @@ draft: false
 thumb: /img/experiments/ombak-thumb.gif
 modalBtn: Give it a whirl
 
+vendor-scripts:
+- paper-full
+- Tone
+
 extra-scripts:
 - experiments/pennereq
 - experiments/circleseqtriggerclass
