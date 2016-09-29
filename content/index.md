@@ -6,7 +6,10 @@ layout: index.html
 permalink: false
 function: home
 vimeolink: 180631550
-subtitle: Creative Engineer
+
+hero-title: Niall Henn
+hero-subtitle: Creative Engineer
+
 page-scripts:
 - homecanvas
 ---

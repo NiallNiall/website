@@ -1,0 +1,43 @@
+<div class="homehero-inner">
+  <div class="homehero-text-outer">
+    <div class="homehero-text-inner">
+      <h1 class="hero-title">{{hero-title}}</h1>
+      <div class="homesub-container homesub-layout">
+        <h3 class= "homesub-text homesub-tag">
+          {{#if hero-subtitle-link}}
+            <a href="{{hero-subtitle-link}}">{{hero-subtitle}}</a>
+          {{else}}
+            {{hero-subtitle}}
+          {{/if}}
+        </h3>
+        {{#if social-icons }}
+          <ul class="contact-social">
+            {{> socialicons}}
+          </ul>
+        {{/if}}
+        {{#if lower-menu }}
+          <ul class="homesub-menu">
+            <li><h3 class="homesub-text"><a href="about/">About</a></h3></li>
+            <!-- <li><h3 class="homesub-text"><a href="">Work</a></h3></li> -->
+            <li><h3 class="homesub-text"><a href="experiments/">Experiments</a></h3></li>
+            <li><h3 class="homesub-text"><a href="contact/">Contact</a></h3></li>
+          </ul>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{#if down-arrow}}
+  <a id="hero-down-btn" class="down-arrow-outer" data-attr-scroll="main-content">
+    <span class="down-arrow"></span>
+  </a>
+{{/if}}
+
+{{#if home-btns}}
+  <div class="home-btn-container">
+    <button id="fs-video" class="btn-showreel">Showreel</button>
+    <button id="homemenu" alt="show and hide the menu" class="btn-showmenu"></button>
+  </div>
+{{/if}}
