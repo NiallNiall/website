@@ -1,15 +1,20 @@
 <div class="homehero-inner">
-  <div class="homehero-text-outer">
+
+  <div class="homehero-text-outer ">
+<!--     <div class="fw-bg-img"></div> -->
     <div class="homehero-text-inner">
       <h1 class="hero-title">{{hero-title}}</h1>
+      {{#if hero-subtitle}}
       <div class="homesub-container homesub-layout">
-        <h3 class= "homesub-text homesub-tag">
-          {{#if hero-subtitle-link}}
-            <a href="{{hero-subtitle-link}}">{{hero-subtitle}}</a>
-          {{else}}
-            {{hero-subtitle}}
-          {{/if}}
-        </h3>
+
+          <h3 class= "homesub-text homesub-tag">
+            {{#if hero-subtitle-link}}
+              <a href="{{hero-subtitle-link}}">{{hero-subtitle}}</a>
+            {{else}}
+              {{hero-subtitle}}
+            {{/if}}
+          </h3>
+
         {{#if social-icons }}
           <ul class="contact-social">
             {{> socialicons}}
@@ -24,6 +29,8 @@
           </ul>
         {{/if}}
       </div>
+      <!--  End hero subtitle if -->
+      {{/if}}
     </div>
   </div>
 </div>

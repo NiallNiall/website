@@ -83,7 +83,7 @@ div[class^='parallax-bg-'] {
 	background-size: cover;
 	background-image: url('/img/abouttint.jpg');
 	background-position: center;
-	z-index: 1;
+	z-index: 0;
 	position: fixed;
 }
 
@@ -171,19 +171,22 @@ div[class^='parallax-bg-'] {
 
 
 
-.hero-text-outer {
-    top: 0;
-    position: absolute;
-    z-index: 3;
+.content-page {
+
+	padding: 0;
 
     h1 {
-    	color: $nearwhite;
+
 			opacity: 1.0;
 			transition: 0.5s;
 
     	.scrolleddown & {
     		opacity: 0;
     	}
+    }
+
+    &.dark h1{
+    	color: $nearwhite;
     }
 }
 
